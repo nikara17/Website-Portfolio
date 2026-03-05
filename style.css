@@ -20,32 +20,6 @@ body {
     color: #fff;
 }
 
-<<<<<<< Updated upstream
-#header {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: url(Images/image222.jpg);
-    background-size: 30%;
-    background-position: 10% center;
-    background-repeat: no-repeat;
-}
-
-
-#header::after {
-    content: '';
-    display: block;
-    width: 80%;
-    /* Adjust the width of the border line */
-    margin: 230px auto 0 auto;
-    /* Center the border line and add some space */
-    border-bottom: 5px solid #6e656c;
-    /* The color and thickness of the line */
-}
-
-
-=======
->>>>>>> Stashed changes
 
 
 .container {
@@ -934,13 +908,6 @@ nav ul li a:hover::after {
     overflow:hidden;
 }
 
-#certifications::before{
-    background: rgba(0,0,0,0.75);
-}
-
-#certifications::before{
-    background: rgba(0,0,0,0.75);
-}
 
 /* TITLE */
 .cert-title{
@@ -2857,156 +2824,187 @@ nav .fa-circle-xmark {
 }
 
 
+/* =========================================================
+   RESPONSIVE (REPLACE OLD MOBILE SECTION)
+   - Fixes nesting issues, wrong paths, old classes
+   - Matches your CURRENT HTML structure
+   ========================================================= */
 
+@media (max-width: 1024px){
+  .container{ padding: 10px 6%; }
 
+  .hero-title{ font-size: 72px; }
 
+  .slide-btn.left{ left: -50px; }
+  .slide-btn.right{ right: -50px; }
+}
 
-/*------------CSS for small screens----------------*/
+@media (max-width: 900px){
+  /* ABOUT */
+  #about .row{
+    flex-direction: column;
+    gap: 28px;
+  }
 
-@media only screen and (max-width: 768px) {
+  .about-col-1{
+    margin-top: 20px;
+    width: 100%;
+    flex: none;
+  }
 
-    html,
-    body {
-        width: 100%;
-        overflow-x: hidden;
-    }
+  .about-col-1 img,
+  .about-media-item{
+    height: 300px;
+  }
 
+  .sub-title{ font-size: 38px; }
 
-    #header {
-        background-image: url(Images/phone-image2.jpg) !important;
-        background-size: cover;
-        /* Ensure the image covers the header */
-        background-position: center 100%;
-        /* Ensure it's centered */
-        padding: 20px 0;
-        /* Adjust padding */
+  /* BLOGS layout stacks */
+  .blogs-layout{
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
 
-    }
+  .blogs-left{
+    position: static;
+    top: auto;
+  }
 
-    #header::after {
-        content: '';
-        display: hidden;
-        width: 100%;
-        /* Adjust the width of the border line */
-        margin: 350px auto 0 auto;
-        /* Center the border line and add some space */
-        border-bottom: 5px solid #86477900;
-        /* The color and thickness of the line */
-    }
+  .blogs-right{
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+    max-width: 100%;
+    justify-self: stretch;
+  }
 
+  .blog-card{
+    max-width: 100%;
+    margin-left: 0;
+  }
 
+  /* REVIEWS grid stacks */
+  .reviews-grid{
+    grid-template-columns: 1fr;
+  }
 
-    .header-text {
+  .reviews-title{
+    font-size: 48px;
+  }
 
+  .reviews-panel--feed{
+    max-height: 520px;
+  }
+}
 
-        /* This allows you to position the element relative to its nearest positioned ancestor */
-        top: 30%;
-        /* Move the text higher by decreasing the percentage */
-        left: 50%;
-        /* Center horizontally */
-        transform: translateX(-50%);
-        /* Adjust for centering */
-        font-size: 30px;
-        display: inline;
-        margin: 10px;
-        padding: 0 10px;
-        /* Reduce padding */
-    }
+@media (max-width: 768px){
+  html, body{
+    width: 100%;
+    overflow-x: hidden;
+  }
 
+  /* NAV: show hamburger icons */
+  nav .fa-bars,
+  nav .fa-circle-xmark{
+    display: block;
+    font-size: 25px;
+  }
 
-    .header-text h1 {
-        font-size: 30px;
-        text-align: center;
-    }
+  /* Slide-out menu */
+  nav ul{
+    background: rgba(0,0,0,0.92);
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    padding-top: 70px;
+    z-index: 9999;
+    transition: right 0.5s ease;
+  }
 
+  nav ul li{
+    display: block;
+    margin: 18px 22px;
+  }
 
-    nav .fa-bars,
-    nav .fa-circle-xmark {
-        display: block;
-        font-size: 25px;
-    }
+  /* Close icon placement */
+  nav ul .fa-circle-xmark{
+    position: absolute;
+    top: 20px;
+    left: 18px;
+    cursor: pointer;
+  }
 
+  /* HERO stacks */
+  .header-content{
+    flex-direction: column;
+    gap: 26px;
+    margin-top: 26px;
+    text-align: center;
+  }
 
-    nav ul {
-        background: #000000ec;
-        position: fixed;
-        top: 0;
-        right: -250px;
-        width: auto;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
-        transition: right o.5s;
-    }
+  .header-text{
+    padding-right: 0;
+    text-align: center;
+  }
 
+  .hero-title{
+    font-size: 44px;
+    line-height: 1.15;
+  }
 
+  .typewriter{
+    margin-top: 26px;
+    margin-left: 0;
+    font-size: 18px;
+    min-height: 0;
+  }
 
-    nav ul li {
-        display: block;
-        margin: 30px;
-        margin: 10px 30px;
-        /* Increase right margin for more spacing */
-    }
+  .hero-meta{
+    margin-top: 18px;
+    font-size: 16px;
+  }
 
+  #typing-text{
+    font-size: 15px;
+  }
 
-    nav ul .fa-bars {
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
+  .header-image{
+    justify-content: center;
+  }
 
-    }
+  .header-image img{
+    max-width: 320px;
+  }
 
-    nav ul .fa-circle-xmark {
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
-    }
+  /* IMPORTANT: fix your mobile header background path casing */
+  #header{
+    background-image: url("images/phone-image2.jpg") !important;
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0;
+  }
 
-    .sub-title {
-        font-size: 40px;
-    }
+  /* PORTFOLIO: cards become vertical stack */
+  .work-list{
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+  }
 
-    .about-col-1,
-    .about-col-2 {
-        flex-basis: 100%;
-    }
+  .work{
+    min-width: 0;
+    width: 100%;
+    max-width: 520px;
+  }
 
-    .about-col-1 {
-        margin-bottom: 30px;
-    }
+  /* hide slider arrows on mobile (stack layout) */
+  .slide-btn{
+    display: none;
+  }
 
-    .about-col-1 {
-        font-size: 14px;
-    }
-
-    .tab-links {
-        font-size: 16px;
-        margin-right: 20px;
-
-    }
-
-    .work-list {
-        flex-direction: column;
-        /* Stack items vertically on small screens */
-        align-items: center;
-        /* Center align items if necessary */
-    }
-
-    .work {
-        flex-basis: 100%;
-        /* Make each item take full width on mobile */
-        margin-bottom: 20px;
-        /* Maintain spacing */
-    }
-
-    .contact-left,
-    .contact-Right {
-        flex-basis: 100%;
-
-    }
-@media only screen and (max-width: 768px){
+  /* CONTACT stacks */
   #contact{
     padding: 80px 0;
   }
@@ -3020,106 +3018,54 @@ nav .fa-circle-xmark {
     font-size: 34px;
   }
 
+  .contact-title::after{
+    width: 220px;
+  }
+
   .field-grid{
     grid-template-columns: 1fr;
   }
+
+  /* BLOG title sizing */
+  .blogs-title{
+    font-size: 44px;
+    margin-bottom: 26px;
+  }
+
+  /* FOOTER stacks */
+  .site-footer{
+    padding: 38px 0 34px 0;
+    margin-top: 80px;
+  }
+
+  .site-footer .footer-inner{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social{
+    justify-content: center;
+  }
+
+  .footer-links .to-top{
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .footer-copy{
+    white-space: normal;
+  }
 }
 
+@media (max-width: 480px){
+  .hero-title{ font-size: 38px; }
+  .header-image img{ max-width: 280px; }
 
+  .contact-left,
+  .contact-right{
+    padding: 20px;
+  }
 
-    #reviews {
-        display: flex;
-        /* Ensure flexbox layout is applied */
-        flex-direction: column;
-        /* Stack the columns vertically */
-        align-items: center;
-        /* Center the content */
-        padding: 0 15px;
-        /* Add some padding to ensure content doesn't touch screen edges */
-        width: 100%;
-        /* Ensure it takes up full width of the screen */
-        box-sizing: border-box;
-        /* Ensure padding is included in the width */
-
-
-    }
-
-    /* Adjust the review section width for smaller screens */
-    .review-left,
-    .review-right {
-        width: 100% !important;
-        /* Make both sections take up full width */
-        max-width: 100%;
-        /* Limit the max width to make it visually balanced on larger small screens */
-        margin: 10px auto;
-        /* Center the sections */
-        padding: 20px;
-        /* Add padding for better spacing */
-        box-sizing: border-box;
-        /* Include padding in width calculation */
-    }
-
-    .review-left {
-        /* Ensure Add a Review is not too wide */
-        min-width: unset;
-        /* Reset min-width */
-    }
-
-    /* Add margin between the two sections */
-    .review-right {
-        margin-top: 20px;
-        /* Space between Add a Review and Recent Reviews */
-
-    }
-
-    /* Optional: Add some additional styling to improve readability on mobile */
-    .review-left p,
-    .review-right p {
-        font-size: 14px;
-        /* Reduce the font size slightly on mobile */
-    }
-
-
-
-
-    /* Make the copyright cover the entire width of the screen */
-    footer {
-        width: 100%;
-        text-align: center;
-        /* Center the copyright text */
-        padding: 10px 0;
-        /* Add some padding for spacing */
-        background-color: #000;
-        /* Optional: Set a background color */
-    }
-
-
-    .copyright {
-        font-size: 14px;
-        width: 100%;
-    }
-
-   
-    #skills{
-        grid-template-columns:1fr; /* stack on small screens */
-    }
-}
-
-
-
-
-
-#msg {
-    color: #00ff00;
-    /*Colour for "message sent successfully*/
-    margin-top: -20px;
-    display: block;
-}
-
-
-#reviewmsg {
-    color: #01ff01;
-    /*Colour for "message sent successfully*/
-    margin-top: 20px;
-    display: block;
+  .reviews-title{ font-size: 40px; }
 }
