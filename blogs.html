@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Thinking Thread | Pathways & Purpose</title>
+    <meta name="description" content="Blogs and insights on AI, robotics, growth, and career pathways." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="blogs.css" />
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/63052dda00.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="blogs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+
+
+
+    <!-- =========================
+       TOP BANNER / NAV
+  ========================== -->
+
+    <header class="journal-banner">
+
+        <div class="banner-left">
+            <a class="banner-logo" href="index.html">The Thinking Thread</a>
+        </div>
+
+        <nav class="banner-nav" aria-label="Primary">
+            <a href="blogs.html" class="banner-link active">Home</a>
+            <a href="about.html" class="banner-link">What is Thinking Thread</a>
+            <a href="contact.html" class="banner-link">Contact</a>
+        </nav>
+
+
+    </header>
+
+
+
+
+
+
+
+    <main id="main">
+        <!-- =========================
+         HERO (CENTERED) + PANELS
+    ========================== -->
+        <section class="journal-hero" aria-labelledby="page-title">
+            <div class="hero-grid container">
+                <!-- LEFT: Title + Summary -->
+                <div class="hero-text">
+                    <h1 id="page-title" class="journal-title">The Thinking Thread</h1>
+
+                    <p class="journal-subline">
+                        What becomes possible when curiosity meets intelligent systems?
+                        The Thinking Thread explores artificial intelligence, robotics,
+                        and growth — uncovering pathways that expand opportunity
+                        beyond traditional boundaries.
+                    </p>
+
+                    <a href="#latest" class="hero-cta">Explore Latest Articles →</a>
+
+                    <div class="journal-tags" aria-label="Topics">
+                        <span>AI</span>
+                        <span>Robotics</span>
+                        <span>Growth</span>
+                        <span>Career Pathways</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Author -->
+                <aside class="journal-author" aria-label="Author">
+                    <div class="author-card">
+                        <img src="images/author-img.png" class="author-img" alt="Nikara Ishwarlall" />
+
+                        <div class="author-info">
+                            <span class="author-label">The Author</span>
+                            <h2 class="author-name">Nikara Ishwarlall</h2>
+
+                            <p>
+                                Hi There! Through The Thinking Thread, I explore artificial intelligence, robotics, and growth —
+                                sharing ideas and reflections on how technology is reshaping opportunity. My goal is to
+                                make complex ideas more accessible while uncovering pathways that help people navigate
+                                the future with curiosity and purpose.
+                            </p>
+
+                            <a href="index.html" class="author-portfolio-link">
+                                View Portfolio →
+                            </a>
+
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- =========================
+         FILTER TOOLBAR (Categories + Search)
+    ========================== -->
+        <section class="journal-toolbar" aria-label="Filter and search articles">
+            <div class="toolbar-inner container">
+                <nav class="categories-menu" id="categoryNav" aria-label="Blog categories">
+                    <a href="#" class="category-link active" data-filter="all">All</a>
+                    <a href="#" class="category-link" data-filter="ai">Artificial Intelligence</a>
+                    <a href="#" class="category-link" data-filter="robotics">Robotics</a>
+                    <a href="#" class="category-link" data-filter="technology">Technology</a>
+                    <a href="#" class="category-link" data-filter="growth">Growth</a>
+                    <a href="#" class="category-link" data-filter="career-pathways">Career Pathways</a>
+                    <a href="#" class="category-link" data-filter="local-origins">Local Origins</a>
+                </nav>
+
+                <form class="search-box" role="search" aria-label="Search articles">
+                    <label class="sr-only" for="blog-search">Search articles</label>
+                    <input id="blog-search" type="search" placeholder="Search articles..." autocomplete="off" />
+                    <button type="submit" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+
+
+        <!-- =========================
+         RELATED ARTICLES (FILTERED)
+    ========================== -->
+        <section id="related" class="journal-latest" aria-labelledby="related-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="related-title" class="latest-title">Related Articles</h2>
+                </div>
+
+                <div class="blogs-grid" id="relatedGrid">
+                    <article class="blog-post-card" data-category="career-pathways,technology">
+                        <div class="blog-thumb">
+                            <img src="images/blog2.png" alt="Before You Pick a Degree cover" />
+                        </div>
+
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>2026</span> • <span>Nikara Ishwarlall</span>
+                            </div>
+
+                            <h3 class="blog-title">Before You Pick a Degree, Read This</h3>
+
+                            <p class="blog-excerpt">
+                                A practical deep-dive for matriculants and young adults on choosing a tech direction
+                                beyond job titles — focusing on skill clusters, problem-solving, and long-term growth.
+                            </p>
+
+                            <a href="blog-before-you-pick-a-degree.html" class="blog-read">Read Article →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card" data-category="ai,technology">
+                        <div class="blog-thumb">
+                            <img src="images/blog1.png" alt="How AI Can Bridge the Digital Divide cover" />
+                        </div>
+
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>2026</span> • <span>Nikara Ishwarlall</span>
+                            </div>
+
+                            <h3 class="blog-title">How Artificial Intelligence Can Bridge the Digital Divide</h3>
+
+                            <p class="blog-excerpt">
+                                Exploring how AI can reduce inequality through accessible education,
+                                human-centered design, and scalable intelligent systems.
+                            </p>
+
+                            <a href="blog-digital-divide-ai.html" class="blog-read">Read Article →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <p id="relatedNoPostsMessage" class="no-posts" hidden>
+                    No articles match your search in this category.
+                </p>
+            </div>
+        </section>
+
+        <!-- =========================
+         LATEST ARTICLES (STATIC)
+    ========================== -->
+        <section id="latest" class="journal-latest" aria-labelledby="latest-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="latest-title" class="latest-title">Latest Articles</h2>
+                </div>
+
+                <div class="blogs-grid" id="latestGrid">
+                    <article class="blog-post-card latest-post-card">
+                        <div class="blog-thumb">
+                            <img src="images/blog2.png" alt="Before You Pick a Degree cover" />
+                        </div>
+
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>2026</span> • <span>Nikara Ishwarlall</span>
+                            </div>
+
+                            <h3 class="blog-title">Before You Pick a Degree, Read This</h3>
+
+                            <p class="blog-excerpt">
+                                A practical deep-dive for matriculants and young adults on choosing a tech direction
+                                beyond job titles — focusing on skill clusters, problem-solving, and long-term growth.
+                            </p>
+
+                            <a href="blog-before-you-pick-a-degree.html" class="blog-read">Read Article →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card latest-post-card">
+                        <div class="blog-thumb">
+                            <img src="images/blog1.png" alt="How AI Can Bridge the Digital Divide cover" />
+                        </div>
+
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>2026</span> • <span>Nikara Ishwarlall</span>
+                            </div>
+
+                            <h3 class="blog-title">How Artificial Intelligence Can Bridge the Digital Divide</h3>
+
+                            <p class="blog-excerpt">
+                                Exploring how AI can reduce inequality through accessible education,
+                                human-centered design, and scalable intelligent systems.
+                            </p>
+
+                            <a href="blog-digital-divide-ai.html" class="blog-read">Read Article →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- =========================
+         NEWSLETTER
+    ========================== -->
+        <section class="journal-newsletter" aria-labelledby="newsletter-title">
+            <div class="newsletter-box container">
+                <div class="newsletter-grid">
+                    <div class="newsletter-copy">
+                        <h2 id="newsletter-title">Stay Updated</h2>
+                        <p>
+                            Receive new articles, insights and technology discussions directly
+                            to your inbox. No spam — only meaningful content.
+                        </p>
+                    </div>
+
+                    <div class="newsletter-actions">
+                        <form class="newsletter-form">
+                            <label class="sr-only" for="newsletter-email">Email address</label>
+                            <input id="newsletter-email" type="email" placeholder="Enter your email" />
+                            <button type="submit">Subscribe</button>
+                        </form>
+
+                        <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- =========================
+         SIGNATURE + FOOTER
+    ========================== -->
+        <section class="journal-signature">
+            <div class="signature-content container">
+
+                <img src="images/signature.png" alt="Signature of Nikara Ishwarlall" class="signature-image" />
+
+                <p class="signature-role">
+                    Founder, The Thinking Thread
+                </p>
+
+            </div>
+        </section>
+
+        <footer class="journal-footer">
+            <div class="container footer-inner">
+                <div class="footer-left">
+                    <h2 class="footer-brand">The Thinking Thread</h2>
+                    <p>Where creativity meets technology.</p>
+                    <p class="footer-copy">© 2026 The Thinking Thread. All rights reserved.</p>
+                </div>
+
+                <div class="footer-right">
+                    <a href="blogs.html">Blog</a>
+                    <a href="index.html">Portfolio</a>
+
+                    <a href="https://www.linkedin.com/in/nikara-ishwarlall-761095251" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+
+                    <a href="https://www.instagram.com/nikara.i/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const nav = document.getElementById("categoryNav");
+            const links = nav ? nav.querySelectorAll(".category-link") : [];
+
+            // ONLY filter the Related grid cards
+            const relatedGrid = document.getElementById("relatedGrid");
+            const cards = relatedGrid ? relatedGrid.querySelectorAll(".blog-post-card") : [];
+
+            const searchInput = document.getElementById("blog-search");
+            const noPostsMessage = document.getElementById("relatedNoPostsMessage");
+
+            let activeCategory = "all";
+
+            function applyFilters() {
+                const q = (searchInput?.value || "").trim().toLowerCase();
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const cats = (card.dataset.category || "")
+                        .toLowerCase()
+                        .split(",")
+                        .map(s => s.trim());
+
+                    const title = (card.querySelector(".blog-title")?.textContent || "").toLowerCase();
+                    const excerpt = (card.querySelector(".blog-excerpt")?.textContent || "").toLowerCase();
+
+                    const matchesCategory = (activeCategory === "all") || cats.includes(activeCategory);
+                    const matchesSearch = !q || title.includes(q) || excerpt.includes(q);
+
+                    const show = matchesCategory && matchesSearch;
+                    card.style.display = show ? "" : "none";
+
+                    if (show) visibleCount++;
+                });
+
+                if (noPostsMessage) {
+                    noPostsMessage.hidden = visibleCount !== 0;
+                }
+            }
+
+            // Category click (NO scroll)
+            links.forEach(link => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    links.forEach(l => l.classList.remove("active"));
+                    link.classList.add("active");
+
+                    activeCategory = (link.dataset.filter || "all").toLowerCase();
+                    applyFilters();
+                });
+            });
+
+            // Search typing (NO scroll)
+            if (searchInput) {
+                searchInput.addEventListener("input", () => {
+                    applyFilters();
+                });
+            }
+
+            // Stop form reload (NO scroll)
+            const searchForm = document.querySelector(".search-box");
+            if (searchForm) {
+                searchForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    applyFilters();
+                });
+            }
+
+            applyFilters();
+        });
+
+
+        /* ===============================
+           Hide toolbar when Latest is visible
+        ================================= */
+
+        const toolbar = document.querySelector(".journal-toolbar");
+        const latestSection = document.getElementById("latest");
+
+        if (toolbar && latestSection) {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        toolbar.style.opacity = "0";
+                        toolbar.style.transform = "translateY(-10px)";
+                        toolbar.style.pointerEvents = "none";
+                    } else {
+                        toolbar.style.opacity = "1";
+                        toolbar.style.transform = "translateY(0)";
+                        toolbar.style.pointerEvents = "auto";
+                    }
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+            observer.observe(latestSection);
+        }
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
