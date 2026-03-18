@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikara Ishwarlall | Personal Website</title>
+    <title>Nikara Ishwarlall | Robotics & AI Systems Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/63052dda00.js" crossorigin="anonymous"></script>
 </head>
@@ -30,7 +30,8 @@
                     <img src="images/logo.png" class="logo">
 
                     <div class="nav-social">
-                        <a href="https://www.linkedin.com/in/nikara-ishwarlall-761095251" target="_blank">
+                        <a href="https://www.linkedin.com/in/nikara-ishwarlall-761095251" target="_blank"
+                            rel="noopener noreferrer">
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
 
@@ -40,59 +41,81 @@
                     </div>
                 </div>
 
-
                 <ul id="sidemenu">
+                    <li class="menu-close-item">
+                        <button class="menu-close-btn" onclick="closemenu()" aria-label="Close menu">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </li>
+
+
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Projects</a></li>
                     <li><a href="#blogs">Blogs</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#reviews">Reviews</a></li>
-                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()" style="color:#ee09fe9e;"></i>
                 </ul>
 
-                <i class="fa-solid fa-bars" onclick="openmenu()" style="color:#ee09fe9e;"></i>
+                <i class="fa-solid fa-bars" onclick="openmenu()" style="color:#b45a00ef;"></i>
             </nav>
 
 
             <!-- ======================================================
-     HERO SECTION (HOME PAGE)
-     Text Left • Image Right Layout
-====================================================== -->
+             HERO SECTION (HOME PAGE)
+             Text Left • Image Right Layout
+        ====================================================== -->
 
             <div class="header-content">
 
                 <div class="header-text">
                     <h1 class="hero-title">
-                        Hi, I'm <span>Nikara.I</span>
+                        Hi, I'm <span class="hero-name">Nikara</span>
                     </h1>
 
-                    <div class="typewriter">
 
+
+                    <div class="typewriter">
                         <p class="hero-meta">
-                            BSc Information Technology Graduate (Robotics Specialisation) • GPA 3.8 • 19 Distinctions
+                            BSc Information Technology Graduate — Robotics Specialisation • GPA 3.8
                         </p>
+
 
                         <div class="typing-divider"></div>
 
                         <p id="typing-text"></p>
+                    </div>
+
+                    <div class="hero-buttons">
+
+                        <a href="#contact" class="reach-btn">
+                            <span>Reach Out</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </a>
+
+                        <a href="resume.pdf" class="resume-btn" target="_blank">
+                            <span>Jump to Resume</span>
+                            <i class="fa-solid fa-file-lines"></i>
+                        </a>
 
                     </div>
 
-                    <a href="#contact" class="reach-btn">Reach Out</a>
 
                 </div>
 
                 <div class="header-image">
-                    <img src="images/home-portrait.png" alt="Nikara Ishwarlall Robotics Portfolio">
-
+                    <div class="portrait-frame">
+                        <img src="images/home-portrait.png" alt="Nikara Ishwarlall Robotics Portfolio" loading="lazy">
+                    </div>
                 </div>
+
 
             </div>
 
         </div>
     </div>
+
+
 
 
 
@@ -123,9 +146,9 @@
                 <div class="about-col-2">
 
                     <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('aboutme')">About</p>
-                        <p class="tab-links" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links active-link" onclick="opentab(event, 'aboutme')">About</p>
+                        <p class="tab-links" onclick="opentab(event, 'skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab(event, 'education')">Education</p>
                     </div>
 
 
@@ -135,30 +158,40 @@
                     <div class="tab-contents active-tab" id="aboutme">
 
                         <!-- SUMMARY -->
-                        <p>
-                            I’m Nikara Ishwarlall, a BSc Information Technology graduate with a specialisation in
-                            Robotics.
-                            My passion for technology stems from curiosity — understanding how systems learn, how data
-                            shapes
-                            decisions, and how creativity and engineering intersect to drive meaningful
-                            <span class="about-accent">impact</span>.
-                        </p>
+                        <div class="about-summary-preview">
+                            <p>
+                                I’m Nikara Ishwarlall, a BSc Information Technology graduate specialising in Robotics.
+                                My passion for technology is rooted in curiosity — understanding how systems learn,
+                                how data shapes decisions, and how engineering and creativity come together to create
+                                meaningful <span class="about-accent">impact</span>.
+                            </p>
+                        </div>
 
-                        <p>
-                            My academic foundation spans robotics, artificial intelligence, software engineering, and
-                            data
-                            analysis, equipping me with both analytical depth and structured problem-solving ability.
-                            While robotics introduced me to control systems and AI-driven environments, my capabilities
-                            extend across broader IT domains, including backend development, systems design, and
-                            data-oriented projects.
-                        </p>
+                        <!-- subtle inline-style toggle -->
+                        <div class="about-summary-toggle">
+                            <button class="about-read-more-btn" id="aboutReadMoreBtn" type="button">
+                                Continue reading
+                            </button>
+                        </div>
 
-                        <p>
-                            Rooted in Durban, South Africa, I walk with the resilience and adaptability shaped by a
-                            diverse
-                            and dynamic environment. I am open to relocation and international opportunities that align
-                            with innovation, growth, and meaningful contribution.
-                        </p>
+                        <!-- EXPANDED CONTENT -->
+                        <div class="about-summary-more" id="aboutSummaryMore">
+                            <p>
+                                My academic foundation spans robotics, artificial intelligence, software engineering,
+                                and data analysis, giving me both analytical depth and structured problem-solving
+                                ability.
+                                While robotics introduced me to control systems and intelligent environments, my wider
+                                interests extend across software, systems design, and data-driven solutions.
+                            </p>
+
+                            <p>
+                                Based in Durban, South Africa, I bring resilience, adaptability, and a growth-driven
+                                mindset.
+                                I’m open to relocation and international opportunities aligned with innovation,
+                                continuous learning, and meaningful contribution.
+                            </p>
+                        </div>
+
 
                         <!-- ACCORDION MENU -->
                         <div class="about-accordion">
@@ -169,22 +202,25 @@
 
                                     <p>
                                         I approach challenges with discipline, clarity, and long-term thinking.
-                                        In the evolving digital landscape, I remain grounded — driven, resilient,
-                                        and focused on creating work that delivers lasting
-                                        impact.
+                                        In a fast-evolving digital landscape, I stay grounded, resilient, and focused
+                                        on building work that creates lasting value.
                                     </p>
 
                                     <p>
-                                        My long-term vision is to enhance lives through technology —
-                                        making both technology and knowledge about technology more
-                                        accessible and affordable to those who need it most.
+                                        My long-term vision is to enhance lives through technology by making both
+                                        digital tools and technical knowledge more accessible and affordable to the
+                                        people
+                                        who need them most.
                                     </p>
 
                                     <p>
-                                        My focus is on building systems that combine intelligent algorithms
-                                        with real-world usability, ensuring innovation is not only advanced,
-                                        but practical and inclusive.
+                                        I’m especially interested in building systems that combine intelligent
+                                        algorithms
+                                        with real-world usability — ensuring innovation is not only advanced, but
+                                        practical
+                                        and inclusive.
                                     </p>
+
 
                                 </div>
                             </div>
@@ -210,16 +246,17 @@
                                     <ul>
                                         <li>
                                             <span>Accessible Intelligent Systems</span> —
-                                            researching how AI-driven solutions can be simplified and deployed
+                                            exploring how AI-driven solutions can be simplified and deployed effectively
                                             in resource-constrained environments.
                                         </li>
 
                                         <li>
                                             <span>Inclusive Artificial Intelligence</span> —
-                                            exploring how AI can help bridge knowledge gaps in underserved
-                                            communities by making technical education, tools, and digital
-                                            resources more accessible and affordable.
+                                            exploring how AI can help bridge knowledge gaps by making technical
+                                            education,
+                                            digital tools, and learning resources more accessible and affordable.
                                         </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -332,6 +369,22 @@
                                     <li>MATLAB Online</li>
                                     <li>Documentation best practices</li>
                                     <li>Agile / Scrum awareness</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="skill-dropdown">
+                            <div class="skill-header">Microsoft Tools & Productivity</div>
+                            <div class="skill-body">
+                                <ul>
+                                    <li>Microsoft Word</li>
+                                    <li>Microsoft Excel</li>
+                                    <li>Microsoft PowerPoint</li>
+                                    <li>Microsoft Outlook</li>
+                                    <li>Microsoft Teams</li>
+                                    <li>Document formatting & professional reporting</li>
+                                    <li>Spreadsheet organisation & basic data handling</li>
+                                    <li>Presentation design for academic and professional use</li>
                                 </ul>
                             </div>
                         </div>
@@ -540,6 +593,12 @@
         <div class="container">
             <h1 class="sub-title portfolio-title">Projects</h1>
 
+            <div class="portfolio-status">
+                <span class="status-dot"></span>
+                New projects currently in development
+            </div>
+
+
             <div class="portfolio-slider">
 
                 <button class="slide-btn left" onclick="scrollProjects(-1)">
@@ -563,13 +622,14 @@
                                 integration, combining ToF sensing and computer vision concepts to support real-time
                                 spatial awareness and guidance.
                             </p>
-                            <a href="#"><i class="fa-solid fa-link"></i></a>
+                            <a href="javascript:void(0)" aria-label="Project link coming soon"><i
+                                    class="fa-solid fa-link"></i></a>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
                     <div class="work">
-                        <img src="images/home-assistant-proj.png">
+                        <img src="images/home-assistant-proj.png" alt="Smart Home Automation Project">
                         <div class="project-header">
                             <h3>Smart Home Automation Prototype</h3>
                             <span class="project-date">2024</span>
@@ -581,7 +641,8 @@
                                 Python-based control logic, focusing on reliable workflows, modular design, and
                                 practical user interaction.
                             </p>
-                            <a href="#"><i class="fa-solid fa-link"></i></a>
+                            <a href="javascript:void(0)" aria-label="Project link coming soon"><i
+                                    class="fa-solid fa-link"></i></a>
                         </div>
                     </div>
 
@@ -668,9 +729,14 @@
                     </h1>
 
                     <p class="blogs-intro">
-                        I write about artificial intelligence, robotics, and growth — exploring how
-                        technology reshapes opportunity, learning, and the way we build.
+                        I write about AI, robotics, and growth through The Thinking Thread —
+                        exploring how technology reshapes opportunity, learning, and the way we build.
                     </p>
+
+                    <a href="https://nikara17.github.io/Thinking-Thread-Blog/" class="blog-more" target="_blank"
+                        rel="noopener noreferrer">Visit The Thinking Thread</a>
+
+
                 </div>
 
                 <!-- RIGHT SIDE -->
@@ -687,7 +753,9 @@
                                     A practical guide for matriculants and young adults choosing a tech direction —
                                     focusing on skill clusters, problem-solving, and long-term growth.
                                 </p>
-                                <a href="blog-before-you-pick-a-degree.html" class="blog-link">
+                                <a href="https://nikara17.github.io/Thinking-Thread-Blog/blog-before-you-pick-a-degree.html"
+                                    class="blog-link" target="_blank" rel="noopener noreferrer">
+
                                     Read Article <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -703,7 +771,9 @@
                                     Exploring how AI can reduce inequality through accessible education,
                                     human-centered design, and scalable intelligent systems.
                                 </p>
-                                <a href="blog-digital-divide-ai.html" class="blog-link">
+                                <a href="https://nikara17.github.io/Thinking-Thread-Blog/blog-digital-divide-ai.html"
+                                    class="blog-link" target="_blank" rel="noopener noreferrer">
+
                                     Read Article <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -711,7 +781,9 @@
 
                     </div>
 
-                    <a href="blogs.html" class="blog-more">See All Blogs</a>
+                    <a href="https://nikara17.github.io/Thinking-Thread-Blog/" class="blog-more" target="_blank"
+                        rel="noopener noreferrer">See All Blogs</a>
+
                 </div>
 
             </div>
@@ -744,7 +816,7 @@
                     <div class="contact-details">
                         <a class="contact-detail" href="mailto:nikara.connect@gmail.com">
                             <i class="fa-solid fa-envelope"></i>
-                            <span>nikara0405@gmail.com</span>
+                            <span>nikara.connect@gmail.com</span>
                         </a>
                     </div>
 
@@ -842,7 +914,8 @@
                         <div class="panel-dot"></div>
                         <div class="panel-dot"></div>
                         <div class="panel-dot"></div>
-                        <span class="panel-label">/submit-review</span>
+                        <span class="panel-label console-status">system ready</span>
+
                     </div>
 
                     <h2 class="panel-title">Add a Review</h2>
@@ -864,6 +937,28 @@
                                 placeholder="What stood out to you?" required autocomplete="off"></textarea>
                         </div>
 
+                        <div class="field">
+                            <label>Review Visibility</label>
+
+                            <div class="review-visibility">
+                                <label class="visibility-option">
+                                    <input type="radio" name="Review-visibility" value="Public" checked>
+                                    <span>Public</span>
+                                </label>
+
+                                <label class="visibility-option">
+                                    <input type="radio" name="Review-visibility" value="Private">
+                                    <span>Private</span>
+                                </label>
+                            </div>
+
+                            <small id="visibility-note" class="visibility-note">
+                                Public reviews will appear with your name in the live review feed.
+                            </small>
+
+                        </div>
+
+
                         <button type="submit" class="reviews-btn">
                             <span class="btn-glow" aria-hidden="true"></span>
                             <span class="btn-text">Submit Review</span>
@@ -880,24 +975,22 @@
                         <div class="panel-dot"></div>
                         <div class="panel-dot"></div>
                         <div class="panel-dot"></div>
-                        <span class="panel-label">/recent</span>
+                        <span class="panel-label" id="reviews-feed-status">Feedback Stream</span>
 
-                        <div class="feed-meta">
-                            <span class="feed-pill"><i class="fa-solid fa-star"></i> Featured Feedback</span>
-                        </div>
                     </div>
 
                     <div class="feed-head">
-                        <h2 class="panel-title">Recent Reviews</h2>
+                        <h2 class="panel-title">Live Reviews</h2>
                         <div class="feed-fade"></div>
                     </div>
 
+
                     <div class="reviews-feed">
-
                         <!-- keep your review items -->
-
-
                     </div>
+
+                    <div class="reviews-footnote">Newer reviews appear at the top.</div>
+
                 </section>
 
             </div>
@@ -913,8 +1006,9 @@
             <div class="footer-left">
                 <div class="footer-brand">
                     <span class="footer-name">Nikara Ishwarlall</span>
-                    <span class="footer-tag">Robotics • AI • Innovation</span>
+                    <span class="footer-tag">Robotics · AI Engineering · Innovation Systems</span>
                 </div>
+
 
                 <div class="footer-social" aria-label="Social links">
                     <a href="https://www.linkedin.com/in/nikara-ishwarlall-761095251" target="_blank"
@@ -939,7 +1033,8 @@
             </nav>
 
             <div class="footer-right">
-                <span class="footer-copy">© 2024 Nikara Ishwarlall. All rights reserved.</span>
+                <span class="footer-copy">© 2026 Nikara Ishwarlall. All rights reserved.</span>
+
             </div>
 
         </div>
@@ -956,76 +1051,62 @@
 
 
     <script>
-
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
 
-        function opentab(tabname) {
-            for (tablink of tablinks) {
+        function opentab(event, tabname) {
+            for (let tablink of tablinks) {
                 tablink.classList.remove("active-link");
             }
 
-            for (tabcontent of tabcontents) {
+            for (let tabcontent of tabcontents) {
                 tabcontent.classList.remove("active-tab");
             }
 
             event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab")
+            document.getElementById(tabname).classList.add("active-tab");
         }
-
-
-
     </script>
 
 
-
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openmenu() {
-            sidemenu.style.right = "0";
-        }
-
-        function closemenu() {
-            sidemenu.style.right = "-200px";
-        }
-
-
-    </script>
 
 
     <!----  Home page paragraph Script  -->
     <script>
         const bulletLines = [
-            "> Software Engineering & Systems Development",
-            "> Data Analytics & Machine Learning",
-            "> Network & Infrastructure Fundamentals",
-            "> Intelligent Automation & Control Systems"
+            "> Software Engineering & Intelligent Systems",
+            "> Data Analytics, Machine Learning & AI",
+            "> Network Architecture & Infrastructure",
+            "> Automation, Robotics & Control Systems"
         ];
 
-        let lineIndex = 0;
-        let charIndex = 0;
         const typingElement = document.getElementById("typing-text");
 
-        function typeBullets() {
-            if (lineIndex >= bulletLines.length) return;
+        if (window.innerWidth > 768) {
+            let lineIndex = 0;
+            let charIndex = 0;
 
-            const currentLine = bulletLines[lineIndex];
+            function typeBullets() {
+                if (lineIndex >= bulletLines.length) return;
 
-            if (charIndex < currentLine.length) {
-                typingElement.innerHTML += currentLine.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeBullets, 30);
-            } else {
-                typingElement.innerHTML += "<br>";
-                lineIndex++;
-                charIndex = 0;
-                setTimeout(typeBullets, 250);
+                const currentLine = bulletLines[lineIndex];
+
+                if (charIndex < currentLine.length) {
+                    typingElement.innerHTML += currentLine.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeBullets, 20);
+                } else {
+                    typingElement.innerHTML += "<br>";
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeBullets, 150);
+                }
             }
-        }
 
-        typeBullets();
+            typeBullets();
+        }
     </script>
+
 
 
 
@@ -1084,7 +1165,7 @@
 
         const imageSets = {
             aboutme: [
-                "images/about-me.jpeg",
+                "images/about-me.png",
                 "images/durban-vid.mp4",
                 "images/indian-culture.png",
                 "images/african-culture.png"
@@ -1209,10 +1290,11 @@
 
         // Hook into your existing tab function
         const oldOpenTab = window.opentab;
-        window.opentab = function (tabname) {
-            if (typeof oldOpenTab === "function") oldOpenTab(tabname);
+        window.opentab = function (event, tabname) {
+            if (typeof oldOpenTab === "function") oldOpenTab(event, tabname);
             startSlideshow(tabname);
         };
+
 
         // default
         //  startSlideshow("aboutme");
@@ -1242,6 +1324,27 @@
 
         if (aboutSection) aboutObserver.observe(aboutSection);
     </script>
+
+
+
+    <!--- Read More About Script --->
+    <script>
+        const aboutReadMoreBtn = document.getElementById("aboutReadMoreBtn");
+        const aboutSummaryMore = document.getElementById("aboutSummaryMore");
+
+        if (aboutReadMoreBtn && aboutSummaryMore) {
+            aboutReadMoreBtn.addEventListener("click", function () {
+                aboutSummaryMore.classList.toggle("show");
+
+                if (aboutSummaryMore.classList.contains("show")) {
+                    aboutReadMoreBtn.textContent = "Show less";
+                } else {
+                    aboutReadMoreBtn.textContent = "Continue reading";
+                }
+            });
+        }
+    </script>
+
 
 
 
@@ -1370,18 +1473,19 @@
 
         if (blogScroll) {
             blogScroll.addEventListener("scroll", () => {
+                if (window.innerWidth <= 900) {
+                    blogCards.forEach(card => {
+                        card.style.transform = "none";
+                    });
+                    return;
+                }
 
                 const scrollTop = blogScroll.scrollTop;
 
                 blogCards.forEach((card, index) => {
-
-                    /* subtle layered movement */
                     const speed = 0.07 + (index * 0.01);
-
-                    card.style.transform =
-                        `translateY(${scrollTop * speed * -1}px)`;
+                    card.style.transform = `translateY(${scrollTop * speed * -1}px)`;
                 });
-
             });
         }
     </script>
@@ -1392,12 +1496,12 @@
 
     <script>
         const scriptURL =
-            "https://script.google.com/macros/s/AKfycbxKFQLJlD6uPnky6W0aF6--PyfD7zt1vkwJEMrzsDce777iEH6YbUwshjoLLb-dktHvLg/exec";
+            "https://script.google.com/macros/s/AKfycbyol0QDOTfeRDRviYT3xabOrnWV0kfcW8iCdIw1qCgUryalcLa0AEKzb045_U9mvzoDTA/exec";
+
 
         const form = document.forms["submit-to-google-sheet"];
         const msg = document.getElementById("msg");
 
-        // Futuristic button support (optional, but you have it)
         const btn = document.querySelector(".futuristic-btn") || form?.querySelector('button[type="submit"]');
         const btnText = btn?.querySelector(".btn-text");
 
@@ -1413,7 +1517,6 @@
         function showMessage(text, type = "success") {
             if (!msg) return;
 
-            // reset
             msg.className = "form-message";
             msg.classList.add(type, "show");
 
@@ -1428,7 +1531,6 @@
 
             msg.innerHTML = `${icon}<span class="msg-text"><b>${title}:</b> ${text}</span>`;
 
-            // auto-hide success + error (keep loading visible until response)
             if (type !== "loading") {
                 setTimeout(() => {
                     msg.classList.remove("show");
@@ -1449,14 +1551,20 @@
                         body: new FormData(form),
                     });
 
-                    // Only treat it as success if server answered OK
                     if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+
+                    const data = await res.json();
+
+                    if (data.result !== "success") {
+                        throw new Error(data.error || "Script did not save the message.");
+                    }
 
                     showMessage("Message sent successfully! I’ll get back to you soon.", "success");
                     form.reset();
+
                 } catch (error) {
                     console.error("Contact form error:", error);
-                    showMessage("Something went wrong. Please try again in a moment.", "error");
+                    showMessage(error.message || "Something went wrong. Please try again in a moment.", "error");
                 } finally {
                     setBtnLoading(false);
                 }
@@ -1465,17 +1573,27 @@
     </script>
 
 
-    <!-------------------Google Sheet- REVIEWS------------------->
-
+    <!-------------------Google Sheet - REVIEWS------------------->
     <script>
+        /* =========================================================
+           1) CONFIG + DOM REFERENCES
+           ========================================================= */
         const reviewscriptURL = "https://script.google.com/macros/s/AKfycbxKFQLJlD6uPnky6W0aF6--PyfD7zt1vkwJEMrzsDce777iEH6YbUwshjoLLb-dktHvLg/exec";
 
         const reviewform = document.forms["submit-review-to-google-sheet"];
         const reviewmsg = document.getElementById("reviewmsg");
         const reviewFeed = document.querySelector(".reviews-feed");
+        const reviewFeedStatus = document.getElementById("reviews-feed-status");
+        const reviewFeedPanel = document.querySelector(".reviews-panel--feed");
 
-        // ⭐ Featured reviews (always visible)
-        const FEATURED = [
+
+
+        /* =========================================================
+   2) PINNED REVIEW MATCHES
+   These reviews must exist in Google Sheets as normal reviews.
+   They will then be rendered first as pinned items.
+   ========================================================= */
+        const PINNED_MATCHES = [
             {
                 name: "Kyle Pillay",
                 message:
@@ -1487,6 +1605,12 @@
             }
         ];
 
+
+
+
+        /* =========================================================
+           3) HELPER FUNCTIONS
+           ========================================================= */
         function escapeHTML(str = "") {
             return String(str).replace(/[&<>"']/g, (m) => ({
                 "&": "&amp;",
@@ -1498,7 +1622,6 @@
         }
 
         function setReviewMsg(text, type = "loading") {
-            // type: loading | success | error
             reviewmsg.className = "review-message show " + type;
             reviewmsg.textContent = text;
 
@@ -1518,83 +1641,324 @@
             return an === bn && am === bm;
         }
 
+        function getInitials(name = "Anonymous") {
+            return name
+                .trim()
+                .split(/\s+/)
+                .slice(0, 2)
+                .map(part => part[0]?.toUpperCase() || "")
+                .join("") || "A";
+        }
+
+        function makeReviewId(index, featured = false) {
+            return featured
+                ? `PIN-${String(index + 1).padStart(3, "0")}`
+                : `RVW-${String(index + 1).padStart(4, "0")}`;
+        }
+
+        function formatTimestamp(ts) {
+            if (!ts) return "";
+
+            const date = new Date(ts);
+            const now = new Date();
+            const diff = Math.floor((now - date) / 1000);
+
+            if (diff < 60) return "just now";
+            if (diff < 3600) return `${Math.floor(diff / 60)} min ago`;
+            if (diff < 86400) return `${Math.floor(diff / 3600)} hr ago`;
+            if (diff < 604800) return `${Math.floor(diff / 86400)} day ago`;
+
+            return date.toLocaleDateString(undefined, {
+                month: "short",
+                day: "numeric"
+            });
+        }
+
+        /* =========================================================
+           4) FEED STATUS + PANEL STATE
+           ========================================================= */
+        function setFeedStatus(text = "Feedback Stream") {
+            if (!reviewFeedStatus) return;
+            reviewFeedStatus.textContent = text;
+        }
+
+        function clearFeedPanelState() {
+            if (!reviewFeedPanel) return;
+            reviewFeedPanel.classList.remove("is-syncing", "is-updating");
+        }
+
+        function setFeedPanelState(state) {
+            if (!reviewFeedPanel) return;
+
+            clearFeedPanelState();
+
+            if (state === "syncing") {
+                reviewFeedPanel.classList.add("is-syncing");
+            }
+
+            if (state === "updating") {
+                reviewFeedPanel.classList.add("is-updating");
+            }
+        }
+
+        // Keep the fast blinking/glowing state visible for 5 seconds after a new review submission
+        function pulseNewReviewState() {
+            setFeedStatus("Publishing Review…");
+
+            setFeedPanelState("updating");
+
+            setTimeout(() => {
+                clearFeedPanelState();
+                setFeedStatus("Feedback Stream");
+            }, 5000);
+        }
+
+        /* =========================================================
+       5) REVIEW RENDERING
+       Pinned reviews are pulled from live sheet data
+       ========================================================= */
         function renderReviews(live = []) {
             if (!reviewFeed) return;
 
-            // remove duplicates that match featured
-            const liveFiltered = live.filter((r) => !FEATURED.some((f) => sameReview(f, r)));
+            const pinnedReviews = [];
+            const normalReviews = [];
 
-            // build HTML: Featured first, then divider, then Live
-            const featuredHTML = FEATURED.map((r) => `
-      <div class="review-item featured">
-        <strong>${escapeHTML(r.name)} <span class="featured-badge">Featured</span></strong>
-        <p>"${escapeHTML(r.message)}"</p>
-      </div>
-    `).join("");
+            live.forEach((review) => {
+                const isPinned = PINNED_MATCHES.some((pinned) => sameReview(pinned, review));
 
-            const liveHTML = liveFiltered.length
-                ? liveFiltered.slice(0, 30).map((r) => `
-          <div class="review-item">
-            <strong>${escapeHTML(r.name || "Anonymous")}</strong>
-            <p>"${escapeHTML(r.message || "")}"</p>
-          </div>
-        `).join("")
-                : `<div class="reviews-empty">No recent reviews yet </div>`;
+                if (isPinned) {
+                    pinnedReviews.push(review);
+                } else {
+                    normalReviews.push(review);
+                }
+            });
+
+            /* -------------------------
+               Pinned reviews
+               Use REAL timestamp + REAL visibility from sheet
+               ------------------------- */
+            const pinnedHTML = pinnedReviews.length
+                ? pinnedReviews.map((r) => {
+                    const isPrivate = String(r.visibility || "Public").trim().toLowerCase() === "private";
+
+                    const displayName = isPrivate
+                        ? "Anonymous Reviewer"
+                        : (r.name || "Anonymous");
+
+                    const avatarName = isPrivate
+                        ? "Anonymous Reviewer"
+                        : (r.name || "Anonymous");
+
+                    const visibilityBadge = isPrivate
+                        ? `
+                    <span class="review-meta-pill review-meta-private">
+                        <i class="fa-solid fa-user-shield"></i>
+                        Private feedback shown anonymously
+                    </span>
+                `
+                        : `
+                    <span class="review-meta-pill">
+                        <i class="fa-regular fa-message"></i>
+                        Public review
+                    </span>
+                `;
+
+                    return `
+                <article class="review-item review-item--system featured">
+                    <div class="review-shell">
+                        <div class="review-top">
+                            <div class="review-user">
+                                <div class="review-avatar">
+                                    ${escapeHTML(getInitials(avatarName))}
+                                </div>
+
+                                <div class="review-identity">
+                                    <strong>${escapeHTML(displayName)}</strong>
+                                </div>
+                            </div>
+
+                            <div class="review-side-meta">
+                                <span class="review-badge review-badge--featured">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                    Pinned
+                                </span>
+
+                                <span class="review-time">
+                                    ${formatTimestamp(r.timestamp)}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="review-body">
+                            <p>${escapeHTML(r.message || "")}</p>
+                        </div>
+
+                        <div class="review-meta-row">
+                            <span class="review-meta-pill">
+                                <i class="fa-regular fa-clock"></i>
+                                ${formatTimestamp(r.timestamp)}
+                            </span>
+
+                            ${visibilityBadge}
+                        </div>
+                    </div>
+                </article>
+            `;
+                }).join("")
+                : "";
+
+            /* -------------------------
+               Normal live reviews
+               ------------------------- */
+            const liveHTML = normalReviews.length
+                ? normalReviews.slice(0, 30).map((r) => {
+                    const isPrivate = String(r.visibility || "Public").trim().toLowerCase() === "private";
+
+                    const displayName = isPrivate
+                        ? "Anonymous Reviewer"
+                        : (r.name || "Anonymous");
+
+                    const avatarName = isPrivate
+                        ? "Anonymous Reviewer"
+                        : (r.name || "Anonymous");
+
+                    const visibilityBadge = isPrivate
+                        ? `
+                    <span class="review-meta-pill review-meta-private">
+                        <i class="fa-solid fa-user-shield"></i>
+                        Private feedback shown anonymously
+                    </span>
+                `
+                        : `
+                    <span class="review-meta-pill">
+                        <i class="fa-regular fa-message"></i>
+                        Public review
+                    </span>
+                `;
+
+                    return `
+                <article class="review-item review-item--live">
+                    <div class="review-shell">
+                        <div class="review-top">
+                            <div class="review-user">
+                                <div class="review-avatar">
+                                    ${escapeHTML(getInitials(avatarName))}
+                                </div>
+
+                                <div class="review-identity">
+                                    <strong>${escapeHTML(displayName)}</strong>
+                                </div>
+                            </div>
+
+                            <div class="review-side-meta">
+                                <span class="review-badge review-badge--live">
+                                    <span class="review-badge-dot"></span>
+                                    Live
+                                </span>
+
+                                <span class="review-time">
+                                    ${formatTimestamp(r.timestamp)}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="review-body">
+                            <p>${escapeHTML(r.message || "")}</p>
+                        </div>
+
+                        <div class="review-meta-row">
+                            <span class="review-meta-pill">
+                                <i class="fa-regular fa-clock"></i>
+                                ${formatTimestamp(r.timestamp)}
+                            </span>
+
+                            ${visibilityBadge}
+                        </div>
+                    </div>
+                </article>
+            `;
+                }).join("")
+                : `
+            <div class="reviews-empty reviews-empty--system">
+                <i class="fa-regular fa-folder-open"></i>
+                <span>No recent reviews in the live feed yet.</span>
+            </div>
+        `;
 
             reviewFeed.innerHTML = `
-      <div class="reviews-block">
-        ${featuredHTML}
-        <div class="reviews-divider"></div>
-        ${liveHTML}
-      </div>
+        <div class="reviews-block">
+            ${pinnedHTML ? `
+                <div class="reviews-featured-group">
+                    ${pinnedHTML}
+                </div>
+                <div class="reviews-divider"></div>
+            ` : ""}
+
+            <div class="reviews-section-label reviews-section-label--live">
+                Review Stream
+            </div>
+
+            ${liveHTML}
+        </div>
     `;
 
-            // keep your reveal animation if you want it
-            document.querySelectorAll(".review-item").forEach((el) => el.classList.add("review-item-visible"));
+            document.querySelectorAll(".review-item").forEach((el) => {
+                el.classList.add("review-item-visible");
+            });
         }
 
 
 
+
+        /* =========================================================
+           6) LOAD REVIEWS FROM GOOGLE APPS SCRIPT
+           ========================================================= */
         async function loadReviews({ showStatus = false } = {}) {
             if (!reviewFeed) return;
 
-            // ✅ show a status line WITHOUT clearing existing reviews
-            let statusEl = reviewFeed.querySelector(".reviews-loading");
-
+            // Only use syncing state for background fetches / refreshes
             if (showStatus) {
-                if (!statusEl) {
-                    statusEl = document.createElement("div");
-                    statusEl.className = "reviews-loading";
-                    reviewFeed.appendChild(statusEl);
-                }
-                statusEl.textContent = "Updating reviews…";
+                setFeedStatus("Syncing Feedback…");
+                setFeedPanelState("syncing");
             }
 
             try {
-                const res = await fetch(reviewscriptURL, { method: "GET", cache: "no-store" });
+                const res = await fetch(reviewscriptURL, {
+                    method: "GET",
+                    cache: "no-store"
+                });
+
                 const text = await res.text();
                 const data = JSON.parse(text);
 
-                if (!Array.isArray(data)) throw new Error("doGet did not return an array");
+                if (!Array.isArray(data)) {
+                    throw new Error("doGet did not return an array");
+                }
 
-                renderReviews(data); // ✅ replaces list AFTER data arrives
+                renderReviews(data);
 
             } catch (err) {
                 console.error("Load reviews error:", err);
-                // ✅ keep old reviews on screen if fetch fails
             } finally {
-                // remove status line after update
-                statusEl = reviewFeed.querySelector(".reviews-loading");
-                if (statusEl) statusEl.remove();
+                // Only reset if we are not in the 5-second "new review update" state
+                if (!reviewFeedPanel?.classList.contains("is-updating")) {
+                    clearFeedPanelState();
+                    setFeedStatus("Feedback Stream");
+                }
             }
         }
 
-
-
+        /* =========================================================
+           7) FORM SUBMISSION
+           ========================================================= */
         if (reviewform) {
             reviewform.addEventListener("submit", async (e) => {
                 e.preventDefault();
                 setReviewMsg("Submitting your review…", "loading");
+
+                // show publishing state immediately
+                setFeedStatus("Publishing Review…");
+                setFeedPanelState("updating");
 
                 try {
                     const res = await fetch(reviewscriptURL, {
@@ -1602,54 +1966,71 @@
                         body: new FormData(reviewform)
                     });
 
-                    if (!res.ok) throw new Error("Submit failed: " + res.status);
+                    if (!res.ok) {
+                        throw new Error("Submit failed: " + res.status);
+                    }
 
                     reviewform.reset();
                     setReviewMsg("Review submitted — thank you!", "success");
 
-                    // ✅ refresh list so the new review appears
-                    await loadReviews({ showStatus: true });
+                    // keep the fast blinking state visible while reloading data
+                    await loadReviews({ showStatus: false });
+
+                    // keep it active for a short moment after load completes
+                    setTimeout(() => {
+                        clearFeedPanelState();
+                        setFeedStatus("Feedback Stream");
+                    }, 5000);
 
                 } catch (err) {
                     console.error("Submit review error:", err);
                     setReviewMsg("Couldn’t submit right now. Please try again.", "error");
+                    clearFeedPanelState();
+                    setFeedStatus("Feedback Stream");
                 }
             });
         }
 
-        document.addEventListener("DOMContentLoaded", loadReviews);
-    </script>
+        /* =========================================================
+           8) INITIAL LOAD + AUTO REFRESH
+           ========================================================= */
+        document.addEventListener("DOMContentLoaded", () => {
+            setFeedStatus("Feedback Stream");
 
+            loadReviews({ showStatus: false });
 
+            setInterval(() => {
+                const isTyping =
+                    document.activeElement === document.getElementById("review-name") ||
+                    document.activeElement === document.getElementById("review-message");
 
+                // Do not refresh while typing or during the special new-review update pulse
+                const isUpdating = reviewFeedPanel?.classList.contains("is-updating");
 
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const reviewsSection = document.getElementById("reviews");
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) return;
-
-                    // animate the section if you want
-                    if (entry.target === reviewsSection) {
-                        reviewsSection.classList.add("reviews-visible");
-                    }
-
-                    // animate all items currently on the page
-                    document.querySelectorAll(".review-item").forEach(item => {
-                        item.classList.add("review-item-visible");
-                    });
-
-                    observer.unobserve(entry.target);
-                });
-            }, { threshold: 0.15 });
-
-            if (reviewsSection) observer.observe(reviewsSection);
+                if (!isTyping && !isUpdating) {
+                    loadReviews({ showStatus: true });
+                }
+            }, 30000);
         });
     </script>
 
+
+
+
+
+
+    <!-------------------RESPONSIVE MENU ------------------->
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-260px";
+        }
+    </script>
 
 
 
