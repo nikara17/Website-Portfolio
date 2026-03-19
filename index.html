@@ -2,30 +2,73 @@
 <html lang="en">
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Pacifico&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Caudex:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- -------- META SETTINGS -------- -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  img-src 'self' data: https:;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://kit.fontawesome.com https://ka-f.fontawesome.com;
+  font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com;
+  script-src 'self' 'unsafe-inline' https://kit.fontawesome.com;
+  connect-src 'self' https://script.google.com https://script.googleusercontent.com https://ka-f.fontawesome.com;
+  frame-src https://drive.google.com;
+  media-src 'self';
+  object-src 'none';
+  base-uri 'self';
+  form-action 'self' https://script.google.com;
+  frame-ancestors 'none';
+  upgrade-insecure-requests;
+">
+
+    <!-- Page Title -->
     <title>Nikara Ishwarlall | Robotics & AI Systems Portfolio</title>
+
+
+    <!-- -------- GOOGLE FONTS -------- -->
+
+    <!-- Display / Branding Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <!-- Serif / Body Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Caudex:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Modern UI / Headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Preconnect (performance) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <!-- -------- STYLESHEET -------- -->
     <link rel="stylesheet" href="style.css">
+
+
+    <!-- -------- ICON LIBRARY -------- -->
     <script src="https://kit.fontawesome.com/63052dda00.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 
 
+
+
+    <!----------------------------- HOME PAGE / HERO SECTION ---------------------------------->
     <div id="header">
         <div class="container">
 
+            <!-- Navigation -->
             <nav>
+
+                <!-- Left: Logo + Social -->
                 <div class="nav-left">
                     <img src="images/logo.png" class="logo">
 
@@ -35,20 +78,23 @@
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
 
-                        <a href="https://www.instagram.com/nikara.i/" target="_blank">
+                        <a href="https://www.instagram.com/nikara.i/" target="_blank" rel="noopener noreferrer">
                             <i class="fa-brands fa-square-instagram"></i>
                         </a>
                     </div>
                 </div>
 
+                <!-- Mobile / Side Menu -->
                 <ul id="sidemenu">
+
+                    <!-- Close Button -->
                     <li class="menu-close-item">
-                        <button class="menu-close-btn" onclick="closemenu()" aria-label="Close menu">
+                        <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close menu">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
                     </li>
 
-
+                    <!-- Navigation Links -->
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Projects</a></li>
@@ -57,58 +103,69 @@
                     <li><a href="#reviews">Reviews</a></li>
                 </ul>
 
-                <i class="fa-solid fa-bars" onclick="openmenu()" style="color:#b45a00ef;"></i>
+                <!-- Mobile Menu Icon -->
+                <button id="menuOpenBtn" class="menu-open-btn" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
             </nav>
 
 
-            <!-- ======================================================
-             HERO SECTION (HOME PAGE)
-             Text Left • Image Right Layout
-        ====================================================== -->
 
+
+
+            <!-- -------- HERO SECTION (HOME PAGE - TEXT LEFT / IMAGE RIGHT) -------- -->
             <div class="header-content">
 
+                <!-- Left: Text Content -->
                 <div class="header-text">
+
+                    <!-- Main Title -->
                     <h1 class="hero-title">
                         Hi, I'm <span class="hero-name">Nikara</span>
                     </h1>
 
-
-
+                    <!-- Subtitle + Typewriter -->
                     <div class="typewriter">
+
+                        <!-- Static Subtitle -->
                         <p class="hero-meta">
                             BSc Information Technology Graduate — Robotics Specialisation • GPA 3.8
                         </p>
 
-
+                        <!-- Divider -->
                         <div class="typing-divider"></div>
 
+                        <!-- Dynamic Typing Text -->
                         <p id="typing-text"></p>
+
                     </div>
 
+                    <!-- Call-To-Action Buttons -->
                     <div class="hero-buttons">
 
+                        <!-- Reach Out -->
                         <a href="#contact" class="reach-btn">
                             <span>Reach Out</span>
                             <i class="fa-solid fa-paper-plane"></i>
                         </a>
 
-                        <a href="resume.pdf" class="resume-btn" target="_blank">
+                        <!-- Resume -->
+                        <a href="resume.pdf" class="resume-btn" target="_blank" rel="noopener noreferrer">
                             <span>Jump to Resume</span>
                             <i class="fa-solid fa-file-lines"></i>
                         </a>
 
                     </div>
 
-
                 </div>
 
+                <!-- Right: Portrait -->
                 <div class="header-image">
                     <div class="portrait-frame">
                         <img src="images/home-portrait.png" alt="Nikara Ishwarlall Robotics Portfolio" loading="lazy">
                     </div>
                 </div>
-
 
             </div>
 
@@ -121,7 +178,7 @@
 
 
 
-    <!------------about---------------->
+    <!----------------------------------ABOUT------------------------------------------------------------------------------------>
     <div id="about">
 
         <!-- Background Video -->
@@ -146,9 +203,9 @@
                 <div class="about-col-2">
 
                     <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab(event, 'aboutme')">About</p>
-                        <p class="tab-links" onclick="opentab(event, 'skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab(event, 'education')">Education</p>
+                        <p class="tab-links active-link" data-tab="aboutme">About</p>
+                        <p class="tab-links" data-tab="skills">Skills</p>
+                        <p class="tab-links" data-tab="education">Education</p>
                     </div>
 
 
@@ -485,14 +542,14 @@
                                     <div class="edu-actions">
 
                                         <a class="edu-action"
-                                            href="https://drive.google.com/file/d/1nHDgbQnlKr8qjzalNdUE6U7Zj5LABDl6/preview"
-                                            target="_blank">
+                                            href="https://drive.google.com/file/d/1ZdjzfaiW8ALe58czYrnLUtdOdmjma1wO/preview"
+                                            target="_blank" rel="noopener noreferrer">
                                             View Transcript
                                         </a>
 
                                         <a class="edu-action"
                                             href="https://drive.google.com/file/d/1ZdjzfaiW8ALe58czYrnLUtdOdmjma1wO/preview"
-                                            target="_blank">
+                                            target="_blank" rel="noopener noreferrer">
                                             View Letter of Completion
                                         </a>
 
@@ -555,20 +612,27 @@
     </div>
 
 
-    <!-------------------Certifications------------------->
+
+
+
+
+
+    <!-------------------CERTIFICATIONS------------------->
     <div id="certifications">
 
+        <!-- Background Video -->
         <video autoplay muted loop playsinline class="cert-bg-video">
             <source src="images/cert-bg-flipped.mp4" type="video/mp4">
         </video>
 
         <div class="container">
 
+            <!-- Section Title -->
             <h1 class="cert-title">
                 <span>C</span><span>e</span><span>r</span><span>t</span><span>i</span><span>f</span><span>i</span><span>c</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
             </h1>
 
-
+            <!-- Placeholder Message -->
             <div class="cert-coming">
                 <i class="fa-solid fa-hourglass-half"></i>
                 <p>Certifications coming soon — actively expanding my technical skillset.</p>
@@ -591,8 +655,11 @@
         </video>
 
         <div class="container">
-            <h1 class="sub-title portfolio-title">Projects</h1>
 
+            <h1 class="sub-title portfolio-title">
+                <span class="portfolio-white">Systems</span>
+                <span class="portfolio-accent">&amp; Projects</span>
+            </h1>
             <div class="portfolio-status">
                 <span class="status-dot"></span>
                 New projects currently in development
@@ -601,7 +668,7 @@
 
             <div class="portfolio-slider">
 
-                <button class="slide-btn left" onclick="scrollProjects(-1)">
+                <button class="slide-btn left" id="projectsLeftBtn">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
 
@@ -664,7 +731,7 @@
                             </p>
 
                             <a href="https://www.linkedin.com/pulse/network-security-infrastructure-design-nikara-ishwarlall-xbh1f"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fa-solid fa-link"></i>
                             </a>
                         </div>
@@ -687,8 +754,8 @@
                                 clean UX, performance, and maintainable structure to present projects and technical
                                 growth.
                             </p>
-                            <a
-                                href="https://www.linkedin.com/pulse/you-ready-explore-intersection-technology-creativity-ishwarlall-8uplf">
+                            <a href="https://www.linkedin.com/pulse/you-ready-explore-intersection-technology-creativity-ishwarlall-8uplf"
+                                target="_blank" rel="noopener noreferrer">
                                 <i class="fa-solid fa-link"></i>
                             </a>
                         </div>
@@ -698,7 +765,7 @@
 
                 </div>
 
-                <button class="slide-btn right" onclick="scrollProjects(1)">
+                <button class="slide-btn right" id="projectsRightBtn">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
 
@@ -711,9 +778,12 @@
 
 
 
-    <!---------------------------Blogs----------------------------->
+
+    <!---------------------------BLOGS----------------------------->
 
     <div id="blogs">
+
+        <!-- Background Video -->
         <video autoplay muted loop playsinline class="blogs-video">
             <source src="images/blogs-bg.mp4" type="video/mp4">
         </video>
@@ -721,59 +791,72 @@
         <div class="container">
             <div class="blogs-layout">
 
-                <!-- LEFT SIDE -->
+                <!-- Left: Intro Content -->
                 <div class="blogs-left">
+
+                    <!-- Section Title -->
                     <h1 class="blogs-title">
                         <span class="blogs-orange">Blogs</span>
                         <span class="blogs-white"> & Insights</span>
                     </h1>
 
+                    <!-- Description -->
                     <p class="blogs-intro">
                         I write about AI, robotics, and growth through The Thinking Thread —
                         exploring how technology reshapes opportunity, learning, and the way we build.
                     </p>
 
+                    <!-- External Blog Link -->
                     <a href="https://nikara17.github.io/Thinking-Thread-Blog/" class="blog-more" target="_blank"
-                        rel="noopener noreferrer">Visit The Thinking Thread</a>
-
+                        rel="noopener noreferrer">
+                        Visit The Thinking Thread
+                    </a>
 
                 </div>
 
-                <!-- RIGHT SIDE -->
+
+                <!-- Right: Blog Cards -->
                 <div class="blogs-right">
                     <div class="blog-list">
 
-                        <!-- Blog 1 -->
+                        <!-- Blog Card 1 -->
                         <div class="blog-card">
                             <img src="images/blog2.png" alt="Before You Pick a Degree cover">
+
                             <div class="blog-info">
                                 <span class="blog-date">2026</span>
+
                                 <h3>Before You Pick a Degree, Read This</h3>
+
                                 <p>
                                     A practical guide for matriculants and young adults choosing a tech direction —
                                     focusing on skill clusters, problem-solving, and long-term growth.
                                 </p>
+
                                 <a href="https://nikara17.github.io/Thinking-Thread-Blog/blog-before-you-pick-a-degree.html"
                                     class="blog-link" target="_blank" rel="noopener noreferrer">
-
                                     Read Article <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
 
-                        <!-- Blog 2 -->
+
+                        <!-- Blog Card 2 -->
                         <div class="blog-card">
                             <img src="images/blog1.png" alt="How AI Can Bridge the Digital Divide cover">
+
                             <div class="blog-info">
                                 <span class="blog-date">2026</span>
+
                                 <h3>How Artificial Intelligence Can Bridge the Digital Divide</h3>
+
                                 <p>
                                     Exploring how AI can reduce inequality through accessible education,
                                     human-centered design, and scalable intelligent systems.
                                 </p>
+
                                 <a href="https://nikara17.github.io/Thinking-Thread-Blog/blog-digital-divide-ai.html"
                                     class="blog-link" target="_blank" rel="noopener noreferrer">
-
                                     Read Article <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -781,8 +864,11 @@
 
                     </div>
 
+                    <!-- View All Blogs -->
                     <a href="https://nikara17.github.io/Thinking-Thread-Blog/" class="blog-more" target="_blank"
-                        rel="noopener noreferrer">See All Blogs</a>
+                        rel="noopener noreferrer">
+                        See All Blogs
+                    </a>
 
                 </div>
 
@@ -793,26 +879,39 @@
 
 
 
-    <!-------------------------Contact---------------------------->
+
+
+
+
+
+
+
+
+    <!-------------------------CONTACT---------------------------->
+
     <div id="contact">
+
+        <!-- Background Video -->
         <video autoplay muted loop playsinline class="contact-video">
             <source src="images/contact-bg.mp4" type="video/mp4">
         </video>
 
-
-
         <div class="container">
             <div class="contact-wrap">
 
-                <!-- LEFT: Contact Card -->
+                <!-- Left: Contact Info -->
                 <div class="contact-left">
+
+                    <!-- Section Title -->
                     <h1 class="contact-title">Get in Touch</h1>
 
+                    <!-- Intro Text -->
                     <p class="contact-sub">
                         Want to collaborate, chat robotics, or discuss opportunities? Send a message — I reply as soon
                         as I can.
                     </p>
 
+                    <!-- Email -->
                     <div class="contact-details">
                         <a class="contact-detail" href="mailto:nikara.connect@gmail.com">
                             <i class="fa-solid fa-envelope"></i>
@@ -820,36 +919,51 @@
                         </a>
                     </div>
 
+                    <!-- Social Links -->
                     <div class="social-icons contact-social">
                         <a href="https://www.linkedin.com/in/nikara-ishwarlall-761095251" target="_blank"
-                            aria-label="LinkedIn">
+                            rel="noopener noreferrer" aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
-                        <a href="https://www.instagram.com/nikara.i/" target="_blank" aria-label="Instagram">
+
+                        <a href="https://www.instagram.com/nikara.i/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram">
                             <i class="fa-brands fa-square-instagram"></i>
                         </a>
                     </div>
 
-                    <!-- Optional CV button -->
+                    <!-- Optional CV Button -->
                     <!-- <a href="images/my-cv.pdf" download class="btn btn2 contact-cv">Download CV</a> -->
+
                 </div>
 
-                <!-- RIGHT: Form -->
+
+                <!-- Right: Contact Form -->
                 <div class="contact-right">
                     <form class="contact-form" name="submit-to-google-sheet" autocomplete="on">
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input id="website" type="text" name="Website" tabindex="-1" autocomplete="off">
+                        </div>
 
+                        <!-- Name + Email -->
                         <div class="field-grid">
+
                             <div class="field">
                                 <label for="name">Your Name</label>
-                                <input id="name" type="text" name="Name" placeholder="e.g. Jane Doe" required>
+                                <input id="name" type="text" name="Name" placeholder="e.g. Jane Doe" required
+                                    maxlength="80" pattern="^[A-Za-zÀ-ÿ0-9 .,'&()\-]{2,80}$">
                             </div>
 
                             <div class="field">
                                 <label for="email">Your Email</label>
-                                <input id="email" type="email" name="Email" placeholder="e.g. jane@email.com" required>
+                                <input id="email" type="email" name="Email" placeholder="e.g. jane@email.com" required
+                                    maxlength="120">
                             </div>
+
                         </div>
 
+                        <!-- Referral Source -->
                         <div class="field">
                             <label for="source">How did you find this site? (optional)</label>
                             <select id="source" name="Source">
@@ -864,12 +978,14 @@
                             </select>
                         </div>
 
+                        <!-- Message -->
                         <div class="field">
                             <label for="message">Your Message</label>
                             <textarea id="message" name="Message" rows="6"
-                                placeholder="Tell me what you’re working on..." required></textarea>
+                                placeholder="Tell me what you’re working on..." required maxlength="2000"></textarea>
                         </div>
 
+                        <!-- Submit Button -->
                         <button type="submit" class="btn btn2 contact-submit futuristic-btn">
                             <span class="btn-glow" aria-hidden="true"></span>
                             <span class="btn-text">Send Message</span>
@@ -878,6 +994,7 @@
 
                     </form>
 
+                    <!-- Form Status Message -->
                     <div id="msg" class="form-message" aria-live="polite"></div>
                 </div>
 
@@ -890,57 +1007,78 @@
 
 
 
-    <!-------------------Reviews Section------------------->
+
+
+    <!-------------------REVIEWS------------------->
 
     <div id="reviews">
         <div class="container">
 
-            <!-- Header -->
+            <!-- Section Header -->
             <div class="reviews-head">
                 <h1 class="reviews-title">
                     Reviews <span class="reviews-accent">Console</span>
                 </h1>
+
                 <p class="reviews-sub">
                     Feedback helps me improve and refine my work — thank you for taking a moment to share yours.
                 </p>
             </div>
 
-            <!-- Futuristic split layout -->
+
+            <!-- Reviews Layout -->
             <div class="reviews-grid">
 
-                <!-- LEFT: Form panel -->
+                <!-- Left: Review Form -->
                 <section class="reviews-panel reviews-panel--form">
+
+                    <!-- Panel Top Bar -->
                     <div class="panel-top">
                         <div class="panel-dot"></div>
                         <div class="panel-dot"></div>
                         <div class="panel-dot"></div>
                         <span class="panel-label console-status">system ready</span>
-
                     </div>
 
+                    <!-- Title -->
                     <h2 class="panel-title">Add a Review</h2>
+
+                    <!-- Hint -->
                     <p class="panel-hint">
                         <i class="fa-regular fa-message"></i>
                         Share your experience and thoughts about my portfolio.
                     </p>
 
-                    <form class="reviewform reviews-form" name="submit-review-to-google-sheet" autocomplete="on">
+                    <!-- Form -->
+                    <form class="reviewform reviews-form" name="submit-review-to-google-sheet" autocomplete="off">
+
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="company-site">Company Site</label>
+                            <input id="company-site" type="text" name="CompanySite" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <!-- Name -->
                         <div class="field">
                             <label for="review-name">Your Name / Company</label>
                             <input id="review-name" type="text" name="Review-name"
-                                placeholder="e.g. Company / Recruiter" required autocomplete="name">
+                                placeholder="e.g. Company / Recruiter" required autocomplete="name" maxlength="100"
+                                pattern="^[A-Za-zÀ-ÿ0-9 .,'&()\-\/]{2,100}$">
                         </div>
 
+                        <!-- Message -->
                         <div class="field">
                             <label for="review-message">Your Message</label>
                             <textarea id="review-message" name="Review-message" rows="6"
-                                placeholder="What stood out to you?" required autocomplete="off"></textarea>
+                                placeholder="What stood out to you?" required autocomplete="off"
+                                maxlength="1500"></textarea>
                         </div>
 
+                        <!-- Visibility -->
                         <div class="field">
                             <label>Review Visibility</label>
 
                             <div class="review-visibility">
+
                                 <label class="visibility-option">
                                     <input type="radio" name="Review-visibility" value="Public" checked>
                                     <span>Public</span>
@@ -950,46 +1088,55 @@
                                     <input type="radio" name="Review-visibility" value="Private">
                                     <span>Private</span>
                                 </label>
+
                             </div>
 
                             <small id="visibility-note" class="visibility-note">
                                 Public reviews will appear with your name in the live review feed.
                             </small>
-
                         </div>
 
-
+                        <!-- Submit Button -->
                         <button type="submit" class="reviews-btn">
                             <span class="btn-glow" aria-hidden="true"></span>
                             <span class="btn-text">Submit Review</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </button>
+
                     </form>
 
+                    <!-- Form Status -->
                     <div id="reviewmsg" class="review-message" aria-live="polite"></div>
+
                 </section>
 
-                <!-- RIGHT: Feed panel -->
+
+                <!-- Right: Review Feed -->
                 <section class="reviews-panel reviews-panel--feed">
+
+                    <!-- Panel Top Bar -->
                     <div class="panel-top">
                         <div class="panel-dot"></div>
                         <div class="panel-dot"></div>
                         <div class="panel-dot"></div>
                         <span class="panel-label" id="reviews-feed-status">Feedback Stream</span>
-
                     </div>
 
+                    <!-- Feed Header -->
                     <div class="feed-head">
                         <h2 class="panel-title">Live Reviews</h2>
                         <div class="feed-fade"></div>
                     </div>
 
-
+                    <!-- Feed Content -->
                     <div class="reviews-feed">
-                        <!-- keep your review items -->
+                        <!-- Dynamic review items -->
                     </div>
 
-                    <div class="reviews-footnote">Newer reviews appear at the top.</div>
+                    <!-- Footer Note -->
+                    <div class="reviews-footnote">
+                        Newer reviews appear at the top.
+                    </div>
 
                 </section>
 
@@ -998,1041 +1145,78 @@
     </div>
 
 
+
+
+
+
+    <!-------------------------FOOTER------------------------->
+
     <footer class="site-footer" id="footer">
+
+        <!-- Glow Background -->
         <div class="footer-glow" aria-hidden="true"></div>
 
         <div class="footer-inner container">
 
+            <!-- Left: Brand + Social -->
             <div class="footer-left">
+
+                <!-- Brand -->
                 <div class="footer-brand">
                     <span class="footer-name">Nikara Ishwarlall</span>
                     <span class="footer-tag">Robotics · AI Engineering · Innovation Systems</span>
                 </div>
 
-
+                <!-- Social Links -->
                 <div class="footer-social" aria-label="Social links">
+
                     <a href="https://www.linkedin.com/in/nikara-ishwarlall-761095251" target="_blank"
-                        aria-label="LinkedIn">
+                        rel="noopener noreferrer" aria-label="LinkedIn">
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
-                    <a href="https://www.instagram.com/nikara.i/" target="_blank" aria-label="Instagram">
+
+                    <a href="https://www.instagram.com/nikara.i/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
                         <i class="fa-brands fa-square-instagram"></i>
                     </a>
+
                     <a href="mailto:nikara0405@gmail.com" aria-label="Email">
                         <i class="fa-solid fa-envelope"></i>
                     </a>
+
                 </div>
+
             </div>
 
+
+            <!-- Center: Navigation -->
             <nav class="footer-links" aria-label="Footer navigation">
+
                 <a href="#about">About</a>
                 <a href="#portfolio">Projects</a>
                 <a href="#blogs">Blogs</a>
                 <a href="#contact">Contact</a>
-                <a href="#header" class="to-top">Back to top <span aria-hidden="true">↑</span></a>
+
+                <!-- Back to Top -->
+                <a href="#header" class="to-top">
+                    Back to top <span aria-hidden="true">↑</span>
+                </a>
+
             </nav>
 
-            <div class="footer-right">
-                <span class="footer-copy">© 2026 Nikara Ishwarlall. All rights reserved.</span>
 
+            <!-- Right: Copyright -->
+            <div class="footer-right">
+                <span class="footer-copy">
+                    © 2026 Nikara Ishwarlall. All rights reserved.
+                </span>
             </div>
 
         </div>
+
     </footer>
 
-
-
-
-
-
-
-
-    <!-------------------JavaScript Section--------------------------------------------------------------------------->
-
-
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-        function opentab(event, tabname) {
-            for (let tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-
-            for (let tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
-
-
-
-
-    <!----  Home page paragraph Script  -->
-    <script>
-        const bulletLines = [
-            "> Software Engineering & Intelligent Systems",
-            "> Data Analytics, Machine Learning & AI",
-            "> Network Architecture & Infrastructure",
-            "> Automation, Robotics & Control Systems"
-        ];
-
-        const typingElement = document.getElementById("typing-text");
-
-        if (window.innerWidth > 768) {
-            let lineIndex = 0;
-            let charIndex = 0;
-
-            function typeBullets() {
-                if (lineIndex >= bulletLines.length) return;
-
-                const currentLine = bulletLines[lineIndex];
-
-                if (charIndex < currentLine.length) {
-                    typingElement.innerHTML += currentLine.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(typeBullets, 20);
-                } else {
-                    typingElement.innerHTML += "<br>";
-                    lineIndex++;
-                    charIndex = 0;
-                    setTimeout(typeBullets, 150);
-                }
-            }
-
-            typeBullets();
-        }
-    </script>
-
-
-
-
-
-    <!--- About section - Title animation script --->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const aboutSection = document.querySelector("#about");
-            const aboutTitle = document.querySelector(".about-title");
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        aboutTitle.classList.add("about-visible");
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            observer.observe(aboutSection);
-
-        });
-    </script>
-
-
-    <!--- About me tab- Dropdown click script-->
-    <script>
-        document.querySelectorAll(".accordion-header").forEach(header => {
-
-            header.addEventListener("click", () => {
-
-                const item = header.parentElement;
-
-                /* close others */
-                document.querySelectorAll(".accordion-item")
-                    .forEach(el => {
-                        if (el !== item) {
-                            el.classList.remove("active");
-                        }
-                    });
-
-                /* toggle clicked */
-                item.classList.toggle("active");
-
-            });
-
-        });
-    </script>
-
-
-
-    <!--- About section - Slide show script  --->
-    <script>
-        const aboutContainer = document.querySelector(".about-col-1");
-
-        const imageSets = {
-            aboutme: [
-                "images/about-me.png",
-                "images/durban-vid.mp4",
-                "images/indian-culture.png",
-                "images/african-culture.png"
-            ],
-            skills: [
-                "images/skills1.png",
-                "images/skills2.png",
-                "images/skills3.jpg",
-                "images/skills4.png"
-            ],
-            education: [
-                "images/edu1.png",
-                "images/edu2.png",
-                "images/edu3.png"
-            ]
-        };
-
-        // ✅ Track and cancel async work properly
-        let slideTimeout = null;
-        let currentToken = 0; // increments every tab switch
-
-        function clearSlideWork() {
-            if (slideTimeout) clearTimeout(slideTimeout);
-            slideTimeout = null;
-        }
-
-        function createMediaElement(src) {
-            if (src.toLowerCase().endsWith(".mp4")) {
-                const video = document.createElement("video");
-                video.src = src;
-                video.autoplay = true;
-                video.muted = true;
-                video.loop = false;
-                video.playsInline = true;
-                video.preload = "auto";
-                video.className = "about-media-item";
-                return video;
-            } else {
-                const img = document.createElement("img");
-                img.src = src;
-                img.className = "about-media-item";
-                img.alt = "About slideshow image";
-                return img;
-            }
-        }
-
-        function mountMedia(el, token) {
-            // ✅ replace media cleanly
-            aboutContainer.innerHTML = "";
-            el.style.opacity = 0;
-            aboutContainer.appendChild(el);
-
-            // fade in
-            requestAnimationFrame(() => {
-                // token check in case tab switched before paint
-                if (token !== currentToken) return;
-                el.style.opacity = 1;
-            });
-
-            // if video, force play reliably
-            if (el.tagName === "VIDEO") {
-                el.currentTime = 0;
-                const p = el.play();
-                if (p && typeof p.catch === "function") p.catch(() => { });
-            }
-        }
-
-        function startSlideshow(tab) {
-            const token = ++currentToken; // ✅ invalidates old timeouts + ended callbacks
-            clearSlideWork();
-
-            const mediaList = imageSets[tab] || [];
-            if (!aboutContainer || mediaList.length === 0) return;
-
-            let index = 0;
-
-            function scheduleNext(ms) {
-                clearSlideWork();
-                slideTimeout = setTimeout(() => {
-                    if (token !== currentToken) return; // ✅ ignore old timers
-                    nextSlide();
-                }, ms);
-            }
-
-            function nextSlide() {
-                if (token !== currentToken) return;
-
-                index = (index + 1) % mediaList.length;
-                const newMedia = createMediaElement(mediaList[index]);
-
-                // ✅ attach ended handler safely (and ignore if tab changed)
-                if (newMedia.tagName === "VIDEO") {
-                    newMedia.onended = () => {
-                        if (token !== currentToken) return;
-                        nextSlide();
-                    };
-                }
-
-                mountMedia(newMedia, token);
-
-                // ✅ only schedule timeout for images
-                if (newMedia.tagName !== "VIDEO") {
-                    scheduleNext(5000);
-                }
-            }
-
-            // Mount first slide
-            const firstMedia = createMediaElement(mediaList[0]);
-            if (firstMedia.tagName === "VIDEO") {
-                firstMedia.onended = () => {
-                    if (token !== currentToken) return;
-                    nextSlide();
-                };
-            }
-            mountMedia(firstMedia, token);
-
-            // Start cycle for first slide
-            if (firstMedia.tagName !== "VIDEO" && mediaList.length > 1) {
-                scheduleNext(5000);
-            }
-        }
-
-        // Hook into your existing tab function
-        const oldOpenTab = window.opentab;
-        window.opentab = function (event, tabname) {
-            if (typeof oldOpenTab === "function") oldOpenTab(event, tabname);
-            startSlideshow(tabname);
-        };
-
-
-        // default
-        //  startSlideshow("aboutme");
-    </script>
-
-
-    <!--   Scroll-Triggered Slideshow  Script for About page-->
-    <script>
-        // ✅ Start slideshow only when About section is visible
-        let aboutStarted = false;
-
-        const aboutSection = document.getElementById("about");
-
-        const aboutObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting || aboutStarted) return;
-
-                aboutStarted = true;
-
-                // start based on whichever tab is currently active
-                const activeTab = document.querySelector("#about .tab-contents.active-tab");
-                const activeTabId = activeTab ? activeTab.id : "aboutme";
-
-                startSlideshow(activeTabId);
-            });
-        }, { threshold: 0.25 }); // 25% visible
-
-        if (aboutSection) aboutObserver.observe(aboutSection);
-    </script>
-
-
-
-    <!--- Read More About Script --->
-    <script>
-        const aboutReadMoreBtn = document.getElementById("aboutReadMoreBtn");
-        const aboutSummaryMore = document.getElementById("aboutSummaryMore");
-
-        if (aboutReadMoreBtn && aboutSummaryMore) {
-            aboutReadMoreBtn.addEventListener("click", function () {
-                aboutSummaryMore.classList.toggle("show");
-
-                if (aboutSummaryMore.classList.contains("show")) {
-                    aboutReadMoreBtn.textContent = "Show less";
-                } else {
-                    aboutReadMoreBtn.textContent = "Continue reading";
-                }
-            });
-        }
-    </script>
-
-
-
-
-
-
-    <!--- Skills tab- Dropdown click script-->
-    <script>
-        document.querySelectorAll(".skill-header").forEach(header => {
-            header.addEventListener("click", () => {
-
-                const parent = header.closest(".skill-dropdown");
-
-                document.querySelectorAll(".skill-dropdown").forEach(d => {
-                    if (d !== parent) {
-                        d.classList.remove("active");
-                    }
-                });
-
-                parent.classList.toggle("active");
-            });
-        });
-    </script>
-
-    <!--- Education tab- Dropdown click script-->
-    <script>
-        document.querySelectorAll(".edu-header").forEach(header => {
-            header.addEventListener("click", () => {
-                header.parentElement.classList.toggle("active");
-            });
-        });
-    </script>
-
-
-
-
-    <!--- Certifications script-->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const certSection = document.getElementById("certifications");
-            const certTitle = document.querySelector(".cert-title");
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        certTitle.classList.add("cert-visible");
-                    }
-                });
-            }, { threshold: 0.3 });
-
-            observer.observe(certSection);
-        });
-    </script>
-
-
-
-
-    <!--- Portfolio script for Title -->
-    <script>
-        const portfolioTitle = document.querySelector(".portfolio-title");
-
-        if (portfolioTitle) {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        portfolioTitle.classList.add("portfolio-visible");
-                    }
-                });
-            }, { threshold: 0.3 });
-
-            observer.observe(portfolioTitle);
-        }
-    </script>
-
-
-
-    <!--- Portfolio script for project card scroll -->
-    <script>
-        function scrollProjects(direction) {
-            const track = document.getElementById("projectTrack");
-            const scrollAmount = 420; // controls how far it moves
-            track.scrollBy({
-                left: direction * scrollAmount,
-                behavior: "smooth"
-            });
-        }
-    </script>
-
-    <!--- Blog Script scroll -->
-    <script>
-        const blogsTitle = document.querySelector(".blogs-title");
-
-        const blogObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    blogsTitle.classList.add("type-visible");
-                }
-            });
-        }, { threshold: 0.4 });
-
-        blogObserver.observe(blogsTitle);
-    </script>
-
-    <!--- Blog  Parapgarph Script -->
-    <script>
-        const blogsIntro = document.querySelector(".blogs-intro");
-
-        const introObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        blogsIntro.classList.add("intro-visible");
-                    }, 2000); // waits for title typing to finish
-                }
-            });
-        }, { threshold: 0.4 });
-
-        introObserver.observe(blogsIntro);
-    </script>
-
-
-    <!--- Blogs cards  Script -->
-    <script>
-        const blogScroll = document.querySelector(".blogs-right");
-        const blogCards = document.querySelectorAll(".blog-card");
-
-        if (blogScroll) {
-            blogScroll.addEventListener("scroll", () => {
-                if (window.innerWidth <= 900) {
-                    blogCards.forEach(card => {
-                        card.style.transform = "none";
-                    });
-                    return;
-                }
-
-                const scrollTop = blogScroll.scrollTop;
-
-                blogCards.forEach((card, index) => {
-                    const speed = 0.07 + (index * 0.01);
-                    card.style.transform = `translateY(${scrollTop * speed * -1}px)`;
-                });
-            });
-        }
-    </script>
-
-
-
-    <!-------------------(Google Sheet) CONTACT Message Script----------------->
-
-    <script>
-        const scriptURL =
-            "https://script.google.com/macros/s/AKfycbyol0QDOTfeRDRviYT3xabOrnWV0kfcW8iCdIw1qCgUryalcLa0AEKzb045_U9mvzoDTA/exec";
-
-
-        const form = document.forms["submit-to-google-sheet"];
-        const msg = document.getElementById("msg");
-
-        const btn = document.querySelector(".futuristic-btn") || form?.querySelector('button[type="submit"]');
-        const btnText = btn?.querySelector(".btn-text");
-
-        function setBtnLoading(loading) {
-            if (!btn) return;
-            btn.disabled = loading;
-
-            if (btnText) btnText.textContent = loading ? "Sending..." : "Send Message";
-            btn.style.opacity = loading ? "0.75" : "1";
-            btn.style.cursor = loading ? "not-allowed" : "pointer";
-        }
-
-        function showMessage(text, type = "success") {
-            if (!msg) return;
-
-            msg.className = "form-message";
-            msg.classList.add(type, "show");
-
-            const icon =
-                type === "success"
-                    ? '<span class="msg-icon"><i class="fa-solid fa-check"></i></span>'
-                    : type === "error"
-                        ? '<span class="msg-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>'
-                        : '<span class="msg-icon"><i class="fa-solid fa-paper-plane"></i></span>';
-
-            const title = type === "success" ? "Sent" : type === "error" ? "Oops" : "Sending";
-
-            msg.innerHTML = `${icon}<span class="msg-text"><b>${title}:</b> ${text}</span>`;
-
-            if (type !== "loading") {
-                setTimeout(() => {
-                    msg.classList.remove("show");
-                }, 5000);
-            }
-        }
-
-        if (form) {
-            form.addEventListener("submit", async (e) => {
-                e.preventDefault();
-
-                setBtnLoading(true);
-                showMessage("Transmitting your message…", "loading");
-
-                try {
-                    const res = await fetch(scriptURL, {
-                        method: "POST",
-                        body: new FormData(form),
-                    });
-
-                    if (!res.ok) throw new Error(`Request failed: ${res.status}`);
-
-                    const data = await res.json();
-
-                    if (data.result !== "success") {
-                        throw new Error(data.error || "Script did not save the message.");
-                    }
-
-                    showMessage("Message sent successfully! I’ll get back to you soon.", "success");
-                    form.reset();
-
-                } catch (error) {
-                    console.error("Contact form error:", error);
-                    showMessage(error.message || "Something went wrong. Please try again in a moment.", "error");
-                } finally {
-                    setBtnLoading(false);
-                }
-            });
-        }
-    </script>
-
-
-    <!-------------------Google Sheet - REVIEWS------------------->
-    <script>
-        /* =========================================================
-           1) CONFIG + DOM REFERENCES
-           ========================================================= */
-        const reviewscriptURL = "https://script.google.com/macros/s/AKfycbxKFQLJlD6uPnky6W0aF6--PyfD7zt1vkwJEMrzsDce777iEH6YbUwshjoLLb-dktHvLg/exec";
-
-        const reviewform = document.forms["submit-review-to-google-sheet"];
-        const reviewmsg = document.getElementById("reviewmsg");
-        const reviewFeed = document.querySelector(".reviews-feed");
-        const reviewFeedStatus = document.getElementById("reviews-feed-status");
-        const reviewFeedPanel = document.querySelector(".reviews-panel--feed");
-
-
-
-        /* =========================================================
-   2) PINNED REVIEW MATCHES
-   These reviews must exist in Google Sheets as normal reviews.
-   They will then be rendered first as pinned items.
-   ========================================================= */
-        const PINNED_MATCHES = [
-            {
-                name: "Kyle Pillay",
-                message:
-                    "Nikara, your portfolio is impressive! It showcases your skills in robotics and AI perfectly. Your projects are both creative and innovative."
-            },
-            {
-                name: "Kiara Ishwarlall",
-                message: "Amazing visuals! I really enjoyed going through your portfolio."
-            }
-        ];
-
-
-
-
-        /* =========================================================
-           3) HELPER FUNCTIONS
-           ========================================================= */
-        function escapeHTML(str = "") {
-            return String(str).replace(/[&<>"']/g, (m) => ({
-                "&": "&amp;",
-                "<": "&lt;",
-                ">": "&gt;",
-                '"': "&quot;",
-                "'": "&#039;"
-            }[m]));
-        }
-
-        function setReviewMsg(text, type = "loading") {
-            reviewmsg.className = "review-message show " + type;
-            reviewmsg.textContent = text;
-
-            if (type !== "loading") {
-                setTimeout(() => {
-                    reviewmsg.classList.remove("show");
-                    reviewmsg.textContent = "";
-                }, 4500);
-            }
-        }
-
-        function sameReview(a, b) {
-            const an = (a?.name || "").trim().toLowerCase();
-            const am = (a?.message || "").trim().toLowerCase();
-            const bn = (b?.name || "").trim().toLowerCase();
-            const bm = (b?.message || "").trim().toLowerCase();
-            return an === bn && am === bm;
-        }
-
-        function getInitials(name = "Anonymous") {
-            return name
-                .trim()
-                .split(/\s+/)
-                .slice(0, 2)
-                .map(part => part[0]?.toUpperCase() || "")
-                .join("") || "A";
-        }
-
-        function makeReviewId(index, featured = false) {
-            return featured
-                ? `PIN-${String(index + 1).padStart(3, "0")}`
-                : `RVW-${String(index + 1).padStart(4, "0")}`;
-        }
-
-        function formatTimestamp(ts) {
-            if (!ts) return "";
-
-            const date = new Date(ts);
-            const now = new Date();
-            const diff = Math.floor((now - date) / 1000);
-
-            if (diff < 60) return "just now";
-            if (diff < 3600) return `${Math.floor(diff / 60)} min ago`;
-            if (diff < 86400) return `${Math.floor(diff / 3600)} hr ago`;
-            if (diff < 604800) return `${Math.floor(diff / 86400)} day ago`;
-
-            return date.toLocaleDateString(undefined, {
-                month: "short",
-                day: "numeric"
-            });
-        }
-
-        /* =========================================================
-           4) FEED STATUS + PANEL STATE
-           ========================================================= */
-        function setFeedStatus(text = "Feedback Stream") {
-            if (!reviewFeedStatus) return;
-            reviewFeedStatus.textContent = text;
-        }
-
-        function clearFeedPanelState() {
-            if (!reviewFeedPanel) return;
-            reviewFeedPanel.classList.remove("is-syncing", "is-updating");
-        }
-
-        function setFeedPanelState(state) {
-            if (!reviewFeedPanel) return;
-
-            clearFeedPanelState();
-
-            if (state === "syncing") {
-                reviewFeedPanel.classList.add("is-syncing");
-            }
-
-            if (state === "updating") {
-                reviewFeedPanel.classList.add("is-updating");
-            }
-        }
-
-        // Keep the fast blinking/glowing state visible for 5 seconds after a new review submission
-        function pulseNewReviewState() {
-            setFeedStatus("Publishing Review…");
-
-            setFeedPanelState("updating");
-
-            setTimeout(() => {
-                clearFeedPanelState();
-                setFeedStatus("Feedback Stream");
-            }, 5000);
-        }
-
-        /* =========================================================
-       5) REVIEW RENDERING
-       Pinned reviews are pulled from live sheet data
-       ========================================================= */
-        function renderReviews(live = []) {
-            if (!reviewFeed) return;
-
-            const pinnedReviews = [];
-            const normalReviews = [];
-
-            live.forEach((review) => {
-                const isPinned = PINNED_MATCHES.some((pinned) => sameReview(pinned, review));
-
-                if (isPinned) {
-                    pinnedReviews.push(review);
-                } else {
-                    normalReviews.push(review);
-                }
-            });
-
-            /* -------------------------
-               Pinned reviews
-               Use REAL timestamp + REAL visibility from sheet
-               ------------------------- */
-            const pinnedHTML = pinnedReviews.length
-                ? pinnedReviews.map((r) => {
-                    const isPrivate = String(r.visibility || "Public").trim().toLowerCase() === "private";
-
-                    const displayName = isPrivate
-                        ? "Anonymous Reviewer"
-                        : (r.name || "Anonymous");
-
-                    const avatarName = isPrivate
-                        ? "Anonymous Reviewer"
-                        : (r.name || "Anonymous");
-
-                    const visibilityBadge = isPrivate
-                        ? `
-                    <span class="review-meta-pill review-meta-private">
-                        <i class="fa-solid fa-user-shield"></i>
-                        Private feedback shown anonymously
-                    </span>
-                `
-                        : `
-                    <span class="review-meta-pill">
-                        <i class="fa-regular fa-message"></i>
-                        Public review
-                    </span>
-                `;
-
-                    return `
-                <article class="review-item review-item--system featured">
-                    <div class="review-shell">
-                        <div class="review-top">
-                            <div class="review-user">
-                                <div class="review-avatar">
-                                    ${escapeHTML(getInitials(avatarName))}
-                                </div>
-
-                                <div class="review-identity">
-                                    <strong>${escapeHTML(displayName)}</strong>
-                                </div>
-                            </div>
-
-                            <div class="review-side-meta">
-                                <span class="review-badge review-badge--featured">
-                                    <i class="fa-solid fa-thumbtack"></i>
-                                    Pinned
-                                </span>
-
-                                <span class="review-time">
-                                    ${formatTimestamp(r.timestamp)}
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="review-body">
-                            <p>${escapeHTML(r.message || "")}</p>
-                        </div>
-
-                        <div class="review-meta-row">
-                            <span class="review-meta-pill">
-                                <i class="fa-regular fa-clock"></i>
-                                ${formatTimestamp(r.timestamp)}
-                            </span>
-
-                            ${visibilityBadge}
-                        </div>
-                    </div>
-                </article>
-            `;
-                }).join("")
-                : "";
-
-            /* -------------------------
-               Normal live reviews
-               ------------------------- */
-            const liveHTML = normalReviews.length
-                ? normalReviews.slice(0, 30).map((r) => {
-                    const isPrivate = String(r.visibility || "Public").trim().toLowerCase() === "private";
-
-                    const displayName = isPrivate
-                        ? "Anonymous Reviewer"
-                        : (r.name || "Anonymous");
-
-                    const avatarName = isPrivate
-                        ? "Anonymous Reviewer"
-                        : (r.name || "Anonymous");
-
-                    const visibilityBadge = isPrivate
-                        ? `
-                    <span class="review-meta-pill review-meta-private">
-                        <i class="fa-solid fa-user-shield"></i>
-                        Private feedback shown anonymously
-                    </span>
-                `
-                        : `
-                    <span class="review-meta-pill">
-                        <i class="fa-regular fa-message"></i>
-                        Public review
-                    </span>
-                `;
-
-                    return `
-                <article class="review-item review-item--live">
-                    <div class="review-shell">
-                        <div class="review-top">
-                            <div class="review-user">
-                                <div class="review-avatar">
-                                    ${escapeHTML(getInitials(avatarName))}
-                                </div>
-
-                                <div class="review-identity">
-                                    <strong>${escapeHTML(displayName)}</strong>
-                                </div>
-                            </div>
-
-                            <div class="review-side-meta">
-                                <span class="review-badge review-badge--live">
-                                    <span class="review-badge-dot"></span>
-                                    Live
-                                </span>
-
-                                <span class="review-time">
-                                    ${formatTimestamp(r.timestamp)}
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="review-body">
-                            <p>${escapeHTML(r.message || "")}</p>
-                        </div>
-
-                        <div class="review-meta-row">
-                            <span class="review-meta-pill">
-                                <i class="fa-regular fa-clock"></i>
-                                ${formatTimestamp(r.timestamp)}
-                            </span>
-
-                            ${visibilityBadge}
-                        </div>
-                    </div>
-                </article>
-            `;
-                }).join("")
-                : `
-            <div class="reviews-empty reviews-empty--system">
-                <i class="fa-regular fa-folder-open"></i>
-                <span>No recent reviews in the live feed yet.</span>
-            </div>
-        `;
-
-            reviewFeed.innerHTML = `
-        <div class="reviews-block">
-            ${pinnedHTML ? `
-                <div class="reviews-featured-group">
-                    ${pinnedHTML}
-                </div>
-                <div class="reviews-divider"></div>
-            ` : ""}
-
-            <div class="reviews-section-label reviews-section-label--live">
-                Review Stream
-            </div>
-
-            ${liveHTML}
-        </div>
-    `;
-
-            document.querySelectorAll(".review-item").forEach((el) => {
-                el.classList.add("review-item-visible");
-            });
-        }
-
-
-
-
-        /* =========================================================
-           6) LOAD REVIEWS FROM GOOGLE APPS SCRIPT
-           ========================================================= */
-        async function loadReviews({ showStatus = false } = {}) {
-            if (!reviewFeed) return;
-
-            // Only use syncing state for background fetches / refreshes
-            if (showStatus) {
-                setFeedStatus("Syncing Feedback…");
-                setFeedPanelState("syncing");
-            }
-
-            try {
-                const res = await fetch(reviewscriptURL, {
-                    method: "GET",
-                    cache: "no-store"
-                });
-
-                const text = await res.text();
-                const data = JSON.parse(text);
-
-                if (!Array.isArray(data)) {
-                    throw new Error("doGet did not return an array");
-                }
-
-                renderReviews(data);
-
-            } catch (err) {
-                console.error("Load reviews error:", err);
-            } finally {
-                // Only reset if we are not in the 5-second "new review update" state
-                if (!reviewFeedPanel?.classList.contains("is-updating")) {
-                    clearFeedPanelState();
-                    setFeedStatus("Feedback Stream");
-                }
-            }
-        }
-
-        /* =========================================================
-           7) FORM SUBMISSION
-           ========================================================= */
-        if (reviewform) {
-            reviewform.addEventListener("submit", async (e) => {
-                e.preventDefault();
-                setReviewMsg("Submitting your review…", "loading");
-
-                // show publishing state immediately
-                setFeedStatus("Publishing Review…");
-                setFeedPanelState("updating");
-
-                try {
-                    const res = await fetch(reviewscriptURL, {
-                        method: "POST",
-                        body: new FormData(reviewform)
-                    });
-
-                    if (!res.ok) {
-                        throw new Error("Submit failed: " + res.status);
-                    }
-
-                    reviewform.reset();
-                    setReviewMsg("Review submitted — thank you!", "success");
-
-                    // keep the fast blinking state visible while reloading data
-                    await loadReviews({ showStatus: false });
-
-                    // keep it active for a short moment after load completes
-                    setTimeout(() => {
-                        clearFeedPanelState();
-                        setFeedStatus("Feedback Stream");
-                    }, 5000);
-
-                } catch (err) {
-                    console.error("Submit review error:", err);
-                    setReviewMsg("Couldn’t submit right now. Please try again.", "error");
-                    clearFeedPanelState();
-                    setFeedStatus("Feedback Stream");
-                }
-            });
-        }
-
-        /* =========================================================
-           8) INITIAL LOAD + AUTO REFRESH
-           ========================================================= */
-        document.addEventListener("DOMContentLoaded", () => {
-            setFeedStatus("Feedback Stream");
-
-            loadReviews({ showStatus: false });
-
-            setInterval(() => {
-                const isTyping =
-                    document.activeElement === document.getElementById("review-name") ||
-                    document.activeElement === document.getElementById("review-message");
-
-                // Do not refresh while typing or during the special new-review update pulse
-                const isUpdating = reviewFeedPanel?.classList.contains("is-updating");
-
-                if (!isTyping && !isUpdating) {
-                    loadReviews({ showStatus: true });
-                }
-            }, 30000);
-        });
-    </script>
-
-
-
-
-
-
-    <!-------------------RESPONSIVE MENU ------------------->
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openmenu() {
-            sidemenu.style.right = "0";
-        }
-
-        function closemenu() {
-            sidemenu.style.right = "-260px";
-        }
-    </script>
-
-
+    <script src="app.js" defer></script>
 
 </body>
 
