@@ -46,7 +46,7 @@ const escapeHTML = (str = "") =>
 
 // ================= BASIC ANTI-SPAM TIMING =================
 const pageLoadTime = Date.now();
-
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let lastContactSubmit = 0;
 const CONTACT_COOLDOWN_MS = 15000;
 
@@ -60,14 +60,12 @@ const REVIEW_COOLDOWN_MS = 15000;
 const typingElement = document.getElementById("typing-text");
 
 const bulletLines = [
-  "> Software Engineering & Intelligent Systems",
-  "> Data Analytics, Machine Learning & AI",
-  "> Network Architecture & Infrastructure",
-  "> Automation, Robotics & Control Systems"
+  " AI Systems • Robotics • Intelligent Software",
+  " Data • Automation • Scalable Solutions"
 ];
 
 // Only run on desktop + if element exists
-if (typingElement && window.innerWidth > 768) {
+if (typingElement && window.innerWidth > 768 && !prefersReducedMotion) {
   let lineIndex = 0;
   let charIndex = 0;
 
@@ -105,11 +103,13 @@ if (aboutSection && aboutTitle) {
       if (entry.isIntersecting) {
         aboutTitle.classList.add("about-visible");
 
-        // Stop observing after animation runs once (performance)
+        // Stop observing after animation runs once
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, {
+    threshold: 0.05
+  });
 
   aboutObserver.observe(aboutSection);
 }
@@ -124,19 +124,16 @@ const accordionHeaders = document.querySelectorAll(".accordion-header");
 if (accordionHeaders.length) {
   accordionHeaders.forEach(header => {
     header.addEventListener("click", () => {
-
       const currentItem = header.closest(".accordion-item");
+      if (!currentItem) return;
 
-      // Close all other items
       document.querySelectorAll(".accordion-item").forEach(item => {
         if (item !== currentItem) {
           item.classList.remove("active");
         }
       });
 
-      // Toggle current item
       currentItem.classList.toggle("active");
-
     });
   });
 }
@@ -146,7 +143,7 @@ if (accordionHeaders.length) {
 // ================= ABOUT MEDIA SLIDESHOW =================
 // Handles image/video slideshow based on active tab
 
-const aboutContainer = document.querySelector(".about-col-1");
+const aboutContainer = document.querySelector(".about-media-stage");
 
 const imageSets = {
   aboutme: [
@@ -188,8 +185,9 @@ function createMediaElement(src) {
     video.src = src;
     video.autoplay = true;
     video.muted = true;
+    video.loop = false;
     video.playsInline = true;
-    video.preload = "auto";
+    video.preload = "metadata";
     video.className = "about-media-item";
     return video;
   }
@@ -197,6 +195,7 @@ function createMediaElement(src) {
   const img = document.createElement("img");
   img.src = src;
   img.alt = "About slideshow image";
+  img.loading = "lazy";
   img.className = "about-media-item";
   return img;
 }
@@ -223,7 +222,7 @@ function mountMedia(el, token) {
 
 // Start slideshow
 function startSlideshow(tab) {
-  if (!aboutContainer) return;
+  if (!aboutContainer || prefersReducedMotion) return;
 
   const mediaList = imageSets[tab] || [];
   if (!mediaList.length) return;
@@ -240,30 +239,38 @@ function startSlideshow(tab) {
     const media = createMediaElement(mediaList[index]);
 
     if (media.tagName === "VIDEO") {
-      media.onended = nextSlide;
+      media.onended = () => {
+        clearSlideWork();
+        nextSlide();
+      };
+
+      slideTimeout = setTimeout(() => {
+        nextSlide();
+      }, 8000);
+    } else {
+      slideTimeout = setTimeout(nextSlide, 5000);
     }
 
     mountMedia(media, token);
-
-    if (media.tagName !== "VIDEO") {
-      slideTimeout = setTimeout(nextSlide, 5000);
-    }
   }
 
-  // First media
   const firstMedia = createMediaElement(mediaList[0]);
 
   if (firstMedia.tagName === "VIDEO") {
-    firstMedia.onended = nextSlide;
+    firstMedia.onended = () => {
+      clearSlideWork();
+      nextSlide();
+    };
+
+    slideTimeout = setTimeout(() => {
+      nextSlide();
+    }, 8000);
+  } else if (mediaList.length > 1) {
+    slideTimeout = setTimeout(nextSlide, 5000);
   }
 
   mountMedia(firstMedia, token);
-
-  if (firstMedia.tagName !== "VIDEO" && mediaList.length > 1) {
-    slideTimeout = setTimeout(nextSlide, 5000);
-  }
 }
-
 
 
 // ================= ABOUT SCROLL TRIGGER =================
@@ -324,19 +331,16 @@ const skillHeaders = document.querySelectorAll(".skill-header");
 if (skillHeaders.length) {
   skillHeaders.forEach(header => {
     header.addEventListener("click", () => {
-
       const currentDropdown = header.closest(".skill-dropdown");
+      if (!currentDropdown) return;
 
-      // Close all other dropdowns
       document.querySelectorAll(".skill-dropdown").forEach(dropdown => {
         if (dropdown !== currentDropdown) {
           dropdown.classList.remove("active");
         }
       });
 
-      // Toggle current dropdown
       currentDropdown.classList.toggle("active");
-
     });
   });
 }
@@ -351,15 +355,137 @@ const eduHeaders = document.querySelectorAll(".edu-header");
 if (eduHeaders.length) {
   eduHeaders.forEach(header => {
     header.addEventListener("click", () => {
-
       const currentDropdown = header.closest(".edu-dropdown");
       if (!currentDropdown) return;
 
       currentDropdown.classList.toggle("active");
-
     });
   });
 }
+
+
+// ================= ABOUT TAB SWITCHING =================
+// Handles About / Skills / Education tabs
+
+const aboutTabLinks = document.querySelectorAll("#about .tab-links");
+const aboutTabContents = document.querySelectorAll("#about .tab-contents");
+
+function openTab(clickedTab, tabName) {
+  aboutTabLinks.forEach(link => link.classList.remove("active-link"));
+  aboutTabContents.forEach(content => content.classList.remove("active-tab"));
+
+  clickedTab.classList.add("active-link");
+
+  const targetTab = document.getElementById(tabName);
+  if (targetTab) {
+    targetTab.classList.add("active-tab");
+  }
+}
+
+if (aboutTabLinks.length) {
+  aboutTabLinks.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const tabName = tab.dataset.tab;
+      if (!tabName) return;
+
+      openTab(tab, tabName);
+      startSlideshow(tabName);
+    });
+  });
+}
+
+
+
+// ================= JUMP TO TRANSCRIPT =================
+// Open Education first, let layout settle, then do one smooth scroll
+
+const jumpToTranscriptBtn = document.getElementById("jumpToTranscriptBtn");
+const educationTabBtn = document.querySelector('.tab-links[data-tab="education"]');
+const transcriptSection = document.getElementById("transcript");
+const viewTranscriptBtn = document.getElementById("viewTranscriptBtn");
+const academicStatsDropdown = document.getElementById("academicStatsDropdown");
+
+// Smooth custom scroll helper
+function smoothScrollToElement(target, duration = 1100, offset = -120, callback) {
+  if (!target) return;
+
+  const startPosition = window.pageYOffset;
+  const targetPosition =
+    target.getBoundingClientRect().top + window.pageYOffset + offset;
+  const distance = targetPosition - startPosition;
+  let startTime = null;
+
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const easedProgress = easeInOutCubic(progress);
+
+    window.scrollTo(0, startPosition + distance * easedProgress);
+
+    if (progress < 1) {
+      requestAnimationFrame(animation);
+    } else if (typeof callback === "function") {
+      callback();
+    }
+  }
+
+  requestAnimationFrame(animation);
+}
+
+if (
+  jumpToTranscriptBtn &&
+  educationTabBtn &&
+  transcriptSection
+) {
+  jumpToTranscriptBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Reset temporary highlights
+    educationTabBtn.classList.remove("tab-glow");
+    if (viewTranscriptBtn) {
+      viewTranscriptBtn.classList.remove("transcript-highlight");
+    }
+
+    // Open Education immediately
+    educationTabBtn.classList.add("tab-glow");
+    openTab(educationTabBtn, "education");
+    startSlideshow("education");
+
+    // Open Academic Stats immediately
+    if (academicStatsDropdown) {
+      academicStatsDropdown.classList.add("active");
+    }
+
+    // Wait for layout to settle before calculating scroll position
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        smoothScrollToElement(transcriptSection, 1100, -120, () => {
+          if (viewTranscriptBtn) {
+            viewTranscriptBtn.classList.add("transcript-highlight");
+
+            setTimeout(() => {
+              viewTranscriptBtn.classList.remove("transcript-highlight");
+            }, 2400);
+          }
+        });
+      });
+    });
+
+    // Remove Education tab glow after a moment
+    setTimeout(() => {
+      educationTabBtn.classList.remove("tab-glow");
+    }, 900);
+  });
+}
+
 
 
 
@@ -639,11 +765,13 @@ if (contactForm) {
       return;
     }
 
-    if (email.length < 5 || email.length > 120) {
-      showContactMessage("Please enter a valid email address.", "error");
-      setContactBtnLoading(false);
-      return;
-    }
+    const emailField = contactForm.Email;
+
+if (!emailField || !emailField.validity.valid || email.length > 120) {
+  showContactMessage("Please enter a valid email address.", "error");
+  setContactBtnLoading(false);
+  return;
+}
 
     if (message.length < 10 || message.length > 2000) {
       showContactMessage("Your message must be between 10 and 2000 characters.", "error");
@@ -671,12 +799,18 @@ if (contactForm) {
         throw new Error(`Request failed (${response.status})`);
       }
 
-      const data = await response.json();
+      const raw = await response.text();
+let data;
 
-      if (data.result !== "success") {
-        throw new Error(data.error || "Message was not saved.");
-      }
+try {
+  data = JSON.parse(raw);
+} catch {
+  throw new Error("Unexpected server response.");
+}
 
+if (data.result !== "success") {
+  throw new Error(data.error || "Message was not saved.");
+}
       showContactMessage("Message sent successfully! I’ll get back to you soon.", "success");
       contactForm.reset();
 
@@ -703,7 +837,7 @@ if (contactForm) {
 // ================= REVIEWS SYSTEM =================
 // Handles review submission + live feed + UI states
 
-const REVIEWS_API_URL = "https://script.google.com/macros/s/AKfycbxKFQLJlD6uPnky6W0aF6--PyfD7zt1vkwJEMrzsDce777iEH6YbUwshjoLLb-dktHvLg/exec";
+const REVIEWS_API_URL = "https://script.google.com/macros/s/AKfycbxUxwEpLsnYtiZapx1v8JFlkvos_N5WyIEG8tTb_rD4VTPDabduhB6FR9MFS9bTLrpo/exec";
 
 const reviewForm = document.forms["submit-review-to-google-sheet"];
 const reviewMsg = document.getElementById("reviewmsg");
@@ -1070,7 +1204,15 @@ if (reviewForm) {
     }
 
     const reviewName = reviewForm["Review-name"]?.value?.trim() || "";
-    const reviewMessage = reviewForm["Review-message"]?.value?.trim() || "";
+const reviewMessage = reviewForm["Review-message"]?.value?.trim() || "";
+const reviewVisibility = reviewForm["Review-visibility"]?.value || "";
+
+if (!["Public", "Private"].includes(reviewVisibility)) {
+  setReviewMsg("Please choose a valid visibility option.", "error");
+  clearFeedPanelState();
+  setFeedStatus("Feedback Stream");
+  return;
+}
 
     if (reviewName.length < 2 || reviewName.length > 100) {
       setReviewMsg("Please enter a valid name or company.", "error");
@@ -1097,22 +1239,30 @@ if (reviewForm) {
       const formData = new FormData(reviewForm);
 formData.append("_clientKey", `${navigator.userAgent}|${window.location.hostname}`.slice(0, 120));
 
+
 const res = await fetch(REVIEWS_API_URL, {
   method: "POST",
   body: formData,
   signal: controller.signal
 });
 
-      clearTimeout(timeoutId);
+clearTimeout(timeoutId);
 
-      if (!res.ok) {
-        throw new Error(`Submit failed: ${res.status}`);
-      }
+if (!res.ok) {
+  throw new Error(`Submit failed: ${res.status}`);
+}
 
-      reviewForm.reset();
-      setReviewMsg("Review submitted — thank you!", "success");
+const data = await res.json();
 
-      await loadReviews({ showStatus: false });
+if (!data.ok) {
+  throw new Error(data.error || "Review could not be submitted.");
+}
+
+reviewForm.reset();
+setReviewMsg("Review submitted — thank you!", "success");
+
+await loadReviews({ showStatus: false });
+
 
       setTimeout(() => {
         clearFeedPanelState();
@@ -1124,9 +1274,9 @@ const res = await fetch(REVIEWS_API_URL, {
       console.error("Submit review error:", err);
 
       const errorText =
-        err.name === "AbortError"
-          ? "The request timed out. Please try again."
-          : "Couldn’t submit right now. Please try again.";
+  err.name === "AbortError"
+    ? "The request timed out. Please try again."
+    : (err.message || "Couldn’t submit right now. Please try again.");
 
       setReviewMsg(errorText, "error");
       clearFeedPanelState();
@@ -1136,21 +1286,43 @@ const res = await fetch(REVIEWS_API_URL, {
 }
 
 // ================= INIT =================
-if (reviewFeed) {
-  setFeedStatus("Feedback Stream");
-  loadReviews({ showStatus: false });
+let reviewInterval = null;
 
-  setInterval(() => {
+function startReviewPolling() {
+  if (reviewInterval || !reviewFeed) return;
+
+  reviewInterval = setInterval(() => {
     const isTyping =
       document.activeElement === document.getElementById("review-name") ||
       document.activeElement === document.getElementById("review-message");
 
     const isUpdating = reviewFeedPanel?.classList.contains("is-updating");
 
-    if (!isTyping && !isUpdating) {
+    if (!document.hidden && !isTyping && !isUpdating) {
       loadReviews({ showStatus: true });
     }
   }, 60000);
+}
+
+function stopReviewPolling() {
+  if (reviewInterval) {
+    clearInterval(reviewInterval);
+    reviewInterval = null;
+  }
+}
+
+if (reviewFeed) {
+  setFeedStatus("Feedback Stream");
+  loadReviews({ showStatus: false });
+  startReviewPolling();
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopReviewPolling();
+    } else {
+      startReviewPolling();
+    }
+  });
 }
 
 
@@ -1164,29 +1336,32 @@ const menuOpenBtn = document.getElementById("menuOpenBtn");
 const menuCloseBtn = document.getElementById("menuCloseBtn");
 
 if (sideMenu) {
+  const openMenu = () => {
+    sideMenu.style.right = "0";
+    document.body.classList.add("menu-open");
+    if (menuOpenBtn) menuOpenBtn.setAttribute("aria-expanded", "true");
+  };
 
-  // Open menu
+  const closeMenu = () => {
+    sideMenu.style.right = "-260px";
+    document.body.classList.remove("menu-open");
+    if (menuOpenBtn) menuOpenBtn.setAttribute("aria-expanded", "false");
+  };
+
   if (menuOpenBtn) {
-    menuOpenBtn.addEventListener("click", () => {
-      sideMenu.style.right = "0";
-    });
+    menuOpenBtn.setAttribute("aria-expanded", "false");
+    menuOpenBtn.addEventListener("click", openMenu);
   }
 
-  // Close menu
   if (menuCloseBtn) {
-    menuCloseBtn.addEventListener("click", () => {
-      sideMenu.style.right = "-260px";
-    });
+    menuCloseBtn.addEventListener("click", closeMenu);
   }
 
-  // Close menu when clicking any navigation link (IMPORTANT)
-  document.querySelectorAll("#sidemenu a").forEach(link => {
-    link.addEventListener("click", () => {
-      sideMenu.style.right = "-260px";
-    });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMenu();
+    }
   });
-
-
 }
 
 

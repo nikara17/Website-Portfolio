@@ -70,7 +70,7 @@
 
                 <!-- Left: Logo + Social -->
                 <div class="nav-left">
-                    <img src="images/logo.png" class="logo">
+                    <img src="images/logo.png" class="logo" alt="Nikara Ishwarlall logo">
 
                     <div class="nav-social">
                         <a href="https://www.linkedin.com/in/nikara-ishwarlall-761095251" target="_blank"
@@ -122,22 +122,21 @@
 
                     <!-- Main Title -->
                     <h1 class="hero-title">
-                        Hi, I'm <span class="hero-name">Nikara</span>
+                        Hi there!<br>
+                        I'm <span class="hero-name">Nikara...</span>
                     </h1>
 
                     <!-- Subtitle + Typewriter -->
                     <div class="typewriter">
 
                         <!-- Static Subtitle -->
-                        <p class="hero-meta">
-                            BSc Information Technology Graduate — Robotics Specialisation • GPA 3.8
+                        <p class="hero-role">
+                            BSc (IT) <span>Robotics</span> <span>Engineer</span> 
                         </p>
 
                         <!-- Divider -->
                         <div class="typing-divider"></div>
 
-                        <!-- Dynamic Typing Text -->
-                        <p id="typing-text"></p>
 
                     </div>
 
@@ -150,20 +149,25 @@
                             <i class="fa-solid fa-paper-plane"></i>
                         </a>
 
-                        <!-- Resume -->
-                        <a href="resume.pdf" class="resume-btn" target="_blank" rel="noopener noreferrer">
-                            <span>Jump to Resume</span>
+                        <!-- Transcript -->
+                        <button type="button" class="transcript-btn" id="jumpToTranscriptBtn">
+                            <span>Jump to Transcript</span>
                             <i class="fa-solid fa-file-lines"></i>
-                        </a>
+                        </button>
 
                     </div>
 
                 </div>
 
-                <!-- Right: Portrait -->
+                <!-- Right: Portrait + Skills -->
                 <div class="header-image">
                     <div class="portrait-frame">
-                        <img src="images/home-portrait.png" alt="Nikara Ishwarlall Robotics Portfolio" loading="lazy">
+                        <img src="images/home-portrait.png" alt="Portrait of Nikara Ishwarlall" fetchpriority="high">
+                    </div>
+
+                    <!-- Dynamic Typing Text -->
+                    <div class="hero-skills">
+                        <p id="typing-text"></p>
                     </div>
                 </div>
 
@@ -178,11 +182,12 @@
 
 
 
+
     <!----------------------------------ABOUT------------------------------------------------------------------------------------>
     <div id="about">
 
         <!-- Background Video -->
-        <video autoplay muted loop playsinline class="about-video">
+        <video autoplay muted loop playsinline class="about-video" preload="none">
             <source src="images/about-bg.mp4" type="video/mp4">
         </video>
 
@@ -196,7 +201,9 @@
 
             <div class="row">
                 <div class="about-col-1">
-                    <img id="about-image" src="images/about-me.jpeg" alt="About me">
+                    <div class="about-media-stage">
+                        <img id="about-image" src="images/about-me.jpeg" alt="About me">
+                    </div>
                 </div>
 
 
@@ -515,100 +522,103 @@
                     <!--- EDUCATION TAB--->
                     <div class="tab-contents" id="education">
 
-                        <div class="edu-timeline">
+                        <div id="transcript">
+                            <div class="edu-timeline">
 
-                            <!-- EDUVOS -->
-                            <div class="edu-item">
-                                <div class="edu-year">2023 – 2025</div>
+                                <!-- EDUVOS -->
+                                <div class="edu-item">
+                                    <div class="edu-year">2023 – 2025</div>
 
-                                <div class="edu-content">
-                                    <h4>Eduvos, South Africa</h4>
-                                    <p class="edu-degree">BSc IT (Robotics)</p>
+                                    <div class="edu-content">
+                                        <h4>Eduvos, South Africa</h4>
+                                        <p class="edu-degree">BSc IT (Robotics)</p>
 
-                                    <!-- STATS DROPDOWN -->
-                                    <div class="edu-dropdown">
-                                        <div class="edu-header">Academic Stats</div>
+                                        <!-- STATS DROPDOWN -->
+                                        <div class="edu-dropdown" id="academicStatsDropdown">
+                                            <div class="edu-header">Academic Stats</div>
 
-                                        <div class="edu-body">
-                                            <ul>
-                                                <li>79.1% Weighted Average (GPA)</li>
-                                                <li>19 Academic Distinctions</li>
-                                                <li>2024 Top Achiever Recognition</li>
-                                            </ul>
+                                            <div class="edu-body">
+                                                <ul>
+                                                    <li>79.1% Weighted Average (GPA)</li>
+                                                    <li>19 Academic Distinctions</li>
+                                                    <li>2024 Top Achiever Recognition</li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
 
 
-                                    <div class="edu-actions">
+                                        <div class="edu-actions">
 
-                                        <a class="edu-action"
-                                            href="https://drive.google.com/file/d/1ZdjzfaiW8ALe58czYrnLUtdOdmjma1wO/preview"
-                                            target="_blank" rel="noopener noreferrer">
-                                            View Transcript
-                                        </a>
+                                            <a class="edu-action" id="viewTranscriptBtn"
+                                                href="https://drive.google.com/file/d/1nHDgbQnlKr8qjzalNdUE6U7Zj5LABDl6/view?usp=sharing"
+                                                target="_blank" rel="noopener noreferrer">
+                                                View Transcript
+                                            </a>
 
-                                        <a class="edu-action"
-                                            href="https://drive.google.com/file/d/1ZdjzfaiW8ALe58czYrnLUtdOdmjma1wO/preview"
-                                            target="_blank" rel="noopener noreferrer">
-                                            View Letter of Completion
-                                        </a>
+                                            <a class="edu-action"
+                                                href="https://drive.google.com/file/d/1ZdjzfaiW8ALe58czYrnLUtdOdmjma1wO/preview"
+                                                target="_blank" rel="noopener noreferrer">
+                                                View Letter of Completion
+                                            </a>
 
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-                            <!-- VARSITY COLLEGE -->
-                            <div class="edu-item">
-                                <div class="edu-year">2022 (1 year completed) </div>
-
-                                <div class="edu-content">
-                                    <h4>Varsity College</h4>
-                                    <p class="edu-degree">Bachelor of Computer & Information Sciences — Application
-                                        Development</p>
-
-                                    <!-- COURSEWORK DROPDOWN -->
-                                    <div class="edu-dropdown">
-                                        <div class="edu-header">Relevant Coursework Completed</div>
-
-                                        <div class="edu-body">
-                                            <ul>
-                                                <li>Programming Logic & Design — Distinction</li>
-                                                <li>Database Fundamentals — Distinction</li>
-                                                <li>Web Development Foundations</li>
-                                                <li>Systems Architecture</li>
-                                                <li>Software Development Principles</li>
-                                            </ul>
                                         </div>
+
+
+
                                     </div>
-
                                 </div>
-                            </div>
 
-                            <!-- SCHOOL -->
-                            <div class="edu-item">
-                                <div class="edu-year">Matriculated 2021</div>
+                                <!-- VARSITY COLLEGE -->
+                                <div class="edu-item">
+                                    <div class="edu-year">2022 (1 year completed) </div>
 
-                                <div class="edu-content">
-                                    <h4>Solvista Secondary School</h4>
-                                    <p class="edu-degree">Bachelor's Degree Pass</p>
+                                    <div class="edu-content">
+                                        <h4>Varsity College</h4>
+                                        <p class="edu-degree">Bachelor of Computer & Information Sciences — Application
+                                            Development</p>
+
+                                        <!-- COURSEWORK DROPDOWN -->
+                                        <div class="edu-dropdown">
+                                            <div class="edu-header">Relevant Coursework Completed</div>
+
+                                            <div class="edu-body">
+                                                <ul>
+                                                    <li>Programming Logic & Design — Distinction</li>
+                                                    <li>Database Fundamentals — Distinction</li>
+                                                    <li>Web Development Foundations</li>
+                                                    <li>Systems Architecture</li>
+                                                    <li>Software Development Principles</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
+
+                                <!-- SCHOOL -->
+                                <div class="edu-item">
+                                    <div class="edu-year">Matriculated 2021</div>
+
+                                    <div class="edu-content">
+                                        <h4>Solvista Secondary School</h4>
+                                        <p class="edu-degree">Bachelor's Degree Pass</p>
+                                    </div>
+                                </div>
+
                             </div>
 
                         </div>
 
+
+
+
                     </div>
-
-
-
 
                 </div>
 
             </div>
-
         </div>
+
     </div>
 
 
@@ -621,7 +631,7 @@
     <div id="certifications">
 
         <!-- Background Video -->
-        <video autoplay muted loop playsinline class="cert-bg-video">
+        <video autoplay muted loop playsinline class="cert-bg-video" preload="none">
             <source src="images/cert-bg-flipped.mp4" type="video/mp4">
         </video>
 
@@ -650,7 +660,7 @@
     <div id="portfolio">
 
         <!-- Background Video -->
-        <video autoplay muted loop playsinline class="portfolio-bg-video">
+        <video autoplay muted loop playsinline class="portfolio-bg-video" preload="none">
             <source src="images/portfolio-bg.mp4" type="video/mp4">
         </video>
 
@@ -689,8 +699,7 @@
                                 integration, combining ToF sensing and computer vision concepts to support real-time
                                 spatial awareness and guidance.
                             </p>
-                            <a href="javascript:void(0)" aria-label="Project link coming soon"><i
-                                    class="fa-solid fa-link"></i></a>
+
                         </div>
                     </div>
 
@@ -708,8 +717,7 @@
                                 Python-based control logic, focusing on reliable workflows, modular design, and
                                 practical user interaction.
                             </p>
-                            <a href="javascript:void(0)" aria-label="Project link coming soon"><i
-                                    class="fa-solid fa-link"></i></a>
+
                         </div>
                     </div>
 
@@ -750,7 +758,8 @@
 
                         <div class="layer">
                             <p>
-                                Built and deployed a modern, responsive portfolio using HTML/CSS/JavaScript, focused on
+                                Built and deployed a modern, responsive portfolio using HTML/CSS/JavaScript, focused
+                                on
                                 clean UX, performance, and maintainable structure to present projects and technical
                                 growth.
                             </p>
@@ -784,7 +793,7 @@
     <div id="blogs">
 
         <!-- Background Video -->
-        <video autoplay muted loop playsinline class="blogs-video">
+        <video autoplay muted loop playsinline class="blogs-video" preload="none">
             <source src="images/blogs-bg.mp4" type="video/mp4">
         </video>
 
@@ -892,7 +901,7 @@
     <div id="contact">
 
         <!-- Background Video -->
-        <video autoplay muted loop playsinline class="contact-video">
+        <video autoplay muted loop playsinline class="contact-video" preload="none">
             <source src="images/contact-bg.mp4" type="video/mp4">
         </video>
 
@@ -907,7 +916,8 @@
 
                     <!-- Intro Text -->
                     <p class="contact-sub">
-                        Want to collaborate, chat robotics, or discuss opportunities? Send a message — I reply as soon
+                        Want to collaborate, chat robotics, or discuss opportunities? Send a message — I reply as
+                        soon
                         as I can.
                     </p>
 
