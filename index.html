@@ -3,62 +3,89 @@
 
 <head>
 
-    <!-- -------- META SETTINGS -------- -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google verification (ADD THIS) -->
+    <meta name="google-site-verification" content="O92uTY6xN51oJXsArbIX9XvimQvm7-WxlcBxQmUV7wo" />
+
+    <!-- BASIC META (required for browser + SEO basics) -->
+    <meta charset="UTF-8"> <!-- Ensures proper text encoding -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility for older browsers -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile responsiveness -->
+
+    <!-- SECURITY (good practice, not SEO-related) -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  img-src 'self' data: https:;
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://kit.fontawesome.com https://ka-f.fontawesome.com;
-  font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com;
-  script-src 'self' 'unsafe-inline' https://kit.fontawesome.com;
-  connect-src 'self' https://script.google.com https://script.googleusercontent.com https://ka-f.fontawesome.com;
-  frame-src https://drive.google.com;
-  media-src 'self';
-  object-src 'none';
-  base-uri 'self';
-  form-action 'self' https://script.google.com;
-  frame-ancestors 'none';
-  upgrade-insecure-requests;
-">
 
-    <!-- Page Title -->
+    <!-- CONTENT SECURITY POLICY (controls allowed resources, not SEO) -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      img-src 'self' data: https:;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://kit.fontawesome.com https://ka-f.fontawesome.com;
+      font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com;
+      script-src 'self' 'unsafe-inline' https://kit.fontawesome.com;
+      connect-src 'self' https://script.google.com https://script.googleusercontent.com https://ka-f.fontawesome.com;
+      frame-src https://drive.google.com;
+      media-src 'self';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self' https://script.google.com;
+      frame-ancestors 'none';
+      upgrade-insecure-requests;
+    ">
+
+    <!-- PAGE TITLE -->
     <title>Nikara Ishwarlall | Robotics & AI Systems Portfolio</title>
 
-    <!-- Favicon -->
+    <!-- META DESCRIPTION  -->
+    <meta name="description" content="Nikara Ishwarlall is a Robotics and AI Systems engineer. Explore projects, experience, and contact information.">
+
+    <!-- ROBOTS  -->
+    <meta name="robots" content="index, follow">
+
+    <!-- CANONICAL URL -->
+    <link rel="canonical" href="https://yourusername.github.io/">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Nikara Ishwarlall | Robotics & AI Systems Portfolio">
+    <meta property="og:description" content="Portfolio of Nikara Ishwarlall showcasing Robotics and AI projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/">
+    <meta property="og:image" content="https://yourusername.github.io/images/preview.png">
+
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png?v=1">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png?v=1">
     <link rel="apple-touch-icon" href="images/favicon.png?v=1">
     <link rel="shortcut icon" href="images/favicon.png?v=1">
 
-
-    <!-- -------- GOOGLE FONTS -------- -->
-
-    <!-- Display / Branding Fonts -->
+    <!-- PERFORMANCE: preconnect to font servers -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Pacifico&display=swap"
-        rel="stylesheet">
-
-    <!-- Serif / Body Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Caudex:wght@400;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Modern UI / Headings -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Preconnect (performance) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Caudex:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <!-- -------- STYLESHEET -------- -->
+    <!-- MAIN STYLES -->
     <link rel="stylesheet" href="style.css">
 
-
-    <!-- -------- ICON LIBRARY -------- -->
+    <!-- ICON LIBRARY -->
     <script src="https://kit.fontawesome.com/63052dda00.js" crossorigin="anonymous"></script>
+
+    <!-- STRUCTURED DATA  -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nikara Ishwarlall",
+      "url": "https://yourusername.github.io/",
+      "sameAs": [
+        "https://github.com/yourusername",
+        "https://www.linkedin.com/in/your-linkedin-profile"
+      ],
+      "jobTitle": "Robotics & AI Systems Engineer"
+    }
+    </script>
 
 </head>
 
