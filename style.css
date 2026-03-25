@@ -4003,7 +4003,7 @@ body {
      Header / Hero
      ----------------------------------------- */
   .hero-title {
-    font-size: 64px;
+    font-size: 80px;
   }
 
   .header-image img {
@@ -4544,7 +4544,7 @@ body {
 
 .hero-title {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 50px; /* ↓ cleaner size */
+  font-size: 60px; 
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: -1.2px; /* less aggressive */
@@ -4578,10 +4578,10 @@ body {
   .hero-meta {
     display: block !important;
     margin: 0 auto; /* center */
-    margin-top: 250px; /* push down */
+    margin-top: 240px; /* push down */
     max-width: 320px;
     text-align: center; /* center text */
-    font-size: 15px;
+    font-size: 19px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.84);
     white-space: normal;
@@ -5537,7 +5537,7 @@ body {
 
 /* ---------- TITLE (scaled properly) ---------- */
 .hero-title {
-  font-size: 50px; 
+  font-size: 60px; 
   line-height: 1.05;
   letter-spacing: -1px;
 }
@@ -5751,7 +5751,7 @@ body {
 }
 
 .hero-title {
-  font-size: 50px;
+  font-size: 60px;
   line-height: 1.05;
   letter-spacing: -1px;
 }
