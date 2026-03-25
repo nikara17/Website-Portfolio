@@ -61,7 +61,7 @@ const typingElement = document.getElementById("typing-text");
 
 const bulletLines = [
   " AI Systems • Robotics • Intelligent Software",
-  " Data • Automation • Scalable Solutions"
+  " Data-Driven Solutions · Automation · Intelligent Systems"
 ];
 
 // Only run on desktop + if element exists
