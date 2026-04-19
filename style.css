@@ -1308,21 +1308,36 @@ body {
 
 /* ---------- Certifications Title ---------- */
 .cert-title {
-  font-size: 65px;
-  font-weight: 550;
-  color: #d5d0d0;
-  margin-top: 100px;
-  margin-bottom: 50px;
-  letter-spacing: 1px;
+   font-family: "Alex Brush", cursive;
+
+
+  font-size: 96px;         
+  font-weight: 450;
+
+
+  letter-spacing: 2px;   
+
+  color: #ff6a00;
+
+  display: inline-block;    
+  white-space: nowrap;      
+  overflow: hidden;         
 }
 
-/* ---------- Title Letter Animation ---------- */
-/* Initial state */
+
+/* =========================================================
+   CERT TITLE TYPEWRITER EFFECT
+   ========================================================= */
+.cert-title.typewriter {
+  border-right: 2px solid #ff7017;
+  animation: typing 3s steps(30, end), blink 0.7s step-end infinite;
+}
+
 .cert-title span {
-  opacity: 0;
-  transform: translateX(-50px);
+  font-family: inherit;
   display: inline-block;
 }
+
 
 /*  ONLY animate when visible */
 .cert-title.cert-visible span {
@@ -1386,36 +1401,152 @@ body {
   animation-delay: 1.70s;
 }
 
+/* typing reveal */
 @keyframes certFlow {
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  0% {
+    opacity: 0;
+    transform: translateX(-30px) translateY(6px) rotate(-2deg);
   }
 
-
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
 }
 
-/* ---------- Certification Status Message ---------- */
-.cert-coming {
-  margin: 0 auto;
-  max-width: 420px;
+
+
+/* =========================================================
+   CERT NOTE (small, subtle message style)
+   ========================================================= */
+.cert-note {
+  margin: 10px auto 40px;
+  max-width: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  padding: 24px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-  color: #cfcfcf;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #bdbdbd;
+  font-size: 12.5px;
+  font-style: italic;
+
+  backdrop-filter: blur(6px);
+}
+
+.cert-note i {
+  color: #ff7017;
   font-size: 14px;
 }
 
-.cert-coming i {
-  color: #ff7017;
-  font-size: 20px;
+
+/* =========================================================
+   CERTIFICATE CARD
+   ========================================================= */
+.cert-card {
+  margin: 30px auto;
+  max-width: 520px;
+  padding: 25px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+
+  text-align: center;
+  backdrop-filter: blur(8px);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cert-card h3 {
+  color: #e8e8e8;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.cert-card p {
+  color: #a8a8a8;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   CERT IMAGE (clickable preview)
+   ========================================================= */
+.cert-image {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+
+  border-radius: 12px;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.cert-image:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+
+/* =========================================================
+   MODAL (fullscreen certificate view)
+   ========================================================= */
+.cert-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.cert-modal.show {
+  opacity: 1;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ff7017;
+  transform: scale(1.1);
+}
 
 
 
@@ -4146,6 +4277,45 @@ body {
     font-size: 38px;
   }
 
+
+/* Experience tab */
+#experience .edu-timeline {
+  padding-left: 28px;
+}
+
+#experience .edu-item {
+  margin-bottom: 28px;
+}
+
+#experience .edu-content h4 {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+#experience .edu-degree {
+  font-size: 14px;
+}
+
+#experience .edu-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  margin-top: 8px;
+}
+
+#experience .edu-header {
+  font-size: 14px;
+}
+
+#experience .edu-body li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+
+
+
+
   /* -----------------------------------------
      Portfolio Section
      Scrollbar refinements for vertical mobile-style layout
@@ -4866,20 +5036,112 @@ body {
     font-size: 14px;
   }
 
+
+
+  /* -----------------------------------------
+     Experience Section
+     ----------------------------------------- */
+#experience .edu-timeline {
+  padding-left: 24px;
+}
+
+#experience .edu-item::before {
+  left: -20px;
+  width: 12px;
+  height: 12px;
+}
+
+#experience .edu-year {
+  font-size: 13px;
+}
+
+#experience .edu-content h4 {
+  font-size: 17px;
+}
+
+#experience .edu-degree {
+  font-size: 13.5px;
+}
+
+#experience .edu-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+#experience .edu-dropdown {
+  margin-top: 10px;
+}
+
+#experience .edu-header {
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+#experience .edu-body li {
+  font-size: 13.5px;
+}
+
+.tab-titles {
+  gap: 16px;
+}
+
+.tab-links {
+  font-size: 17px;
+}
+
+
+
   /* -----------------------------------------
      Certifications Section
      ----------------------------------------- */
-  #certifications {
-    padding: 70px 0 35px;
+    #certifications {
+    padding: 70px 0 50px;
   }
 
+  /* Title scaling */
   .cert-title {
-    font-size: 48px;
+    font-size: 42px;
+    margin-top: 60px;
+    margin-bottom: 35px;
   }
 
-  .cert-coming {
+  /* NEW note style (replaces old cert-coming) */
+  .cert-note {
+    max-width: 90%;
+    font-size: 12px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  /* Certificate card responsive */
+  .cert-card {
+    max-width: 90%;
     padding: 18px;
-    font-size: 13px;
+  }
+
+  .cert-card h3 {
+    font-size: 16px;
+  }
+
+  .cert-card p {
+    font-size: 12px;
+  }
+
+  /* Certificate image scaling */
+  .cert-image {
+    max-height: 260px;
+  }
+
+  /* Modal adjustments for mobile */
+  .modal-content {
+    max-width: 95%;
+    max-height: 80%;
+  }
+
+  .close-btn {
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
   }
 
 
@@ -5599,6 +5861,57 @@ body {
     border-radius: 10px;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.015);
   }
+
+  /* Experience tab */
+#experience .edu-timeline {
+  padding-left: 22px;
+}
+
+#experience .edu-item {
+  margin-bottom: 24px;
+}
+
+#experience .edu-item::before {
+  left: -18px;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+}
+
+#experience .edu-year {
+  font-size: 12.5px;
+}
+
+#experience .edu-content h4 {
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+#experience .edu-degree {
+  font-size: 13px;
+}
+
+#experience .edu-desc {
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+#experience .edu-header {
+  font-size: 13.5px;
+}
+
+#experience .edu-body {
+  padding: 0 12px;
+}
+
+#experience .edu-dropdown.active .edu-body {
+  padding: 10px 12px 12px 12px;
+}
+
+#experience .edu-body li {
+  font-size: 13px;
+  margin: 4px 0;
+}
 
 
   /* -----------------------------------------

@@ -162,6 +162,11 @@ const imageSets = {
     "images/edu1.png",
     "images/edu2.png",
     "images/edu3.png"
+  ],
+  experience: [
+    "images/experience1.png",
+    "images/experience2.png",
+    "images/experience3.png"
   ]
 };
 
@@ -365,7 +370,7 @@ if (eduHeaders.length) {
 
 
 // ================= ABOUT TAB SWITCHING =================
-// Handles About / Skills / Education tabs
+// Handles About / Skills / Education tabs / Experience tabs
 
 const aboutTabLinks = document.querySelectorAll("#about .tab-links");
 const aboutTabContents = document.querySelectorAll("#about .tab-contents");
@@ -511,6 +516,30 @@ if (certSection && certTitle) {
 
   certObserver.observe(certSection);
 }
+
+//opening and closing certificate image in a popup (modal).
+function openCertModal(src) {
+  const modal = document.getElementById("certModal");
+  const img = document.getElementById("modalImage");
+
+  modal.style.display = "flex";
+  img.src = src;
+}
+
+function closeCertModal() {
+  document.getElementById("certModal").style.display = "none";
+  document.getElementById("modalImage").src = "";
+}
+
+
+
+
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    closeCertModal();
+  }
+});
 
 
 

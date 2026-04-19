@@ -17,20 +17,20 @@
 
     <!-- CONTENT SECURITY POLICY (controls allowed resources, not SEO) -->
     <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self';
-      img-src 'self' data: https:;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://kit.fontawesome.com https://ka-f.fontawesome.com;
-      font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com;
-      script-src 'self' 'unsafe-inline' https://kit.fontawesome.com;
-      connect-src 'self' https://script.google.com https://script.googleusercontent.com https://ka-f.fontawesome.com;
-      frame-src https://drive.google.com;
-      media-src 'self';
-      object-src 'none';
-      base-uri 'self';
-      form-action 'self' https://script.google.com;
-      frame-ancestors 'none';
-      upgrade-insecure-requests;
-    ">
+  default-src 'self';
+  img-src 'self' data: https:;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://kit.fontawesome.com https://ka-f.fontawesome.com;
+  font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com https://ka-f.fontawesome.com;
+  script-src 'self' 'unsafe-inline' https://kit.fontawesome.com;
+  connect-src 'self' https://script.google.com https://script.googleusercontent.com https://ka-f.fontawesome.com;
+  frame-src https://drive.google.com;
+  media-src 'self';
+  object-src 'none';
+  base-uri 'self';
+  form-action 'self' https://script.google.com;
+  frame-ancestors 'none';
+  upgrade-insecure-requests;
+">
 
     <!-- PAGE TITLE -->
     <title>Nikara Ishwarlall | Robotics & AI Systems Portfolio</title>
@@ -68,6 +68,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Caudex:wght@400;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
 
     <!-- MAIN STYLES -->
     <link rel="stylesheet" href="style.css">
@@ -238,7 +239,7 @@
             <div class="row">
                 <div class="about-col-1">
                     <div class="about-media-stage">
-                        <img id="about-image" src="images/about-me.jpeg" alt="About me">
+                        <img id="about-image" src="images/about-me.png" alt="About me">
                     </div>
                 </div>
 
@@ -249,6 +250,7 @@
                         <p class="tab-links active-link" data-tab="aboutme">About</p>
                         <p class="tab-links" data-tab="skills">Skills</p>
                         <p class="tab-links" data-tab="education">Education</p>
+                        <p class="tab-links" data-tab="experience">Experience</p>
                     </div>
 
 
@@ -650,6 +652,53 @@
 
                     </div>
 
+
+
+
+                    <!--- EXPERIENCE TAB --->
+                    <div class="tab-contents" id="experience">
+                        <div class="edu-timeline">
+
+                            <div class="edu-item">
+                                <div class="edu-year">May 2024 – Dec 2024</div>
+
+                                <div class="edu-content">
+                                    <h4>Administrative Assistant</h4>
+                                    <p class="edu-degree">TKN Security, Durban</p>
+
+                                    <p class="edu-desc">
+                                        Supported daily administrative operations within a fast-paced security
+                                        services environment, ensuring accurate record-keeping, organised workflows,
+                                        and reliable coordination across tasks.
+                                    </p>
+
+                                    <div class="edu-dropdown">
+                                        <div class="edu-header">Key Responsibilities</div>
+
+                                        <div class="edu-body">
+                                            <ul>
+                                                <li>Maintained and updated records, schedules, and internal
+                                                    documentation</li>
+                                                <li>Assisted in managing office inventory and supply levels efficiently
+                                                </li>
+                                                <li>Improved workflow organisation through structured administrative
+                                                    processes</li>
+                                                <li>Handled sensitive information with discretion and confidentiality
+                                                </li>
+                                                <li>Collaborated with team members to support daily operational needs
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
                 </div>
 
             </div>
@@ -678,14 +727,30 @@
                 <span>C</span><span>e</span><span>r</span><span>t</span><span>i</span><span>f</span><span>i</span><span>c</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span><span>s</span>
             </h1>
 
-            <!-- Placeholder Message -->
-            <div class="cert-coming">
-                <i class="fa-solid fa-hourglass-half"></i>
-                <p>Certifications coming soon - actively expanding my technical skillset.</p>
+            <!-- Note-style message (updated text) -->
+            <div class="cert-note">
+                <i class="fa-regular fa-note-sticky"></i>
+                <p>More certifications coming soon - actively expanding my technical skillset.</p>
+            </div>
+
+            <!-- Certificate Card -->
+            <div class="cert-card">
+
+                <h3>Scientific Computing with Python</h3>
+                <p>freeCodeCamp Certification</p>
+
+                <img src="images/python-cert.png" alt="Scientific Computing with Python Certificate" class="cert-image"
+                    onclick="openCertModal(this.src)" />
+
             </div>
 
         </div>
+    </div>
 
+    <!-- Modal (popup view) -->
+    <div id="certModal" class="cert-modal">
+        <span class="close-btn" onclick="closeCertModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
     </div>
 
 
