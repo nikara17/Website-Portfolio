@@ -1311,13 +1311,13 @@ body {
    font-family: "Alex Brush", cursive;
 
 
-  font-size: 96px;         
-  font-weight: 450;
+  font-size: 100px;         
+  font-weight: 500;
 
 
-  letter-spacing: 2px;   
+  letter-spacing: 3px;   
 
-  color: #ff6a00;
+  color: #ff6200;
 
   display: inline-block;    
   white-space: nowrap;      
@@ -1451,7 +1451,7 @@ body {
    ========================================================= */
 .cert-card {
   margin: 30px auto;
-  max-width: 520px;
+  max-width: 420px;
   padding: 25px;
 
   background: rgba(255, 255, 255, 0.03);
@@ -1626,11 +1626,11 @@ body {
 
 /* ---------- Portfolio Title ---------- */
 .portfolio-title {
-  margin-top: 60px;
+
   text-align: center;
   font-family: "Space Grotesk", sans-serif;
   font-size: 65px;
-  font-weight: 550;
+  font-weight: 530;
   line-height: 1.02;
   letter-spacing: -2px;
   opacity: 0;
@@ -1646,11 +1646,11 @@ body {
 }
 
 .portfolio-title .portfolio-white {
-  color: #c6c6c6;
+  color: #fffdfc;
 }
 
 .portfolio-title .portfolio-accent {
-  color: #ff7017;
+  color: #ff6200;
 }
 
 /* ---------- Portfolio Underline ---------- */
@@ -2133,7 +2133,7 @@ body {
 }
 
 .blogs-orange {
-  color: #ff7017;
+  color: #ff6200;
 }
 
 .blogs-white {
