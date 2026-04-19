@@ -40,7 +40,7 @@ The goal of this project is to present my experience and projects in a clear and
 ## Contact
 
 * GitHub: https://github.com/nikara17
-* LinkedIn: https://www.linkedin.com/in/nikara-ishwarlall-761095251
+* LinkedIn: https://www.linkedin.com/in/nikara-ishwarlall
 
 ## Notes
 
