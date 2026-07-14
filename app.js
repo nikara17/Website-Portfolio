@@ -54,14 +54,89 @@ let lastReviewSubmit = 0;
 const REVIEW_COOLDOWN_MS = 15000;
 
 
+// ================= NAVIGATION MENU =================
+// Handles opening and closing of the mobile side menu
+
+const sideMenu = document.getElementById("sidemenu");
+const menuOpenBtn = document.getElementById("menuOpenBtn");
+const menuCloseBtn = document.getElementById("menuCloseBtn");
+const menuOverlay = document.getElementById("menuOverlay");
+
+if (sideMenu) {
+
+  let isAnimating = false;
+
+  const openMenu = () => {
+
+    if (isAnimating || sideMenu.classList.contains("open")) return;
+
+    isAnimating = true;
+
+    sideMenu.classList.add("open");
+    document.body.classList.add("menu-open");
+
+    menuOverlay?.classList.add("show");
+    menuOpenBtn?.setAttribute("aria-expanded", "true");
+
+    setTimeout(() => {
+      isAnimating = false;
+    }, 350);
+
+  };
+
+  const closeMenu = () => {
+
+    if (isAnimating || !sideMenu.classList.contains("open")) return;
+
+    isAnimating = true;
+
+    sideMenu.classList.remove("open");
+    document.body.classList.remove("menu-open");
+
+    menuOverlay?.classList.remove("show");
+    menuOpenBtn?.setAttribute("aria-expanded", "false");
+
+    setTimeout(() => {
+      isAnimating = false;
+    }, 350);
+
+  };
+
+  // Initial state
+  menuOpenBtn?.setAttribute("aria-expanded", "false");
+
+  // Open menu
+  menuOpenBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    openMenu();
+  });
+
+  // Close button
+  menuCloseBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeMenu();
+  });
+
+  // Click outside menu
+  menuOverlay?.addEventListener("click", closeMenu);
+
+  // Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMenu();
+    }
+  });
+
+}
+
+
 // ================= HERO TYPEWRITER =================
 // Animates bullet points in the hero section
 
 const typingElement = document.getElementById("typing-text");
 
 const bulletLines = [
-  " AI Systems • Robotics • Intelligent Software",
-  " Data-Driven Solutions · Automation · Intelligent Systems"
+  " Powered by coffee and curiosity."
 ];
 
 // Only run on desktop + if element exists
@@ -532,15 +607,48 @@ function closeCertModal() {
 }
 
 
+// Learning Path Modal
+function openLearningPath() {
+
+    document.getElementById("learningPathModal").style.display = "flex";
+
+}
+
+function closeLearningPath() {
+
+    document.getElementById("learningPathModal").style.display = "none";
+
+}
 
 
 
 document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") {
-    closeCertModal();
-  }
+
+    if (e.key === "Escape") {
+
+        closeCertModal();
+        closeLearningPath();
+
+    }
+
 });
 
+
+// Close modals when clicking outside
+window.addEventListener("click", function (e) {
+
+    const certModal = document.getElementById("certModal");
+    const learningModal = document.getElementById("learningPathModal");
+
+    if (certModal && e.target === certModal) {
+        closeCertModal();
+    }
+
+    if (learningModal && e.target === learningModal) {
+        closeLearningPath();
+    }
+
+});
 
 
 
@@ -1357,40 +1465,6 @@ if (reviewFeed) {
 
 
 
-// ================= NAVIGATION MENU =================
-// Handles opening and closing of mobile side menu
 
-const sideMenu = document.getElementById("sidemenu");
-const menuOpenBtn = document.getElementById("menuOpenBtn");
-const menuCloseBtn = document.getElementById("menuCloseBtn");
-
-if (sideMenu) {
-  const openMenu = () => {
-    sideMenu.style.right = "0";
-    document.body.classList.add("menu-open");
-    if (menuOpenBtn) menuOpenBtn.setAttribute("aria-expanded", "true");
-  };
-
-  const closeMenu = () => {
-    sideMenu.style.right = "-260px";
-    document.body.classList.remove("menu-open");
-    if (menuOpenBtn) menuOpenBtn.setAttribute("aria-expanded", "false");
-  };
-
-  if (menuOpenBtn) {
-    menuOpenBtn.setAttribute("aria-expanded", "false");
-    menuOpenBtn.addEventListener("click", openMenu);
-  }
-
-  if (menuCloseBtn) {
-    menuCloseBtn.addEventListener("click", closeMenu);
-  }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeMenu();
-    }
-  });
-}
 
 
