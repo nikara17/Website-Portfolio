@@ -478,13 +478,6 @@ body {
   color: #cccccc;
 }
 
-.hero-meta {
-  font-size: 25px;
-  color: #e5e5e5;
-  font-weight: 400;
-  max-width: 980px;
-  line-height: 1.5;
-}
 
 /* ----------  Divider ---------- */
 /* ---------- Tech Pulse Divider ---------- */
@@ -572,7 +565,6 @@ body {
   gap: 14px;
   margin-top: 8px;
   width: 100%;
-  /* ensures full centering */
 }
 
 /* ---------- Hero Action Buttons ---------- */
@@ -834,17 +826,19 @@ body {
 
 .tab-links::after {
   content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 3px;
   background: #ff7017;
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  transition: width 0.5s ease;
+  border-radius: 2px;
+  transition: width 0.35s ease;
 }
 
 .tab-links.active-link::after {
-  width: 50%;
+  width: 100%;
 }
 
 .tab-contents {
@@ -4540,10 +4534,6 @@ body {
 
 
 
-
-
-
-
 /* =========================================================
    12.2 HEADER / HERO
    ========================================================= */
@@ -4558,6 +4548,7 @@ body {
   .header-image img {
     max-width: 420px;
   }
+
 }
 
 /* ---------- SMALL LAPTOP / TABLET LANDSCAPE — 1200px and below ---------------------------- */
@@ -4568,28 +4559,22 @@ body {
   }
 
   .header-content {
-    gap: 40px;
+    gap: 48px;
   }
+
 }
 
 /* ---------- TABLET — 1024px and below ------------------------------------------------------- */
 @media (max-width: 1024px) {
 
   .hero-title {
-    font-size: 80px;
+    font-size: 72px;
   }
 
   .header-image img {
-    max-width: 340px;
+    max-width: 320px;
   }
 
-  .typewriter {
-    font-size: 18px;
-  }
-
-  .hero-meta {
-    font-size: 18px;
-  }
 }
 
 /* ---------- Mobile / Large Phone (768px and below) -------------------------------------------- */
@@ -4601,7 +4586,7 @@ body {
     min-height: 100vh;
     background-image: url("images/portrait-no-bg.png");
     background-size: auto 92vh;
-    background-position: left bottom;
+    background-position: left calc(100% + 0px);
     background-repeat: no-repeat;
     padding: 24px 0 20px;
   }
@@ -4632,7 +4617,7 @@ body {
         rgba(0, 0, 0, 0.12) 20%,
         rgba(0, 0, 0, 0.35) 45%,
         rgba(0, 0, 0, 0.68) 72%,
-        rgba(0, 0, 0, 0.9) 88%,
+        rgba(0, 0, 0, 0.90) 88%,
         #000 100%);
     filter: blur(10px);
     transform: translateY(18px);
@@ -4647,25 +4632,28 @@ body {
   }
 
   .header-content {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 10px;
-    margin-top: 12px;
-    text-align: left;
+    justify-content: space-between;
+
+    min-height: calc(100vh - 110px);
+
     position: relative;
     z-index: 2;
-    min-height: calc(100vh - 110px);
   }
 
   .header-text {
     width: 100%;
     max-width: 100%;
-    padding-right: 0;
     padding-left: 6px;
-    text-align: left;
-    margin-left: 0;
-    margin-top: 18px;
+    padding-right: 0;
+    margin: 40px 0 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    flex: 1;
   }
 
   .hero-title {
@@ -4675,14 +4663,11 @@ body {
     line-height: 1.05;
     letter-spacing: -1.2px;
     margin: 0;
-    margin-top: 95px;
     color: #e6e6e6;
   }
 
   .hero-name {
     display: inline;
-    margin-top: 0;
-    margin-left: 0;
     padding-left: 8px;
     font-size: 1em;
     font-weight: 800;
@@ -4694,16 +4679,13 @@ body {
 
   .typewriter {
     margin-top: 28px;
-    margin-left: 0;
-    min-height: 0;
     max-width: 100%;
+    min-height: 0;
   }
 
-  .hero-role,
-  .hero-meta {
+  .hero-role {
     display: block !important;
-    margin: 0 auto;
-    margin-top: 340px;
+    margin: 20px auto 0;
     max-width: 450px;
     text-align: center;
     font-size: 19px;
@@ -4721,10 +4703,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-top: 24px;
     flex-wrap: wrap;
+    gap: 10px;
+
     width: 100%;
+    padding-bottom: 150px;
+
+    margin-top: 0;
   }
 
   .reach-btn,
@@ -4737,11 +4722,11 @@ body {
     border-radius: 999px;
     font-size: 18px;
     font-weight: 500;
-    text-decoration: none;
     line-height: 1;
+    text-decoration: none;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    transition: all 0.25s ease;
+    transition: all .25s ease;
   }
 
   .reach-btn {
@@ -4760,7 +4745,6 @@ body {
   .reach-btn:hover,
   .transcript-btn:hover {
     transform: translateY(-2px);
-    background: rgba(255, 112, 23, 0.15);
     border-color: rgba(255, 112, 23, 0.5);
     color: #ff7017;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
@@ -4774,34 +4758,29 @@ body {
   .reach-btn i,
   .transcript-btn i {
     font-size: 10px;
-    opacity: 0.85;
+    opacity: .85;
   }
 
   .transcript-btn:visited {
-    color: #ffffff;
+    color: #fff;
   }
 
 }
 
+
 /* ---------- Small Phone (600px and below) -------------------------------------------------------- */
 @media (max-width: 600px) {
-
-  .header-content {
-    margin-top: 12px;
-  }
-
 
   .hero-title {
     font-size: 60px;
     line-height: 1.05;
     letter-spacing: -1px;
+    margin-top: 40px;
   }
 
   .typewriter {
     margin-top: 22px;
   }
-
-
 
   .reach-btn,
   .transcript-btn {
@@ -4813,7 +4792,6 @@ body {
   .hero-buttons {
     justify-content: center;
     gap: 10px;
-    margin-top: 22px;
   }
 
 }
@@ -4821,34 +4799,36 @@ body {
 /* ---------- Extra Small Phone (480px and below) -------------------------------------------------------- */
 @media (max-width: 480px) {
 
+  #header {
+    background-position: left 50px bottom 80px;
+    min-height: calc(100vh - 10px);
+  }
+
   .header-text {
     max-width: 380px;
   }
 
+  .header-content {
+    min-height: calc(100vh - 10px);
+  }
+
   .hero-title {
-    font-size: 70px;
+    font-size: 69px;
     line-height: 1.05;
     letter-spacing: -1px;
+    margin-top: 40px;
+  }
+
+  .hero-role {
+    display: none;
   }
 
   .typewriter {
-    margin-top: 20px;
+    display: none;
   }
-
-  .hero-meta {
-    margin-top: 42px;
-    max-width: 350px;
-    font-size: 14px;
-    line-height: 1.5;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
 
   .hero-buttons {
     justify-content: center;
-    margin-top: 32px;
     gap: 10px;
   }
 
@@ -4857,9 +4837,14 @@ body {
 /* ---------- Very Small Phone (380px and below) -------------------------------------------------------- */
 @media (max-width: 380px) {
 
-  .reach-btn {
-    padding: 10px 20px;
-    font-size: 17px;
+  .hero-title {
+    font-size: 58px;
+  }
+
+  .reach-btn,
+  .transcript-btn {
+    padding: 10px 18px;
+    font-size: 15px;
   }
 
 }
@@ -4956,8 +4941,8 @@ body {
     transform: translateX(100%);
     transition: transform .35s ease;
 
-    width: 320px;
-    max-width: 82vw;
+    width: 300px;
+    max-width: 80vw;
     height: 100vh;
 
     margin: 0;
@@ -5042,10 +5027,10 @@ body {
     letter-spacing: .4px;
 
     box-sizing: border-box;
-    width: 100%;
-    padding: 12px 14px;
+    width: 70%;
+    padding: 7px 7px;
 
-    border-radius: 10px;
+    border-radius: 4px;
 
     background: rgba(255, 255, 255, .015);
 
@@ -5090,12 +5075,12 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 28px;
+    top: 58px;
     right: 22px;
-    width: 44px;
-    height: 44px;
+    width: 37px;
+    height: 37px;
     border-radius: 50%;
-    border: 2px solid #ff7017;
+    border: 1px solid #ff7017;
     background: rgba(255, 112, 23, 0.08);
     color: #ff7017;
     font-size: 22px;
@@ -5119,7 +5104,7 @@ body {
 
   .menu-close-btn i {
     display: block;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1;
     margin: -1px 0 0 0;
     padding: 0;
@@ -5178,14 +5163,43 @@ body {
 /* ---------- SMALL LAPTOP / TABLET LANDSCAPE — 1200px and below ----------------------------------- */
 @media (max-width: 1200px) {
 
+  /* ---------- About Image ---------- */
+
   .about-col-1 {
     flex: 0 0 280px;
   }
+
+}
+
+
+/* ---------- TABLET — 1024px and below ------------------------------------------------------- */
+@media (max-width: 1024px) {
+
+  /* ---------- Layout ---------- */
+
+  #about .row {
+    gap: 40px;
+  }
+
+  /* ---------- About Image ---------- */
+
+  .about-col-1 {
+    flex: 0 0 240px;
+  }
+
+  /* ---------- Section Tabs ---------- */
+
+  .tab-titles {
+    gap: 30px;
+  }
+
 }
 
 
 /* ---------- MEDIUM TABLET — 900px and below -------------------------------------------------------- */
 @media (max-width: 900px) {
+
+  /* ---------- Layout ---------- */
 
   #about .row {
     display: flex;
@@ -5193,38 +5207,46 @@ body {
     gap: 22px;
   }
 
-  /* Put content before slideshow on mobile */
+  /* ---------- About Card ---------- */
+
   .about-col-2 {
     order: 1;
     width: 100%;
     max-width: 100%;
+    padding: 24px 22px;
+
     background: rgba(18, 18, 18, 0.52);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 20px;
-    padding: 24px 22px;
+
     box-shadow:
       0 14px 40px rgba(0, 0, 0, 0.30),
       inset 0 1px 0 rgba(255, 255, 255, 0.03);
   }
 
+  /* ---------- About Image ---------- */
+
   .about-col-1 {
     order: 2;
+    flex: none;
     width: 100%;
     max-width: 220px;
     margin: 6px auto 0;
-    flex: none;
   }
 
   .about-media-stage {
     width: 100%;
     aspect-ratio: 0.9 / 1;
-    border-radius: 14px;
     overflow: hidden;
     padding: 0;
+
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+
     box-shadow:
       0 10px 24px rgba(0, 0, 0, 0.22),
       inset 0 1px 0 rgba(255, 255, 255, 0.02);
@@ -5241,16 +5263,36 @@ body {
   .about-col-1 img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     display: block;
+    object-fit: cover;
     border-radius: 14px;
   }
 
+  /* ---------- Section Title ---------- */
+
+  .sub-title {
+    font-size: 38px;
+  }
+
+  .tab-links::after {
+    display: none;
+  }
+
+  .tab-links.active-link {
+    color: #ff7017;
+  }
+
+  /* ---------- Section Tabs ---------- */
+
   .tab-titles {
-    gap: 26px;
+    font-size: 18px;
+    display: flex;
     flex-wrap: wrap;
+    gap: 26px;
     margin: 18px 0 28px;
   }
+
+  /* ---------- Accordion ---------- */
 
   .accordion-header {
     font-size: 16px;
@@ -5262,11 +5304,8 @@ body {
     line-height: 1.6;
   }
 
-  .sub-title {
-    font-size: 38px;
-  }
+  /* ---------- Experience ---------- */
 
-  /* Experience tab */
   #experience .edu-timeline {
     padding-left: 28px;
   }
@@ -5285,9 +5324,9 @@ body {
   }
 
   #experience .edu-desc {
+    margin-top: 8px;
     font-size: 14px;
     line-height: 1.65;
-    margin-top: 8px;
   }
 
   #experience .edu-header {
@@ -5298,21 +5337,24 @@ body {
     font-size: 14px;
     line-height: 1.6;
   }
-}
 
+}
 
 /* ------------- Mobile / Large Phone (768px and below) ------------------------------------------------ */
 @media (max-width: 768px) {
+
+  /* ---------- About Image ---------- */
 
   .about-col-1 {
     max-width: 210px;
   }
 
-  .about-media-stage {
-    border-radius: 12px;
-  }
-
-  .about-media-stage::before {
+  .about-media-stage,
+  .about-media-stage::before,
+  .about-media-item,
+  .about-media-stage img,
+  .about-media-stage video,
+  .about-col-1 img {
     border-radius: 12px;
   }
 
@@ -5320,19 +5362,56 @@ body {
   .about-media-stage img,
   .about-media-stage video,
   .about-col-1 img {
-    border-radius: 12px;
     height: 100%;
   }
 
+  /* ---------- About Card ---------- */
+  .about-col-2 {
+    padding: 26px 28px;
+  }
+
+  /* ---------- Section Tabs ---------- */
   .tab-titles {
-    gap: 16px;
-    flex-wrap: wrap;
-    margin: 18px 0 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 20px 0 26px;
   }
 
   .tab-links {
+    width: 100%;
+    margin: 0;
+    text-align: center;
     font-size: 17px;
     font-weight: 600;
+  }
+
+  /* ---------- About Summary ---------- */
+
+  .about-summary-preview,
+  .about-summary-more {
+    max-width: 100%;
+  }
+
+  .about-summary-preview p,
+  .about-summary-more p {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .about-summary-toggle {
+    margin-top: 8px;
+  }
+
+  /* ---------- Accordion ---------- */
+
+  .about-accordion {
+    margin-top: 28px;
+  }
+
+  .accordion-item {
+    padding: 14px 0;
   }
 
   .accordion-header {
@@ -5341,29 +5420,30 @@ body {
   }
 
   .accordion-content p {
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.75;
   }
 
-  .about-col-2 {
-    flex: 1;
-    flex-basis: 60%;
-    background: rgba(18, 18, 18, 0.52);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 20px;
-    padding: 26px 28px;
-    box-shadow:
-      0 14px 40px rgba(0, 0, 0, 0.30),
-      inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  .accordion-content li {
+    font-size: 14px;
+    line-height: 1.7;
   }
+
+  /* ---------- Skills ---------- */
 
   .skill-dropdown {
     width: 100%;
   }
 
+  .skill-header {
+    font-size: 16px;
+    line-height: 1.45;
+  }
 
-  /* ---------- Education & Experience ---------- */
+  .skill-body li {
+    font-size: 14px;
+    line-height: 1.65;
+  }
 
   /* ---------- Education ---------- */
 
@@ -5375,12 +5455,32 @@ body {
     left: -22px;
   }
 
+  .edu-year {
+    font-size: 14px;
+  }
+
   .edu-content h4 {
-    font-size: 19px;
+    font-size: 18px;
+    line-height: 1.35;
   }
 
   .edu-degree {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+
+  .edu-desc {
     font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .edu-header {
+    font-size: 15px;
+  }
+
+  .edu-body li {
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   /* ---------- Experience ---------- */
@@ -5396,20 +5496,22 @@ body {
   }
 
   #experience .edu-year {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   #experience .edu-content h4 {
-    font-size: 17px;
+    font-size: 18px;
+    line-height: 1.35;
   }
 
   #experience .edu-degree {
-    font-size: 13.5px;
+    font-size: 15px;
+    color: #e6e6e6;
   }
 
   #experience .edu-desc {
-    font-size: 13.5px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.7;
   }
 
   #experience .edu-dropdown {
@@ -5418,24 +5520,27 @@ body {
 
   #experience .edu-header {
     padding: 10px 12px;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   #experience .edu-body li {
-    font-size: 13.5px;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
-
-
 }
-
 
 /* ---------- Small Phone (600px and below) ------------------------------------------------------ */
 @media (max-width: 600px) {
 
+  /* ---------- Section Title ---------- */
+
   .sub-title {
     font-size: 34px;
+    line-height: 1.15;
   }
+
+  /* ---------- About Image ---------- */
 
   .about-col-1 {
     max-width: 200px;
@@ -5444,10 +5549,6 @@ body {
   .about-col-1 img,
   .about-media-item {
     height: auto;
-  }
-
-  .tab-links {
-    font-size: 18px;
   }
 
   .about-media-stage {
@@ -5461,15 +5562,137 @@ body {
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.015);
   }
 
+  /* ---------- About Card ---------- */
 
-  /* ---------- Education & Experience ---------- */
+  .about-col-2 {
+    padding: 22px;
+  }
+
+  /* ---------- Section Tabs ---------- */
+  .tab-titles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px 0;
+  }
+
+  .tab-links {
+    flex: 0 0 calc(50% - 8px);
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  /* ---------- About Summary ---------- */
+
+  .about-summary-preview,
+  .about-summary-more {
+    max-width: 100%;
+  }
+
+  .about-summary-preview p,
+  .about-summary-more p {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .about-summary-toggle {
+    margin-top: 8px;
+  }
+
+  /* ---------- Accordion ---------- */
+
+  .about-accordion {
+    margin-top: 24px;
+  }
+
+  .accordion-item {
+    padding: 12px 0;
+  }
+
+  .accordion-header {
+    font-size: 15px;
+    padding-right: 22px;
+  }
+
+  .accordion-content p {
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  .accordion-content li {
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  /* ---------- Skills ---------- */
+
+  .skill-dropdown {
+    width: 100%;
+  }
+
+  .skill-header {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .skill-body li {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* ---------- Education ---------- */
+
+  .edu-timeline {
+    padding-left: 22px;
+  }
+
+  .edu-item {
+    margin-bottom: 24px;
+  }
+
+  .edu-item::before {
+    left: -18px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .edu-content h4 {
+    font-size: 17px;
+    line-height: 1.35;
+  }
+
+  .edu-year {
+    font-size: 13px;
+  }
+
+  .edu-degree {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  .edu-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .edu-header {
+    font-size: 14px;
+  }
+
+  .edu-body li {
+    font-size: 13px;
+  }
+
+  /* ---------- Experience ---------- */
 
   #experience .edu-timeline {
     padding-left: 22px;
   }
 
   #experience .edu-item {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
   #experience .edu-item::before {
@@ -5494,10 +5717,15 @@ body {
 
   #experience .edu-desc {
     font-size: 13px;
-    line-height: 1.58;
+    line-height: 1.55;
+  }
+
+  #experience .edu-dropdown {
+    margin-top: 8px;
   }
 
   #experience .edu-header {
+    padding: 9px 12px;
     font-size: 13.5px;
   }
 
@@ -5506,21 +5734,210 @@ body {
   }
 
   #experience .edu-dropdown.active .edu-body {
-    padding: 10px 12px 12px 12px;
+    padding: 10px 12px 12px;
   }
 
   #experience .edu-body li {
     font-size: 13px;
-    margin: 4px 0;
+    line-height: 1.55;
   }
+
 
 }
 
 /* ---------- Extra Small Phone (480px and below) -------------------------------------------------------- */
 @media (max-width: 480px) {
 
+  /* ---------- About Image ---------- */
+
   .about-col-1 {
     display: none;
+  }
+
+  /* ---------- About Card ---------- */
+
+  .about-col-2 {
+    padding: 20px 18px;
+    border-radius: 18px;
+  }
+
+  /* ---------- Section Tabs ---------- */
+
+  .tab-titles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 0;
+    margin: 18px 0 22px;
+  }
+
+  .tab-links {
+    flex: 0 0 calc(50% - 8px);
+    text-align: center;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  /* ---------- About Summary ---------- */
+
+  .about-summary-preview,
+  .about-summary-more {
+    max-width: 100%;
+  }
+
+  .about-summary-preview p,
+  .about-summary-more p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    text-align: left;
+  }
+
+  .about-summary-toggle {
+    margin-top: 6px;
+  }
+
+  /* ---------- Accordion ---------- */
+
+  .about-accordion {
+    margin-top: 22px;
+  }
+
+  .accordion-item {
+    padding: 10px 0;
+  }
+
+  .accordion-header {
+    font-size: 14px;
+    padding-right: 20px;
+  }
+
+  .accordion-content p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .accordion-content li {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* ---------- Skills ---------- */
+
+  .skill-dropdown {
+    width: 100%;
+  }
+
+  .skill-header {
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+
+  .skill-body li {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+
+  /* ---------- Education ---------- */
+
+  .edu-timeline {
+    padding-left: 20px;
+  }
+
+  .edu-item {
+    margin-bottom: 20px;
+  }
+
+  .edu-item::before {
+    left: -16px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .edu-content h4 {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .edu-year {
+    font-size: 12.5px;
+  }
+
+  .edu-degree {
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  .edu-desc {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .edu-header {
+    font-size: 13px;
+    padding: 9px 11px;
+  }
+
+  .edu-body li {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+
+  /* ---------- Experience ---------- */
+
+  #experience .edu-timeline {
+    padding-left: 20px;
+  }
+
+  #experience .edu-item {
+    margin-bottom: 20px;
+  }
+
+  #experience .edu-item::before {
+    left: -16px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+  }
+
+  #experience .edu-year {
+    font-size: 12px;
+  }
+
+  #experience .edu-content h4 {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  #experience .edu-degree {
+    font-size: 12.5px;
+  }
+
+  #experience .edu-desc {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  #experience .edu-dropdown {
+    margin-top: 8px;
+  }
+
+  #experience .edu-header {
+    padding: 8px 11px;
+    font-size: 13px;
+  }
+
+  #experience .edu-body {
+    padding: 0 11px;
+  }
+
+  #experience .edu-dropdown.active .edu-body {
+    padding: 8px 11px 10px;
+  }
+
+  #experience .edu-body li {
+    font-size: 12.5px;
+    line-height: 1.5;
   }
 
 }
