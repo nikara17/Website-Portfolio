@@ -5583,6 +5583,16 @@ desktop typing text beneath the portrait image.)--*/
 /* ---------- Small Phone (600px and below) ------------------------------------------------------ */
 @media (max-width: 600px) {
 
+  /* Hide video */
+  .about-video {
+    display: none;
+  }
+
+  /* Replace with background image */
+  #about {
+    background: #0b0f14;
+  }
+
   /* ---------- Section Title ---------- */
 
   .sub-title {
@@ -6249,6 +6259,23 @@ desktop typing text beneath the portrait image.)--*/
     padding: 60px 0 25px;
   }
 
+  /* Hide background video */
+  .cert-bg-video {
+    display: none;
+  }
+
+  /* Replace with elegant background */
+  #certifications {
+    background:
+      radial-gradient(circle at top,
+        rgba(164, 204, 214, .08),
+        transparent 40%),
+      linear-gradient(180deg,
+        #0b0b0b 0%,
+        #131b22 45%,
+        #0b0b0b 100%);
+  }
+
   /* ---------- Section Title ---------- */
   .cert-title {
     display: block;
@@ -6871,7 +6898,13 @@ desktop typing text beneath the portrait image.)--*/
 @media (max-width: 600px) {
 
   #portfolio {
-    padding: 80px 0 60px;
+    padding: 30px 0 60px;
+  }
+
+  .portfolio-title {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
   }
 
   .portfolio-slider {
@@ -6879,7 +6912,7 @@ desktop typing text beneath the portrait image.)--*/
   }
 
   .portfolio-title {
-    font-size: 40px;
+    font-size: 50px;
   }
 
   .work-list {
@@ -7078,6 +7111,9 @@ desktop typing text beneath the portrait image.)--*/
   .blogs-title {
     font-size: 44px;
     margin-bottom: 26px;
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
   }
 
   .blogs-intro {
