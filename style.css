@@ -50,7 +50,7 @@ body {
 #header {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   background-image: url("images/home-bg.png");
   background-size: cover;
   background-position: 70% center;
@@ -332,6 +332,14 @@ body {
 }
 
 /* ---------- Hero Supporting Text ---------- */
+
+/*-- Mobile-only hero tagline (hidden on desktop,  
+Activated only in responsive breakpoints to replace the 
+desktop typing text beneath the portrait image.)--*/
+.hero-mobile-tagline {
+  display: none;
+}
+
 .header-text h1 small {
   display: block;
   margin-top: 10px;
@@ -454,6 +462,7 @@ body {
 }
 
 /* ---------- Hero Skills (Right Side Under Image) ---------- */
+/* Desktop typing (controlled in app.js) */
 .hero-skills {
   margin-top: 18px;
   text-align: center;
@@ -4586,7 +4595,10 @@ body {
     min-height: 100vh;
     background-image: url("images/portrait-no-bg.png");
     background-size: auto 92vh;
-    background-position: left calc(100% + 0px);
+
+    /* Anchor to bottom-right */
+    background-position: right bottom;
+
     background-repeat: no-repeat;
     padding: 24px 0 20px;
   }
@@ -4634,12 +4646,13 @@ body {
   .header-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
-    min-height: calc(100vh - 110px);
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    min-height: calc(100vh - 120px);
 
     position: relative;
-    z-index: 2;
   }
 
   .header-text {
@@ -4651,9 +4664,9 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 
-    flex: 1;
+    flex: 0;
   }
 
   .hero-title {
@@ -4701,15 +4714,14 @@ body {
 
   .hero-buttons {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 10px;
 
     width: 100%;
-    padding-bottom: 150px;
-
     margin-top: 0;
+    padding-bottom: 10px;
   }
 
   .reach-btn,
@@ -4778,6 +4790,11 @@ body {
     margin-top: 40px;
   }
 
+  .hero-mobile-tagline {
+    display: block;
+    text-align: center;
+  }
+
   .typewriter {
     margin-top: 22px;
   }
@@ -4798,20 +4815,6 @@ body {
 
 /* ---------- Extra Small Phone (480px and below) -------------------------------------------------------- */
 @media (max-width: 480px) {
-
-  #header {
-    background-position: left 50px bottom 80px;
-    min-height: calc(100vh - 10px);
-  }
-
-  .header-text {
-    max-width: 380px;
-  }
-
-  .header-content {
-    min-height: calc(100vh - 10px);
-  }
-
   .hero-title {
     font-size: 69px;
     line-height: 1.05;
@@ -4820,19 +4823,57 @@ body {
   }
 
   .hero-role {
+    display: block;
+    margin: 0px auto 0;
+    max-width: 350px;
+
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.45;
+
+    color: rgba(255, 255, 255, .82);
+  }
+
+  .typing-divider,
+  #typing-text {
     display: none;
   }
 
-  .typewriter {
-    display: none;
+  /* ---------- Mobile Tagline ---------- */
+  .hero-mobile-tagline {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    /* sits above buttons */
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .4px;
+
+    color: rgba(255, 255, 255, .65);
   }
 
+  /* ---------- Hero Buttons ---------- */
   .hero-buttons {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 35px;
+
+    display: flex;
     justify-content: center;
     gap: 10px;
+
+    width: 100%;
   }
 
 }
+
 
 /* ---------- Very Small Phone (380px and below) -------------------------------------------------------- */
 @media (max-width: 380px) {
@@ -4840,6 +4881,11 @@ body {
   .hero-title {
     font-size: 58px;
   }
+
+  .hero-role {
+    display: none;
+  }
+
 
   .reach-btn,
   .transcript-btn {
@@ -5344,6 +5390,10 @@ body {
 @media (max-width: 768px) {
 
   /* ---------- About Image ---------- */
+  #about {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
 
   .about-col-1 {
     max-width: 210px;

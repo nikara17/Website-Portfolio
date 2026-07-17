@@ -98,7 +98,7 @@
 
 
     <div id="menuOverlay"></div>
-    
+
     <!----------------------------- HOME PAGE / HERO SECTION ---------------------------------->
     <div id="header">
         <div class="container">
@@ -182,9 +182,14 @@
 
                         <!-- Divider -->
                         <div class="typing-divider"></div>
-
+                        <!-- Mobile-only hero tagline (hidden on desktop) -->
+                        <p class="hero-mobile-tagline">
+                            Powered by coffee and curiosity.
+                        </p>
 
                     </div>
+
+
 
                     <!-- Call-To-Action Buttons -->
                     <div class="hero-buttons">
@@ -211,7 +216,7 @@
                         <img src="images/home-portrait.png" alt="Portrait of Nikara Ishwarlall" fetchpriority="high">
                     </div>
 
-                    <!-- Dynamic Typing Text -->
+                    <!-- Dynamic Typing Text (revert to app.js)-->
                     <div class="hero-skills">
                         <p id="typing-text"></p>
                     </div>
@@ -246,11 +251,14 @@
             </h1>
 
             <div class="row">
+
+
                 <div class="about-col-1">
                     <div class="about-media-stage">
                         <img id="about-image" src="images/about-me.png" alt="About me">
                     </div>
                 </div>
+
 
 
                 <div class="about-col-2">
@@ -271,10 +279,10 @@
                         <!-- SUMMARY -->
                         <div class="about-summary-preview">
                             <p>
-                                I’m Nikara Ishwarlall, a BSc Information Technology graduate specialising in Robotics.
-                                My passion for technology is rooted in curiosity - understanding how systems learn,
-                                how data shapes decisions, and how engineering and creativity come together to create
-                                meaningful <span class="about-accent">impact</span>.
+                                I'm <span class="about-accent">Nikara Ishwarlall</span>, a BSc Information Technology
+                                graduate specialising in Robotics. I enjoy building software, exploring data, and
+                                creating intelligent systems that solve real-world problems. Always curious, always
+                                learning - and occasionally guilty of having far too many browser tabs open.
                             </p>
                         </div>
 
@@ -288,283 +296,192 @@
                         <!-- EXPANDED CONTENT -->
                         <div class="about-summary-more" id="aboutSummaryMore">
                             <p>
-                                My academic foundation spans robotics, artificial intelligence, software engineering,
-                                and data analysis, giving me both analytical depth and structured problem-solving
-                                ability.
-                                While robotics introduced me to control systems and intelligent environments, my wider
-                                interests extend across software, systems design, and data-driven solutions.
+                                My degree gave me experience across robotics, artificial intelligence, software
+                                engineering, and data analytics, but it also taught me how to approach problems with
+                                curiosity and a systems-thinking mindset. I enjoy understanding how things work, finding
+                                better ways to build them, and learning new technologies along the way.
                             </p>
 
                             <p>
-                                Based in Durban, South Africa, I bring resilience, adaptability, and a growth-driven
-                                mindset.
-                                I’m open to relocation and international opportunities aligned with innovation,
-                                continuous learning, and meaningful contribution.
+                                Based in Durban, South Africa, I'm open to relocation and international opportunities.
+                                Whether it's developing software, analysing data, or building intelligent solutions, I'm
+                                excited to contribute, keep learning, and create technology that makes a positive
+                                impact.
                             </p>
                         </div>
 
 
                         <!-- ACCORDION MENU -->
-                        <div class="about-accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">My Approach & Vision</div>
+                            <div class="accordion-content">
 
-                            <div class="accordion-item">
-                                <div class="accordion-header">My Approach & Vision</div>
-                                <div class="accordion-content">
+                                <p>
+                                    I enjoy turning complex problems into practical solutions through software, data,
+                                    and continuous learning. Curiosity and attention to detail drive the way I build and
+                                    improve.
+                                </p>
 
-                                    <p>
-                                        I approach challenges with discipline, clarity, and long-term thinking.
-                                        In a fast-evolving digital landscape, I stay grounded, resilient, and focused
-                                        on building work that creates lasting value.
-                                    </p>
+                                <p>
+                                    My goal is to create intelligent, accessible technology that solves real-world
+                                    problems and makes innovation available to more people.
+                                </p>
 
-                                    <p>
-                                        My long-term vision is to enhance lives through technology by making both
-                                        digital tools and technical knowledge more accessible and affordable to the
-                                        people
-                                        who need them most.
-                                    </p>
+                                <p>
+                                    I'm passionate about combining software, AI, data, and automation to build systems
+                                    that are not only technically strong, but genuinely useful—because great technology
+                                    should help people, not just impress them.
+                                </p>
 
-                                    <p>
-                                        I’m especially interested in building systems that combine intelligent
-                                        algorithms
-                                        with real-world usability - ensuring innovation is not only advanced, but
-                                        practical
-                                        and inclusive.
-                                    </p>
-
-
-                                </div>
                             </div>
-
-
-
-                            <div class="accordion-item">
-                                <div class="accordion-header">Hobbies</div>
-                                <div class="accordion-content">
-
-                                    <div class="hobby-line">
-                                        Travel • Photography • Swimming • Strategic Games
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-
-                            <div class="accordion-item">
-                                <div class="accordion-header">Currently Exploring</div>
-                                <div class="accordion-content">
-                                    <ul>
-                                        <li>
-                                            <span>Accessible Intelligent Systems</span> -
-                                            exploring how AI-driven solutions can be simplified and deployed effectively
-                                            in resource-constrained environments.
-                                        </li>
-
-                                        <li>
-                                            <span>Inclusive Artificial Intelligence</span> -
-                                            exploring how AI can help bridge knowledge gaps by making technical
-                                            education,
-                                            digital tools, and learning resources more accessible and affordable.
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-
                         </div>
 
 
-                    </div>
 
+                        <div class="accordion-item">
+                            <div class="accordion-header">Hobbies</div>
+                            <div class="accordion-content">
+
+                                <div class="hobby-line">
+                                    Travel • Photography • Swimming • Strategic Games
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">Currently Exploring</div>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>
+                                        <span>Artificial Intelligence & Machine Learning</span> –
+                                        expanding my knowledge through hands-on projects and exploring how intelligent
+                                        systems solve real-world problems.
+                                    </li>
+
+                                    <li>
+                                        <span>Data Analytics</span> –
+                                        learning how to turn raw data into meaningful insights using modern tools,
+                                        visualisation, and data-driven decision making.
+                                    </li>
+
+                                    <li>
+                                        <span>Automation & Emerging Technologies</span> –
+                                        keeping up with new technologies that improve efficiency, simplify workflows,
+                                        and create smarter software solutions.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
 
                     <!--- SKILLS TAB --->
                     <div class="tab-contents" id="skills">
 
                         <div class="skill-dropdown">
-                            <div class="skill-header">Programming & Software Development</div>
+                            <div class="skill-header">Software Development & Programming</div>
                             <div class="skill-body">
                                 <ul>
-                                    <li>Python (OOP, scripting, automation)</li>
-                                    <li>C++ (basic systems-level programming)</li>
-                                    <li>Java fundamentals</li>
-                                    <li>Data structures & algorithms (foundational)</li>
-                                    <li>REST API fundamentals</li>
-                                    <li>Debugging & testing practices</li>
-                                    <li>Git workflows (branching, pull requests)</li>
-                                    <li>Unit Testing</li>
+                                    <li>Python, Java & C++ Programming</li>
+                                    <li>Object-Oriented Programming (OOP)</li>
+                                    <li>Data Structures & Algorithms</li>
+                                    <li>Software Development Practices</li>
+                                    <li>Debugging & Testing</li>
+                                    <li>Git & Version Control</li>
                                 </ul>
                             </div>
                         </div>
 
 
-
                         <div class="skill-dropdown">
-                            <div class="skill-header">Robotics, AI & Intelligent Systems</div>
+                            <div class="skill-header">Artificial Intelligence & Intelligent Systems</div>
                             <div class="skill-body">
                                 <ul>
-                                    <li>ROS2 development & simulation</li>
-                                    <li>Autonomous navigation concepts</li>
-                                    <li>Control systems fundamentals</li>
-                                    <li>Machine Learning (supervised/unsupervised)</li>
-                                    <li>Computer vision fundamentals</li>
-                                    <li>Model training & evaluation concepts</li>
-                                    <li>Computer vision fundamentals</li>
-                                    <li>MATLAB robotics modelling</li>
-                                    <li>Algorithmic problem solving</li>
-                                    <li>Computer vision concepts</li>
+                                    <li>Machine Learning</li>
+                                    <li>Computer Vision</li>
+                                    <li>AI Model Training & Evaluation</li>
+                                    <li>Data-Driven Decision Making</li>
+                                    <li>Intelligent Systems Development</li>
                                 </ul>
                             </div>
                         </div>
 
 
-
                         <div class="skill-dropdown">
-                            <div class="skill-header">Data Analysis & Technical Reporting</div>
+                            <div class="skill-header">Data Analytics & Data Processing</div>
                             <div class="skill-body">
                                 <ul>
-                                    <li>NumPy, Pandas, Matplotlib</li>
-                                    <li>Data cleaning & preprocessing</li>
-                                    <li>Exploratory data analysis (EDA)</li>
+                                    <li>Python Data Analysis (NumPy, Pandas)</li>
                                     <li>SQL Querying</li>
-                                    <li>Data visualisation principles</li>
-                                    <li>Report writing & technical documentation</li>
-                                    <li>CSV / structured dataset handling</li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-
-                        <div class="skill-dropdown">
-                            <div class="skill-header">Systems, Networking & IT Foundations</div>
-                            <div class="skill-body">
-                                <ul>
-                                    <li>Networking fundamentals</li>
-                                    <li>IP addressing & subnetting basics</li>
-                                    <li>Cisco Packet Tracer simulations</li>
-                                    <li>Infrastructure design</li>
-                                    <li>Linux terminal fundamentals</li>
-                                    <li>Windows system environments</li>
-                                    <li> Virtual machines (VM concepts)</li>
-                                    <li>Basic cybersecurity awareness </li>
+                                    <li>Data Cleaning & Preprocessing</li>
+                                    <li>Exploratory Data Analysis (EDA)</li>
+                                    <li>Data Visualisation</li>
+                                    <li>Technical Reporting</li>
                                 </ul>
                             </div>
                         </div>
 
 
                         <div class="skill-dropdown">
-                            <div class="skill-header">Web Development & Design</div>
+                            <div class="skill-header">Robotics & Automation</div>
                             <div class="skill-body">
                                 <ul>
-                                    <li>HTML5 semantic structure</li>
-                                    <li>CSS3 (Flexbox, Responsive design)</li>
-                                    <li>JavaScript (DOM, events, async basics)</li>
-                                    <li>DOM manipulation</li>
-                                    <li>Basic form handling</li>
-                                    <li>UI/UX fundamentals</li>
-                                    <li>Version-controlled deployment</li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-
-                        <div class="skill-dropdown">
-                            <div class="skill-header">Tools, Platforms & Workflow</div>
-                            <div class="skill-body">
-                                <ul>
-                                    <li>VS Code GitHub</li>
-                                    <li>GitHub repository management</li>
-                                    <li>Ubuntu (WSL2 environment)</li>
-                                    <li>MATLAB Online</li>
-                                    <li>Documentation best practices</li>
-                                    <li>Agile / Scrum awareness</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="skill-dropdown">
-                            <div class="skill-header">Microsoft Tools & Productivity</div>
-                            <div class="skill-body">
-                                <ul>
-                                    <li>Microsoft Word</li>
-                                    <li>Microsoft Excel</li>
-                                    <li>Microsoft PowerPoint</li>
-                                    <li>Microsoft Outlook</li>
-                                    <li>Microsoft Teams</li>
-                                    <li>Document formatting & professional reporting</li>
-                                    <li>Spreadsheet organisation & basic data handling</li>
-                                    <li>Presentation design for academic and professional use</li>
+                                    <li>ROS2 Development</li>
+                                    <li>Robotics Simulation</li>
+                                    <li>Control Systems</li>
+                                    <li>MATLAB Robotics Modelling</li>
+                                    <li>Automation Systems</li>
                                 </ul>
                             </div>
                         </div>
 
 
                         <div class="skill-dropdown">
-                            <div class="skill-header">Problem Solving & Collaboration</div>
+                            <div class="skill-header">Web Development & Application Design</div>
                             <div class="skill-body">
                                 <ul>
-                                    <li>Analytical thinking</li>
-                                    <li>Structured debugging</li>
-                                    <li>Cross-functional collaboration</li>
-                                    <li>Documentation clarity</li>
-                                    <li>Independent research capability</li>
-                                    <li>Adaptability in new environments</li>
-
+                                    <li>HTML5, CSS3 & JavaScript</li>
+                                    <li>Responsive Web Design</li>
+                                    <li>DOM Manipulation</li>
+                                    <li>REST API Development</li>
+                                    <li>Frontend Development Principles</li>
                                 </ul>
                             </div>
                         </div>
 
 
                         <div class="skill-dropdown">
-                            <div class="skill-header">Backend & Systems Concepts</div>
+                            <div class="skill-header">Systems, Networking & Cybersecurity</div>
                             <div class="skill-body">
                                 <ul>
-                                    <li>API fundamentals</li>
-                                    <li>Server-client architecture</li>
-                                    <li>JSON & data interchange formats</li>
-                                    <li>Authentication concepts</li>
-                                    <li>Basic database design concepts</li>
-
+                                    <li>Linux & Windows Environments</li>
+                                    <li>Networking & IP Addressing</li>
+                                    <li>Subnetting</li>
+                                    <li>Cisco Packet Tracer</li>
+                                    <li>Cybersecurity Practices</li>
                                 </ul>
                             </div>
                         </div>
 
 
                         <div class="skill-dropdown">
-                            <div class="skill-header">Artificial Intelligence & Data Systems</div>
+                            <div class="skill-header">Engineering Practices & Collaboration</div>
                             <div class="skill-body">
                                 <ul>
-                                    <li>Supervised vs unsupervised learning</li>
-                                    <li>Model evaluation metrics</li>
-                                    <li>Feature engineering concepts</li>
-                                    <li>Ethical AI considerations</li>
-                                    <li>Data pipeline fundamentals</li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="skill-dropdown">
-                            <div class="skill-header">Software Engineering Principles</div>
-                            <div class="skill-body">
-                                <ul>
-                                    <li>Object-Oriented Design principles</li>
-                                    <li>Clean code practices</li>
-                                    <li>Modular system design</li>
-                                    <li>Requirement analysis</li>
-                                    <li>Testing</li>
-                                    <li>Code readability & maintainability</li>
-
+                                    <li>Analytical Problem Solving</li>
+                                    <li>Technical Documentation</li>
+                                    <li>Requirements Analysis</li>
+                                    <li>Independent Research</li>
+                                    <li>Team Collaboration</li>
+                                    <li>Continuous Learning</li>
                                 </ul>
                             </div>
                         </div>
 
                     </div>
-
-
-
 
                     <!--- EDUCATION TAB--->
                     <div class="tab-contents" id="education">
@@ -582,12 +499,11 @@
 
                                         <!-- STATS DROPDOWN -->
                                         <div class="edu-dropdown" id="academicStatsDropdown">
-                                            <div class="edu-header">Academic Stats</div>
+                                            <div class="edu-header">Highlights</div>
 
                                             <div class="edu-body">
                                                 <ul>
-                                                    <li>79.1% Weighted Average (GPA)</li>
-                                                    <li>19 Academic Distinctions</li>
+                                                    <li>80% Overall Weighted Average</li>
                                                     <li>2024 Top Achiever Recognition</li>
                                                 </ul>
                                             </div>
@@ -609,7 +525,6 @@
                                             </a>
 
                                         </div>
-
 
 
                                     </div>
@@ -648,7 +563,7 @@
 
                                     <div class="edu-content">
                                         <h4>Solvista Secondary School</h4>
-                                        <p class="edu-degree">Bachelor's Degree Pass</p>
+                                        <p class="edu-degree">NSC Bachelor's Pass</p>
                                     </div>
                                 </div>
 
@@ -706,14 +621,18 @@
                         </div>
                     </div>
 
-
-
                 </div>
 
-            </div>
-        </div>
 
+
+
+
+
+            </div>
+
+        </div>
     </div>
+
 
 
 

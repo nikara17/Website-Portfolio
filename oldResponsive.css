@@ -2356,3 +2356,194 @@
     font-size: 34px;
   }
 }
+
+
+
+/* =========================================================
+
+OLD HTML SKILLS:
+<!--- SKILLS TAB --->
+                <div class="tab-contents" id="skills">
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Programming & Software Development</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>Python (OOP, scripting, automation)</li>
+                                <li>C++ (basic systems-level programming)</li>
+                                <li>Java fundamentals</li>
+                                <li>Data structures & algorithms (foundational)</li>
+                                <li>REST API fundamentals</li>
+                                <li>Debugging & testing practices</li>
+                                <li>Git workflows (branching, pull requests)</li>
+                                <li>Unit Testing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Robotics, AI & Intelligent Systems</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>ROS2 development & simulation</li>
+                                <li>Autonomous navigation concepts</li>
+                                <li>Control systems fundamentals</li>
+                                <li>Machine Learning (supervised/unsupervised)</li>
+                                <li>Computer vision fundamentals</li>
+                                <li>Model training & evaluation concepts</li>
+                                <li>Computer vision fundamentals</li>
+                                <li>MATLAB robotics modelling</li>
+                                <li>Algorithmic problem solving</li>
+                                <li>Computer vision concepts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Data Analysis & Technical Reporting</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>NumPy, Pandas, Matplotlib</li>
+                                <li>Data cleaning & preprocessing</li>
+                                <li>Exploratory data analysis (EDA)</li>
+                                <li>SQL Querying</li>
+                                <li>Data visualisation principles</li>
+                                <li>Report writing & technical documentation</li>
+                                <li>CSV / structured dataset handling</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Systems, Networking & IT Foundations</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>Networking fundamentals</li>
+                                <li>IP addressing & subnetting basics</li>
+                                <li>Cisco Packet Tracer simulations</li>
+                                <li>Infrastructure design</li>
+                                <li>Linux terminal fundamentals</li>
+                                <li>Windows system environments</li>
+                                <li> Virtual machines (VM concepts)</li>
+                                <li>Basic cybersecurity awareness </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Web Development & Design</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>HTML5 semantic structure</li>
+                                <li>CSS3 (Flexbox, Responsive design)</li>
+                                <li>JavaScript (DOM, events, async basics)</li>
+                                <li>DOM manipulation</li>
+                                <li>Basic form handling</li>
+                                <li>UI/UX fundamentals</li>
+                                <li>Version-controlled deployment</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Tools, Platforms & Workflow</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>VS Code GitHub</li>
+                                <li>GitHub repository management</li>
+                                <li>Ubuntu (WSL2 environment)</li>
+                                <li>MATLAB Online</li>
+                                <li>Documentation best practices</li>
+                                <li>Agile / Scrum awareness</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Microsoft Tools & Productivity</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>Microsoft Word</li>
+                                <li>Microsoft Excel</li>
+                                <li>Microsoft PowerPoint</li>
+                                <li>Microsoft Outlook</li>
+                                <li>Microsoft Teams</li>
+                                <li>Document formatting & professional reporting</li>
+                                <li>Spreadsheet organisation & basic data handling</li>
+                                <li>Presentation design for academic and professional use</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Problem Solving & Collaboration</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>Analytical thinking</li>
+                                <li>Structured debugging</li>
+                                <li>Cross-functional collaboration</li>
+                                <li>Documentation clarity</li>
+                                <li>Independent research capability</li>
+                                <li>Adaptability in new environments</li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Backend & Systems Concepts</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>API fundamentals</li>
+                                <li>Server-client architecture</li>
+                                <li>JSON & data interchange formats</li>
+                                <li>Authentication concepts</li>
+                                <li>Basic database design concepts</li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Artificial Intelligence & Data Systems</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>Supervised vs unsupervised learning</li>
+                                <li>Model evaluation metrics</li>
+                                <li>Feature engineering concepts</li>
+                                <li>Ethical AI considerations</li>
+                                <li>Data pipeline fundamentals</li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="skill-dropdown">
+                        <div class="skill-header">Software Engineering Principles</div>
+                        <div class="skill-body">
+                            <ul>
+                                <li>Object-Oriented Design principles</li>
+                                <li>Clean code practices</li>
+                                <li>Modular system design</li>
+                                <li>Requirement analysis</li>
+                                <li>Testing</li>
+                                <li>Code readability & maintainability</li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
